@@ -28,7 +28,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "firstName", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "first_name", nullable = false, insertable = true, updatable = true, length = 100)
     public String getFirstName() {
         return firstName;
     }
@@ -38,7 +38,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "lastName", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "last_name", nullable = false, insertable = true, updatable = true, length = 100)
     public String getLastName() {
         return lastName;
     }
