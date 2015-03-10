@@ -13,6 +13,8 @@
 	JSTL URL: ${url}
 	<br>
 	Message: ${message}
+    <br />
+    <a href="product/detail/">click-me</a>
 </body>
 
 </html>
