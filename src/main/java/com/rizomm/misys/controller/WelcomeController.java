@@ -41,4 +41,5 @@ public class WelcomeController {
 		throw new RuntimeException("Foo");
 	}
 
+
 }
