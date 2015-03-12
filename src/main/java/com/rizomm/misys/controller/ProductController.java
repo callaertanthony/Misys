@@ -20,10 +20,25 @@ public class ProductController implements ErrorController {
     @Autowired
     private ProductRepository _productRepository;
 
+    /**
+     * This method will retrieve the product from the database and call the detail JSP page.
+     * If the product can't be found, the 404 page will be shown to the user.
+     *
+     * @param id The product Id (will be matched with the database)
+     * @return  Call the detail JSP with the product object if it was found into the database. Otherwise, the 404 JSP
+     *          is called.
+     */
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
     public ModelAndView detailProduct(@PathVariable int id){
-        Product product = _productRepository.findOne(id);
-        return new ModelAndView("product/detail", "product", product);
+        try {
+            Product product = _productRepository.findOne(id);
+            if (null == product)
+                return new ModelAndView("404");
+            return new ModelAndView("product/detail", "product", product);
+        } catch (IllegalArgumentException e) {
+            System.out.println();
+            return new ModelAndView("404");
+        }
     }
 
     @Override
