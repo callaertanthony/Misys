@@ -1,6 +1,9 @@
 package com.rizomm.misys.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Created by anthonycallaert on 10/03/15.
@@ -8,10 +11,10 @@ import javax.persistence.*;
 @Entity
 public class Stock {
     private int id;
-    private Product productByProductId;
+    private long quantity;
 
     @Id
-    @Column(name = "id")
+    @Column
     public int getId() {
         return id;
     }
@@ -36,18 +39,6 @@ public class Stock {
     public int hashCode() {
         return id;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "id", nullable = false)
-    public Product getProductByProductId() {
-        return productByProductId;
-    }
-
-    public void setProductByProductId(Product productByProductId) {
-        this.productByProductId = productByProductId;
-    }
-
-    private long quantity;
 
     @Basic
     public long getQuantity() {
