@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -8,11 +9,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="tab-pane fade active in" id="reviews" >
     <div class="col-sm-12">
-        <ul>
-            <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
-            <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
-            <li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <c:forEach items="${product.reviews}" var="item">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <ul>
+                        <li><a href=""><i class="fa fa-user"></i>${item.user.nickname}</a></li>
+                        <li>${item.note}</li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                        ${item.review}
+                </div>
+            </div>
+        </c:forEach>
     </div>
 </div>

@@ -1,6 +1,7 @@
 package com.rizomm.misys.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by anthonycallaert on 12/03/15.
@@ -50,4 +51,17 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    @OneToMany(targetEntity = Review.class, mappedBy = "product")
+    List<Review> reviews;
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+
 }

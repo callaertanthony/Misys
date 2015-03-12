@@ -9,6 +9,7 @@
       <mapping class="com.rizomm.misys.model.User"/>
       <mapping class="com.rizomm.misys.model.Stock"/>
       <mapping class="com.rizomm.misys.model.Product"/>
+      <mapping class="com.rizomm.misys.model.Review"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
