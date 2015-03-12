@@ -62,12 +62,16 @@
                                     <img src="images/home/product1.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="3" />
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
                                 </div>
@@ -87,12 +91,16 @@
                                     <img src="images/home/product2.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="3" />
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
                                 </div>
@@ -112,12 +120,16 @@
                                     <img src="images/home/product3.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="3" />
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
                                 </div>
@@ -137,12 +149,16 @@
                                     <img src="images/home/product4.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="3" />
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
                                 </div>
@@ -163,12 +179,16 @@
                                     <img src="images/home/product5.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="3" />
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
                                 </div>
@@ -189,6 +209,8 @@
                                     <img src="images/home/product6.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="3" />
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
@@ -229,7 +251,10 @@
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -242,7 +267,10 @@
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -255,7 +283,10 @@
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -268,7 +299,10 @@
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -284,7 +318,10 @@
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -297,7 +334,10 @@
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -310,7 +350,10 @@
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -323,7 +366,10 @@
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -339,7 +385,10 @@
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -352,7 +401,10 @@
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -364,8 +416,10 @@
                                         <div class="productinfo text-center">
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <p>Easy Polo Black Edition</p><label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -378,7 +432,10 @@
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -394,7 +451,10 @@
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -407,7 +467,10 @@
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -420,7 +483,10 @@
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -433,7 +499,10 @@
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -449,7 +518,10 @@
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -462,7 +534,10 @@
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -475,7 +550,10 @@
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>
@@ -488,7 +566,10 @@
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="3" />
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href="#" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</a>
                                         </div>
 
                                     </div>

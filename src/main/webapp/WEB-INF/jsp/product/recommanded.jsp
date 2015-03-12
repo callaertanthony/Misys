@@ -19,7 +19,10 @@
                                 <img src="${contextPath}/images/home/recommend1.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -31,7 +34,10 @@
                                 <img src="${contextPath}/images/home/recommend2.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -43,7 +49,10 @@
                                 <img src="${contextPath}/images/home/recommend3.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -57,7 +66,10 @@
                                 <img src="${contextPath}/images/home/recommend1.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -69,7 +81,10 @@
                                 <img src="${contextPath}/images/home/recommend2.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -81,7 +96,10 @@
                                 <img src="${contextPath}/images/home/recommend3.jpg" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
