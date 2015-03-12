@@ -1,9 +1,6 @@
 package com.rizomm.misys.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created by anthonycallaert on 12/03/15.
@@ -30,5 +27,27 @@ public class Product {
 
     public void setStock(Stock stock) {
         this.stock = stock;
+    }
+
+    @Basic
+    private float price;
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    @Basic
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

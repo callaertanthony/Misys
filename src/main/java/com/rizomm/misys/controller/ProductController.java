@@ -21,7 +21,7 @@ public class ProductController implements ErrorController {
     private ProductRepository _productRepository;
 
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
-    public ModelAndView detailProduct(@PathVariable Long id){
+    public ModelAndView detailProduct(@PathVariable int id){
         Product product = _productRepository.findOne(id);
         return new ModelAndView("product/detail", "product", product);
     }
