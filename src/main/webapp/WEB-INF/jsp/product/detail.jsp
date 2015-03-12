@@ -54,11 +54,11 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
-                            <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                            <p>Web ID: 1089772</p>
+                            <h2>${product.name}</h2>
+                            <p>Web ID: ${product.id}</p>
                             <img src="${contextPath}/images/product-details/rating.png" alt="" />
 								<span>
-									<span>US $59</span>
+									<span>${product.price}€</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart">

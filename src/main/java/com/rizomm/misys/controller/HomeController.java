@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-
-
     @RequestMapping(method= RequestMethod.GET)
     public String showProductDetail() {
         return "home";
@@ -26,5 +24,14 @@ public class HomeController {
     @RequestMapping("/404")
     public String notFound() {
         return "404";
+    }
+
+    /**
+     *
+     * @return error JSP
+     */
+    @RequestMapping("/error")
+    public String error() {
+        return "error";
     }
 }
