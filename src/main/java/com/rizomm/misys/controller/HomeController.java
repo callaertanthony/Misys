@@ -14,4 +14,9 @@ public class HomeController {
     public String showProductDetail() {
         return "home";
     }
+
+    @RequestMapping("/404")
+    public String notFound() {
+        return "404";
+    }
 }
