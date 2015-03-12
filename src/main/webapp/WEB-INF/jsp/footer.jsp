@@ -162,3 +162,9 @@
     </div>
 
 </footer><!--/Footer-->
+<script src="${contextPath}/js/jquery.js"></script>
+<script src="${contextPath}/js/bootstrap.min.js"></script>
+<script src="${contextPath}/js/jquery.scrollUp.min.js"></script>
+<script src="${contextPath}/js/price-range.js"></script>
+<script src="${contextPath}/js/jquery.prettyPhoto.js"></script>
+<script src="${contextPath}/js/main.js"></script>

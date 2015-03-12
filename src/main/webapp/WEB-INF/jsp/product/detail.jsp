@@ -240,7 +240,6 @@
                         <!-- INCLUDING REVIEWS -->
                         <jsp:include page="review.jsp" />
 
-
                     </div>
                 </div><!--/category-tab-->
 
