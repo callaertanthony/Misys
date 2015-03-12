@@ -72,7 +72,7 @@
 								</span>
                             <p><b>Availability:</b> In Stock</p>
                             <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> E-SHOPPER</p>
+                            <p><b>Brand:</b> ${product.getBrand().getName()}</p>
                             <a href=""><img src="${contextPath}/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
                     </div>
