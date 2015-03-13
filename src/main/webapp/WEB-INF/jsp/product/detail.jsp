@@ -70,8 +70,14 @@
                                         Add to wishlist
                                     </button>
 								</span>
-                            <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
+                            <c:choose>
+                                <c:when test="${product.getStock().getQuantity() > '0'}">
+                                    <p><b>Availability:</b> In Stock</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p><b>Availability:</b> Out of stock</p>
+                                </c:otherwise>
+                            </c:choose>
                             <p><b>Brand:</b> ${product.getBrand().getName()}</p>
                             <a href=""><img src="${contextPath}/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
