@@ -1,5 +1,7 @@
 package com.rizomm.misys.model;
 
+import ch.qos.logback.classic.db.names.ColumnName;
+
 import javax.persistence.*;
 
 /**
@@ -10,7 +12,8 @@ public class Product {
     @GeneratedValue
     @Id
     private int id;
-    @OneToOne
+
+    @OneToOne(optional = false)
     private Stock stock;
 
     public int getId() {
@@ -41,6 +44,7 @@ public class Product {
     }
 
     @Basic
+    @Column(nullable = false)
     private String name;
 
     public String getName() {
@@ -60,5 +64,29 @@ public class Product {
 
     public void setBrand(Brand brand) {
         this.brand = brand;
+    }
+
+    @Basic
+    @Column(nullable = false)
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Basic
+    @Column(unique=true, nullable = false)
+    private String reference;
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 }
