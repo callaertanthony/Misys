@@ -11,6 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class PictureLink {
     private int id;
+    private String link;
 
     @GeneratedValue
     @Id
@@ -21,8 +22,6 @@ public class PictureLink {
     public void setId(int id) {
         this.id = id;
     }
-
-    private String link;
 
     @Basic
     public String getLink() {

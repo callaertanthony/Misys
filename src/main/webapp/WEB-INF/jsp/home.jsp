@@ -60,8 +60,10 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="${product.getPicturelink().getLink()}" alt="" />
+                                        <img src="${product.getPicturelink().getLink()}" alt=""/>
+
                                         <h2>${product.price}€</h2>
+
                                         <p>${product.name}</p>
                                         <label>Quantity:</label>
                                         <input type="text" value="3" />
@@ -70,10 +72,12 @@
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>${product.price}€</h2>
+
                                             <p>${product.name}</p>
                                             <label>Quantity:</label>
-                                            <input type="text" value="3" />
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <input type="text" value="3"/>
+                                            <a href="#" class="btn btn-default add-to-cart"><i
+                                                    class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
                                     </div>
                                 </div>

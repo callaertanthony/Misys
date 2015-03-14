@@ -1,7 +1,5 @@
 package com.rizomm.misys.model;
 
-import ch.qos.logback.classic.db.names.ColumnName;
-
 import javax.persistence.*;
 
 /**
@@ -15,6 +13,21 @@ public class Product {
 
     @OneToOne(optional = false)
     private Stock stock;
+    @Basic
+    private float price;
+    @Basic
+    @Column(nullable = false)
+    private String name;
+    @ManyToOne(optional = false)
+    private Brand brand;
+    @Basic
+    @Column(nullable = false)
+    private String description;
+    @Basic
+    @Column(unique = true, nullable = false)
+    private String reference;
+    @OneToOne(optional = false)
+    private PictureLink picturelink;
 
     public int getId() {
         return id;
@@ -32,9 +45,6 @@ public class Product {
         this.stock = stock;
     }
 
-    @Basic
-    private float price;
-
     public float getPrice() {
         return price;
     }
@@ -42,10 +52,6 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
-
-    @Basic
-    @Column(nullable = false)
-    private String name;
 
     public String getName() {
         return name;
@@ -55,9 +61,6 @@ public class Product {
         this.name = name;
     }
 
-    @ManyToOne(optional = false)
-    private Brand brand;
-
     public Brand getBrand() {
         return brand;
     }
@@ -65,10 +68,6 @@ public class Product {
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
-
-    @Basic
-    @Column(nullable = false)
-    private String description;
 
     public String getDescription() {
         return description;
@@ -78,10 +77,6 @@ public class Product {
         this.description = description;
     }
 
-    @Basic
-    @Column(unique=true, nullable = false)
-    private String reference;
-
     public String getReference() {
         return reference;
     }
@@ -89,9 +84,6 @@ public class Product {
     public void setReference(String reference) {
         this.reference = reference;
     }
-
-    @OneToOne(optional = false)
-    private PictureLink picturelink;
 
     public PictureLink getPicturelink() {
         return picturelink;
