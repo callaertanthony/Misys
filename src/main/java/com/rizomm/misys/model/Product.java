@@ -89,4 +89,15 @@ public class Product {
     public void setReference(String reference) {
         this.reference = reference;
     }
+
+    @OneToOne(optional = false)
+    private PictureLink picturelink;
+
+    public PictureLink getPicturelink() {
+        return picturelink;
+    }
+
+    public void setPicturelink(PictureLink picturelink) {
+        this.picturelink = picturelink;
+    }
 }
