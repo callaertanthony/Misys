@@ -55,7 +55,7 @@
                         <div class="product-information"><!--/product-information-->
                             <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
                             <h2>${product.name}</h2>
-                            <p>Web ID: ${product.id}</p>
+                            <p>Web ID: ${product.reference}</p>
                             <img src="${contextPath}/images/product-details/rating.png" alt="" />
 								<span>
 									<span>${product.price}€</span>
@@ -70,8 +70,14 @@
                                         Add to wishlist
                                     </button>
 								</span>
-                            <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
+                            <c:choose>
+                                <c:when test="${product.getStock().getQuantity() > '0'}">
+                                    <p><b>Availability:</b> In Stock</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p><b>Availability:</b> Out of stock</p>
+                                </c:otherwise>
+                            </c:choose>
                             <p><b>Brand:</b> ${product.getBrand().getName()}</p>
                             <a href=""><img src="${contextPath}/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
@@ -89,65 +95,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade" id="details" >
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <label>Quantity:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery2.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <label>Quantity:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <label>Quantity:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery4.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <label>Quantity:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-sm-12">
+                                <p>${product.description}</p>
                             </div>
                         </div>
 

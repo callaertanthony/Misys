@@ -10,8 +10,24 @@ public class Product {
     @GeneratedValue
     @Id
     private int id;
-    @OneToOne
+
+    @OneToOne(optional = false)
     private Stock stock;
+    @Basic
+    private float price;
+    @Basic
+    @Column(nullable = false)
+    private String name;
+    @ManyToOne(optional = false)
+    private Brand brand;
+    @Basic
+    @Column(nullable = false)
+    private String description;
+    @Basic
+    @Column(unique = true, nullable = false)
+    private String reference;
+    @OneToOne(optional = false)
+    private PictureLink picturelink;
 
     public int getId() {
         return id;
@@ -29,9 +45,6 @@ public class Product {
         this.stock = stock;
     }
 
-    @Basic
-    private float price;
-
     public float getPrice() {
         return price;
     }
@@ -39,9 +52,6 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
-
-    @Basic
-    private String name;
 
     public String getName() {
         return name;
@@ -51,9 +61,6 @@ public class Product {
         this.name = name;
     }
 
-    @ManyToOne(optional = false)
-    private Brand brand;
-
     public Brand getBrand() {
         return brand;
     }
@@ -62,8 +69,21 @@ public class Product {
         this.brand = brand;
     }
 
-    @OneToOne(optional = false)
-    private PictureLink picturelink;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
     public PictureLink getPicturelink() {
         return picturelink;
