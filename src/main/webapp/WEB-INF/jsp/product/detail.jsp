@@ -11,7 +11,6 @@
 
 <html>
 <head>
-    <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +18,15 @@
     <meta name="author" content="">
     <title>Product Details | E-Shopper</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${contextPath}/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${contextPath}/css/price-range.css" rel="stylesheet">
-    <link href="${contextPath}/css/animate.css" rel="stylesheet">
-    <link href="${contextPath}/css/main.css" rel="stylesheet">
-    <link href="${contextPath}/css/responsive.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/price-range.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/animate.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="${contextPath}/js/html5shiv.js"></script>
-    <script src="${contextPath}/js/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head><!--/head-->
@@ -47,31 +46,41 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="../../${product.getPicturelink().getLink()}" alt="" />
+                            <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
                         </div>
 
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
-                            <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
+                            <img src="${pageContext.request.contextPath}/assets/images/product-details/new.jpg"
+                                 class="newarrival" alt=""/>
                             <h2>${product.name}</h2>
                             <p>Web ID: ${product.reference}</p>
-                            <img src="${contextPath}/images/product-details/rating.png" alt="" />
-								<span>
-									<span>${product.price}€</span>
-									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-default cart">
+
+                            <p>
+                                <img src="${pageContext.request.contextPath}/assets/images/product-details/rating.png"
+                                     alt=""/>
+                            </p>
+                            <span>
+                                <span>${product.price}€</span>
+                                <label>Quantity:</label>
+                                <input type="text" value="3"/>
+                                <c:if test="${product.haveStock()}">
+                                    <button type="button" class="btn btn-default cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         Add to cart
                                     </button>
-                                    <button type="button" class="btn btn-default wishlist">
-                                        <i class="fa fa-shopping-wishlist"></i>
-                                        Add to wishlist
-                                    </button>
-								</span>
+                                </c:if>
+                            </span>
+
+                            <p>
+                                <button type="button" class="btn btn-default wishlist">
+                                    <i class="fa fa-shopping-wishlist"></i>
+                                    Add to wishlist
+                                </button>
+                            </p>
                             <c:choose>
-                                <c:when test="${product.getStock().getQuantity() > '0'}">
+                                <c:when test="${product.haveStock()}">
                                     <p><b>Availability:</b> In Stock</p>
                                 </c:when>
                                 <c:otherwise>
@@ -79,7 +88,9 @@
                                 </c:otherwise>
                             </c:choose>
                             <p><b>Brand:</b> ${product.getBrand().getName()}</p>
-                            <a href=""><img src="${contextPath}/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+                            <a href=""><img
+                                    src="${pageContext.request.contextPath}/assets/images/product-details/share.png"
+                                    class="share img-responsive" alt=""/></a>
                         </div><!--/product-information-->
                     </div>
                 </div><!--/product-details-->
@@ -105,7 +116,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery1.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery1.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -120,7 +132,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery3.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery3.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -135,7 +148,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery2.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery2.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -150,7 +164,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery4.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery4.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -168,7 +183,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery1.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery1.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -183,7 +199,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery2.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery2.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -198,7 +215,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery3.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery3.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>
@@ -213,7 +231,8 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="${contextPath}/images/home/gallery4.jpg" alt="" />
+                                            <img src="${pageContext.request.contextPath}/assets/images/home/gallery4.jpg"
+                                                 alt=""/>
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <label>Quantity:</label>

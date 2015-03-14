@@ -25,7 +25,7 @@ public class PictureLink {
 
     @Basic
     public String getLink() {
-        return link;
+        return "/assets/images/product-details/" + link;
     }
 
     public void setLink(String link) {

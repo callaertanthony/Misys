@@ -92,4 +92,8 @@ public class Product {
     public void setPicturelink(PictureLink picturelink) {
         this.picturelink = picturelink;
     }
+
+    public boolean haveStock() {
+        return this.getStock().getQuantity() > 0;
+    }
 }

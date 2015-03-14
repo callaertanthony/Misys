@@ -40,7 +40,7 @@ jQuery(function($) {'use strict',
 		animation: google.maps.Animation.DROP,
 		verticalAlign: 'bottom',
 		horizontalAlign: 'center',
-		backgroundColor: '#ffffff',
+        backgroundColor: '#ffffff'
 	});
 
 	var styles = [ 

@@ -6,8 +6,8 @@ INSERT INTO stock (id, quantity) VALUES (5, 0);
 
 INSERT INTO `misys`.`brand` (`id`, `name`) VALUES (NULL, 'Sony'), (NULL, 'Universal');
 
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'images\\product-details\\Penguins.jpg');
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'images\\product-details\\Penguins.jpg');
+INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'Penguins.jpg');
+INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'Penguins.jpg');
 
 INSERT INTO `misys`.`product` (`id`, `description`, `name`, `price`, `reference`, `brand_id`, `stock_id`, `picturelink_id`)
 VALUES
