@@ -8,6 +8,8 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
+<%@taglib prefix="fn" uri="/WEB-INF/fn.tld" %>
+<%@taglib prefix="fmt" uri="/WEB-INF/fmt.tld" %>
 
 <html>
 <head>
@@ -56,7 +58,12 @@
                             <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
                             <h2>${product.name}</h2>
                             <p>Web ID: ${product.id}</p>
-                            <img src="${contextPath}/images/product-details/rating.png" alt="" />
+                            <c:set var="noteMoyenne" value="0"/>
+                            <c:forEach items="${product.reviews}" var="item">
+                                <c:set var="noteMoyenne" value="${noteMoyenne+item.note}"/>
+                            </c:forEach>
+                            <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
+                            <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
 								<span>
 									<span>${product.price}€</span>
 									<label>Quantity:</label>
@@ -80,7 +87,8 @@
                             <li><a href="#details" data-toggle="tab">Details</a></li>
                             <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
                             <li><a href="#tag" data-toggle="tab">Tag</a></li>
-                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+                            <li class="active"><a href="#reviews"
+                                                  data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
