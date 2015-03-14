@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Product Details | E-Shopper</title>
+    <title>Product Details | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet">
@@ -96,11 +96,11 @@
                 <div class="category-tab"><!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
-                            <li><a href="#blazers" data-toggle="tab">Blazers</a></li>
-                            <li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
-                            <li><a href="#kids" data-toggle="tab">Kids</a></li>
-                            <li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+                            <li class="active"><a href="#dvd" data-toggle="tab">DVD</a></li>
+                            <li><a href="#bluray" data-toggle="tab">Blu-Ray</a></li>
+                            <li><a href="#vinyl" data-toggle="tab">Vinyl</a></li>
+                            <li><a href="#cd" data-toggle="tab">CD</a></li>
+                            <li><a href="#vod" data-toggle="tab">VOD</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
