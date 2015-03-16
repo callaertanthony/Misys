@@ -58,10 +58,10 @@
                     </div>
 
                     <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
+                        <i class="glyphicon glyphicon-chevron-left"></i>
                     </a>
                     <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
+                        <i class="glyphicon glyphicon-chevron-right"></i>
                     </a>
                 </div>
 
