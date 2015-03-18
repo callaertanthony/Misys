@@ -8,6 +8,8 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
+<%@taglib prefix="fn" uri="/WEB-INF/fn.tld" %>
+<%@taglib prefix="fmt" uri="/WEB-INF/fmt.tld" %>
 
 <html>
 <head>
@@ -56,20 +58,32 @@
                             <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
                             <h2>${product.name}</h2>
                             <p>Web ID: ${product.reference}</p>
-                            <img src="${contextPath}/images/product-details/rating.png" alt="" />
-								<span>
-									<span>${product.price}€</span>
-									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-default cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Add to cart
-                                    </button>
-                                    <button type="button" class="btn btn-default wishlist">
-                                        <i class="fa fa-shopping-wishlist"></i>
-                                        Add to wishlist
-                                    </button>
-								</span>
+                            <c:set var="noteMoyenne" value="0"/>
+                            <c:forEach items="${product.reviews}" var="item">
+                                <c:set var="noteMoyenne" value="${noteMoyenne+item.note}"/>
+                            </c:forEach>
+                            <c:choose>
+                                <c:when test="${noteMoyenne<='0'}">
+                                    <p>Note: 0/5</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
+                                    <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
+                                </c:otherwise>
+                            </c:choose>
+                            <span>
+                                <span>${product.price}€</span>
+                                <label>Quantity:</label>
+                                <input type="text" value="3" />
+                                <button type="button" class="btn btn-default cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button>
+                                <button type="button" class="btn btn-default wishlist">
+                                    <i class="fa fa-shopping-wishlist"></i>
+                                    Add to wishlist
+                                </button>
+                            </span>
                             <c:choose>
                                 <c:when test="${product.getStock().getQuantity() > '0'}">
                                     <p><b>Availability:</b> In Stock</p>
@@ -90,13 +104,50 @@
                             <li><a href="#details" data-toggle="tab">Details</a></li>
                             <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
                             <li><a href="#tag" data-toggle="tab">Tag</a></li>
-                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+                            <li class="active"><a href="#reviews"
+                                                  data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade" id="details" >
                             <div class="col-sm-12">
                                 <p>${product.description}</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="${contextPath}/images/home/gallery2.jpg" alt="" />
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="${contextPath}/images/home/gallery3.jpg" alt="" />
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="${contextPath}/images/home/gallery4.jpg" alt="" />
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

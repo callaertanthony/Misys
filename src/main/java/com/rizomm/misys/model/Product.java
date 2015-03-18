@@ -1,6 +1,7 @@
 package com.rizomm.misys.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by anthonycallaert on 12/03/15.
@@ -45,6 +46,9 @@ public class Product {
         this.stock = stock;
     }
 
+    @Basic
+    private float price;
+
     public float getPrice() {
         return price;
     }
@@ -52,6 +56,9 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    @Basic
+    private String name;
 
     public String getName() {
         return name;
@@ -92,4 +99,17 @@ public class Product {
     public void setPicturelink(PictureLink picturelink) {
         this.picturelink = picturelink;
     }
+
+    @OneToMany(targetEntity = Review.class, mappedBy = "product")
+    List<Review> reviews;
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+
 }
