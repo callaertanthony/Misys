@@ -10,7 +10,6 @@
 
 <html>
 <head>
-    <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +18,15 @@
     <title>Product Details | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${contextPath}/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${contextPath}/css/price-range.css" rel="stylesheet">
-    <link href="${contextPath}/css/animate.css" rel="stylesheet">
-    <link href="${contextPath}/css/main.css" rel="stylesheet">
-    <link href="${contextPath}/css/responsive.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/price-range.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/animate.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="${contextPath}/js/html5shiv.js"></script>
-    <script src="${contextPath}/js/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head><!--/head-->

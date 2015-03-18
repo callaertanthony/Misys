@@ -16,7 +16,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend1.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend1.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -31,7 +31,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend2.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend2.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -46,7 +46,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend3.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend3.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -63,7 +63,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend1.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend1.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -78,7 +78,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend2.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend2.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -93,7 +93,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${contextPath}/images/home/recommend3.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend3.jpg" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>

@@ -21,7 +21,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe1.png" alt="" />
+                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe1.png"
+                                         alt=""/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -36,7 +37,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe2.png" alt="" />
+                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe2.png"
+                                         alt=""/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -51,7 +53,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe3.png" alt="" />
+                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe3.png"
+                                         alt=""/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -66,7 +69,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe4.png" alt="" />
+                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe4.png"
+                                         alt=""/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -79,7 +83,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="${contextPath}/images/home/map.png" alt="" />
+                        <img src="${pageContext.request.contextPath}/assets/images/home/map.png" alt=""/>
                         <p>60 Boulevard VAUBAN - 59016 LILLE cedex</p>
                     </div>
                 </div>
@@ -161,9 +165,9 @@
     </div>
 
 </footer><!--/Footer-->
-<script src="${contextPath}/js/jquery.js"></script>
-<script src="${contextPath}/js/bootstrap.min.js"></script>
-<script src="${contextPath}/js/jquery.scrollUp.min.js"></script>
-<script src="${contextPath}/js/price-range.js"></script>
-<script src="${contextPath}/js/jquery.prettyPhoto.js"></script>
-<script src="${contextPath}/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollUp.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/price-range.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.prettyPhoto.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>

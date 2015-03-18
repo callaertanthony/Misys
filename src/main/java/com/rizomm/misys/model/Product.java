@@ -46,9 +46,6 @@ public class Product {
         this.stock = stock;
     }
 
-    @Basic
-    private float price;
-
     public float getPrice() {
         return price;
     }
@@ -56,9 +53,6 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
-
-    @Basic
-    private String name;
 
     public String getName() {
         return name;
@@ -98,6 +92,10 @@ public class Product {
 
     public void setPicturelink(PictureLink picturelink) {
         this.picturelink = picturelink;
+    }
+
+    public boolean haveStock() {
+        return this.getStock().getQuantity() > 0;
     }
 
     @OneToMany(targetEntity = Review.class, mappedBy = "product")

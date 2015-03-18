@@ -139,7 +139,7 @@
     </div><!--/price-range-->
 
     <div class="shipping text-center"><!--shipping-->
-        <img src="${contextPath}/images/home/shipping.jpg" alt="" />
+        <img src="${pageContext.request.contextPath}/assets/images/home/shipping.jpg" alt=""/>
     </div><!--/shipping-->
 
 </div>
