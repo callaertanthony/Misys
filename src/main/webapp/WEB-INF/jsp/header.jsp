@@ -39,11 +39,10 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/"><i class="glyphicon glyphicon-user"></i> Account</a></li>
-                            <li><a href="/"><i class="glyphicon glyphicon-heart-empty"></i> Wishlist</a></li>
-                            <li><a href="/checkout"><i class="glyphicon glyphicon-shopping-cart"></i> Checkout</a></li>
-                            <li><a href="/cart"><i class="glyphicon glyphicon-tags"></i> Cart</a></li>
-                            <li><a href="/login"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+                            <li><a href="/account"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
+                            <li><a href="/whishlist"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
+                            <li><a href="/checkout"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
+                            <li><a href="/login"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
                         </ul>
                     </div>
                 </div>

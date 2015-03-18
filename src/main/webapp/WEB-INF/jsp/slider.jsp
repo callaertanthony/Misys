@@ -26,7 +26,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${contextPath}/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
                                 <img src="${contextPath}/images/home/pricing.png"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${contextPath}/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
                                 <img src="${contextPath}/images/home/pricing.png"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${contextPath}/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
                                 <img src="${contextPath}/images/home/pricing.png" class="pricing" alt="" />
                             </div>
                         </div>

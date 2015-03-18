@@ -21,7 +21,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe1.png" alt="" />
+                                    <img src="${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -36,7 +36,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe2.png" alt="" />
+                                    <img src="${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -51,7 +51,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe3.png" alt="" />
+                                    <img src="${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -66,7 +66,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${contextPath}/images/home/iframe4.png" alt="" />
+                                    <img src="${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>

@@ -47,13 +47,12 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="../../${product.getPicturelink().getLink()}" alt="" />
+                            <img src="../../${product.getPicturelink().getLink()}" alt="${product.name}" />
                         </div>
 
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
-                            <img src="${contextPath}/images/product-details/new.jpg" class="newarrival" alt="" />
                             <h2>${product.name}</h2>
                             <p>Web ID: ${product.reference}</p>
                             <img src="${contextPath}/images/product-details/rating.png" alt="" />
@@ -62,11 +61,11 @@
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-default cart">
-                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class="glyphicon glyphicon-credit-card"></i>
                                         Add to cart
                                     </button>
                                     <button type="button" class="btn btn-default wishlist">
-                                        <i class="fa fa-shopping-wishlist"></i>
+                                        <i class="glyphicon glyphicon-heart-empty"></i>
                                         Add to wishlist
                                     </button>
 								</span>
