@@ -113,9 +113,9 @@
                                                 <h2>${product.price}€</h2>
                                                 <p>${product.name}</p>
                                                 <label for="product-quantity${product.id}">Quantity:</label>
-                                                <input id="product-quantity${product.id}" type="text" value="3" />
+                                                <input id="product-quantity${product.id}" type="text" value="3" class="form-control"/>
                                                 <button type="button" class="btn btn-default add-to-cart"><a href="cart/add/${product.id}"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a></button>
-                                                <button type="button" class="btn btn-default add-to-cart"><a href="wishlist/add/${product.id}"><i class="glyphicon glyphicon-haert-empty"></i>Add to wishlist</a></button>
+                                                <button type="button" class="btn btn-default add-to-wishlist"><a href="wishlist/add/${product.id}"><i class="glyphicon glyphicon-haert-empty"></i>Add to wishlist</a></button>
                                             </div>
 
                                         </div>
