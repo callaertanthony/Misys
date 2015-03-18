@@ -13,8 +13,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <ul>
-                        <li><a href=""><i class="fa fa-user"></i>${item.user.nickname}</a></li>
-                        <li>${item.note}</li>
+                        <li><i class="glyphicon glyphicon-user"></i><a href="">${item.user.nickname}</a></li>
+                        <li class="glyphicon glyphicon-triangle-right">${item.note} ans</li>
                     </ul>
                 </div>
                 <div class="panel-body">
