@@ -62,9 +62,16 @@
                             <c:forEach items="${product.reviews}" var="item">
                                 <c:set var="noteMoyenne" value="${noteMoyenne+item.note}"/>
                             </c:forEach>
-                            <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
-                            <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
-								<span>
+                            <c:choose>
+                                <c:when test="${noteMoyenne<='0'}">
+                                    <p>Note: 0/5</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
+                                    <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
+                                </c:otherwise>
+                            </c:choose>
+                                <span>
 									<span>${product.price}€</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
