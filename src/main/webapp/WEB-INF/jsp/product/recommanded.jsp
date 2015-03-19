@@ -14,23 +14,27 @@
         <div class="carousel-inner">
             <c:set var="count" value="0"/>
 
-            <!-- <div class="item active"> -->
-            <c:forEach items="${productsRecommended}" var="product">
+            <%int i = 0; %>
+
+            <c:forEach items="${productsRecommended}" var="productelement">
                 <c:if test="${count == 0}">
-                    <div class="item">
+                    <div class="item<%= i++ == 0 ? " active" : ""%>">
                 </c:if>
                 <div class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                    <img src="${product.getPicturelink().getLink()}" alt="${product.name} picture"/>
+                                <a href="${pageContext.request.contextPath}/product/detail/${productelement.id}">
+                                    <img src="${productelement.getPicturelink().getLink()}"
+                                         alt="${productelement.name} picture"/>
                                 </a>
-                                <h2>${product.price}€</h2>
-                                <p>${product.name}</p>
+
+                                <h2>${productelement.price}€</h2>
+
+                                <p>${productelement.name}</p>
                                 <div>
-                                    <label for="product-quantity${product.id}">Quantity:</label>
-                                    <select id="product-quantity${product.id}" class="form-control">
+                                    <label for="product-quantity${productelement.id}">Quantity:</label>
+                                    <select id="product-quantity${productelement.id}" class="form-control">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -48,23 +52,20 @@
                         </div>
                     </div>
                 </div>
-                <c:if test="${count == 0}">
-                    </div>
-                </c:if>
+
                 <c:set var="count" value="${count+1}"/>
                 <c:if test="${count == 3}">
+                    </div>
                     <c:set var="count" value="0"/>
                 </c:if>
              </c:forEach>
-            <!-- </div> -->
-
-           <!-- <div class="item">
-
-
-
-            </div>-->
+            <c:if test="${count != 0}">
         </div>
-        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+
+        </c:if>
+        </div>
+
+    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
             <i class="glyphicon glyphicon-chevron-left"></i>
         </a>
         <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
