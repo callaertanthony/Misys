@@ -34,7 +34,8 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id){
         try {
             Product product = _productRepository.findOne(id);
-            Iterable<Product> products = _productRepository.findAll();
+            List<Product> products = _productRepository.findByBrand(product.getBrand());
+            products.remove(product);
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
             mNv.addObject("productsRecommended", products);
