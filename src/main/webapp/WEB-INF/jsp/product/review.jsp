@@ -14,7 +14,7 @@
                 <div class="panel-heading">
                     <ul>
                         <li><i class="glyphicon glyphicon-user"></i><a href="">${item.user.nickname}</a></li>
-                        <li class="glyphicon glyphicon-triangle-right">${item.note} ans</li>
+                        <li class="glyphicon glyphicon-ok"> Note: ${item.note}</li>
                     </ul>
                 </div>
                 <div class="panel-body">

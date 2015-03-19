@@ -37,7 +37,6 @@ public class ProductController implements ErrorController {
             return new ModelAndView("product/detail", "product", product);
 
         } catch (IllegalArgumentException e) {
-            System.out.println();
             return new ModelAndView("404");
         }
     }

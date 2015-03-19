@@ -63,7 +63,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend1.jpg" alt=""/>
+                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -78,7 +78,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend2.jpg" alt=""/>
+                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -93,7 +93,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend3.jpg" alt=""/>
+                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
@@ -107,10 +107,10 @@
             </div>
         </div>
         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
+            <i class="glyphicon glyphicon-chevron-left"></i>
         </a>
         <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-            <i class="fa fa-angle-right"></i>
+            <i class="glyphicon glyphicon-chevron-right"></i>
         </a>
     </div>
 </div><!--/recommended_items-->
