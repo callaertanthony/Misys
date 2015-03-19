@@ -31,12 +31,12 @@
 <body>
 <div class="container text-center">
     <div class="logo-404">
-        <a href="index.html"><img src="${pageContext.request.contextPath}/assets/images/home/logo.png" alt=""/></a>
+        <a href="/"><img src="${pageContext.request.contextPath}/images/home/logo.png" alt="" /></a>
     </div>
     <div class="content-404">
         <h1><b>OPPS!</b> An unexpected error occured.</h1>
         <p>Uh... So it looks like something is broken up here. :/</p>
-        <h2><a href="index.html">Bring me back Home</a></h2>
+        <h2><a href="/">Bring me back Home</a></h2>
     </div>
 </div>
 

@@ -21,8 +21,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe1.png"
-                                         alt=""/>
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -37,8 +36,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe2.png"
-                                         alt=""/>
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -53,8 +51,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe3.png"
-                                         alt=""/>
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -69,8 +66,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}/assets/images/home/iframe4.png"
-                                         alt=""/>
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>

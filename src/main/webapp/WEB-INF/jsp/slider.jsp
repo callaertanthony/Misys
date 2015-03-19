@@ -26,10 +26,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/girl1.jpg"
-                                     class="girl img-responsive" alt=""/>
-                                <img src="${pageContext.request.contextPath}/assets/images/home/pricing.png"
-                                     class="pricing" alt=""/>
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
+                                <img src="${contextPath}/images/home/pricing.png"  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
@@ -40,10 +38,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/girl2.jpg"
-                                     class="girl img-responsive" alt=""/>
-                                <img src="${pageContext.request.contextPath}/assets/images/home/pricing.png"
-                                     class="pricing" alt=""/>
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
+                                <img src="${contextPath}/images/home/pricing.png"  class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -55,19 +51,17 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/girl3.jpg"
-                                     class="girl img-responsive" alt=""/>
-                                <img src="${pageContext.request.contextPath}/assets/images/home/pricing.png"
-                                     class="pricing" alt=""/>
+                                <img src="${products[0].getPicturelink().getLink()}" class="girl img-responsive" alt="" />
+                                <img src="${contextPath}/images/home/pricing.png" class="pricing" alt="" />
                             </div>
                         </div>
                     </div>
 
                     <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
+                        <i class="glyphicon glyphicon-chevron-left"></i>
                     </a>
                     <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
+                        <i class="glyphicon glyphicon-chevron-right"></i>
                     </a>
                 </div>
 

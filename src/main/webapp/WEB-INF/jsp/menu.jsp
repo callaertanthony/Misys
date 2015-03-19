@@ -7,51 +7,71 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="left-sidebar">
-    <h2>Category</h2>
+    <h2>Catégories</h2>
     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+        <!-- CD -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Sportswear
+                    <a data-toggle="collapse" data-parent="#accordian" href="#cd">
+                        <span class="badge pull-right"><i class="glyphicon glyphicon-music"></i></span>
+                        CD & Vinyle
                     </a>
                 </h4>
             </div>
-            <div id="sportswear" class="panel-collapse collapse">
+            <div id="cd" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul>
-                        <li><a href="">Nike </a></li>
-                        <li><a href="">Under Armour </a></li>
-                        <li><a href="">Adidas </a></li>
-                        <li><a href="">Puma</a></li>
-                        <li><a href="">ASICS </a></li>
+                        <li><a href="">Alternatif</a></li>
+                        <li><a href="">Bande originale</a></li>
+                        <li><a href="">Blues</a></li>
+                        <li><a href="">Chanson française</a></li>
+                        <li><a href="">Compilations</a></li>
+                        <li><a href="">Country</a></li>
+                        <li><a href="">Electro</a></li>
+                        <li><a href="">Chanson pour enfant</a></li>
+                        <li><a href="">Folk</a></li>
+                        <li><a href="">Hard rock - Metal</a></li>
+                        <li><a href="">Jazz</a></li>
+                        <li><a href="">Musique Classique</a></li>
+                        <li><a href="">Musique du monde</a></li>
+                        <li><a href="">Pop</a></li>
+                        <li><a href="">Rap & Hip-Hop</a></li>
+                        <li><a href="">Reggae, Ragga & Ska</a></li>
+                        <li><a href="">Rock</a></li>
+                        <li><a href="">R&B, Soul & Funk</a></li>
+                        <li><a href="">Humour et livre audio</a></li>
+                        <li><a href="">Divers</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <!-- DVD -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Mens
+                    <a data-toggle="collapse" data-parent="#accordian" href="#dvd">
+                        <span class="badge pull-right"><i class="glyphicon glyphicon-facetime-video"></i></span>
+                        Blu-Ray & DVD
                     </a>
                 </h4>
             </div>
-            <div id="mens" class="panel-collapse collapse">
+            <div id="dvd" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul>
-                        <li><a href="">Fendi</a></li>
-                        <li><a href="">Guess</a></li>
-                        <li><a href="">Valentino</a></li>
-                        <li><a href="">Dior</a></li>
-                        <li><a href="">Versace</a></li>
-                        <li><a href="">Armani</a></li>
-                        <li><a href="">Prada</a></li>
-                        <li><a href="">Dolce and Gabbana</a></li>
-                        <li><a href="">Chanel</a></li>
-                        <li><a href="">Gucci</a></li>
+                        <li><a href="">Action, Policier et Thriller</a></li>
+                        <li><a href="">Jeunesse et famille</a></li>
+                        <li><a href="">Série TV</a></li>
+                        <li><a href="">Films musicaux et concerts</a></li>
+                        <li><a href="">Drame et émotion</a></li>
+                        <li><a href="">Comédie</a></li>
+                        <li><a href="">Fantastique, Horreur et Science-fiction</a></li>
+                        <li><a href="">Cinéma Asiatique</a></li>
+                        <li><a href="">Documentaires et Divers</a></li>
+                        <li><a href="">Grands classiques</a></li>
+                        <li><a href="">Animation japonaise</a></li>
+                        <li><a href="">Spectacles et Humour</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,87 +80,51 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                        Womens
+                    <a data-toggle="collapse" data-parent="#accordian" href="#dvd">
+                        <span class="badge pull-right"><i class="glyphicon glyphicon-download"></i></span>
+                        VOD
                     </a>
                 </h4>
             </div>
-            <div id="womens" class="panel-collapse collapse">
+            <div id="vod" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul>
-                        <li><a href="">Fendi</a></li>
-                        <li><a href="">Guess</a></li>
-                        <li><a href="">Valentino</a></li>
-                        <li><a href="">Dior</a></li>
-                        <li><a href="">Versace</a></li>
+                        <li><a href="">Action, Policier et Thriller</a></li>
+                        <li><a href="">Jeunesse et famille</a></li>
+                        <li><a href="">Série TV</a></li>
+                        <li><a href="">Films musicaux et concerts</a></li>
+                        <li><a href="">Drame et émotion</a></li>
+                        <li><a href="">Comédie</a></li>
+                        <li><a href="">Fantastique, Horreur et Science-fiction</a></li>
+                        <li><a href="">Cinéma Asiatique</a></li>
+                        <li><a href="">Documentaires et Divers</a></li>
+                        <li><a href="">Grands classiques</a></li>
+                        <li><a href="">Animation japonaise</a></li>
+                        <li><a href="">Spectacles et Humour</a></li>
                     </ul>
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Kids</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Fashion</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Households</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Interiors</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Clothing</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Bags</a></h4>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">Shoes</a></h4>
             </div>
         </div>
     </div><!--/category-products-->
 
     <div class="brands_products"><!--brands_products-->
-        <h2>Brands</h2>
+        <h2>Studio</h2>
         <div class="brands-name">
             <ul class="nav nav-pills nav-stacked">
-                <li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-                <li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                <li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
-                <li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
-                <li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                <li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                <li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                <li><a href=""> <span class="pull-right">(50)</span>Sony</a></li>
+                <li><a href=""> <span class="pull-right">(56)</span>Universal Pictures</a></li>
+                <li><a href=""> <span class="pull-right">(27)</span>Walt Disney</a></li>
+                <li><a href=""> <span class="pull-right">(27)</span>Warner Bros</a></li>
             </ul>
         </div>
     </div><!--/brands_products-->
 
     <div class="price-range"><!--price-range-->
-        <h2>Price Range</h2>
+        <h2>Prix</h2>
         <div class="well">
             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
             <b>$ 0</b> <b class="pull-right">$ 600</b>
         </div>
     </div><!--/price-range-->
-
-    <div class="shipping text-center"><!--shipping-->
-        <img src="${pageContext.request.contextPath}/assets/images/home/shipping.jpg" alt=""/>
-    </div><!--/shipping-->
-
 </div>
 
