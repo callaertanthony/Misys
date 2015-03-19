@@ -1,9 +1,7 @@
 package com.rizomm.misys.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by anthonycallaert on 05/03/15.
@@ -104,5 +102,46 @@ public class User {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + age;
         return result;
+    }
+
+    private List<Selection> selections;
+
+    @OneToMany
+    public List<Selection> getSelections() {
+        return selections;
+    }
+
+    public void setSelections(List<Selection> selections) {
+        this.selections = selections;
+    }
+
+    public Selection wishList()
+    {
+        for(Selection selection: selections){
+            if (selection.getType() == 1){
+                return selection;
+            }
+        }
+        Selection wishlist = new Selection();
+        wishlist.setType(1);
+        wishlist.setUser_id(this);
+
+        selections.add(wishlist);
+        return wishlist;
+    }
+
+    public Selection cart()
+    {
+        for(Selection selection: selections){
+            if (selection.getType() == 2){
+                return selection;
+            }
+        }
+        Selection cart = new Selection();
+        cart.setType(2);
+        cart.setUser_id(this);
+
+        selections.add(cart);
+        return cart;
     }
 }

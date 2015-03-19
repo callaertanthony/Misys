@@ -1,7 +1,6 @@
 package com.rizomm.misys.controller;
 
-import com.rizomm.misys.model.Product;
-import com.rizomm.misys.model.ProductRepository;
+import com.rizomm.misys.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,7 +22,12 @@ public class ProductController implements ErrorController {
 
     @Autowired
     private ProductRepository _productRepository;
-
+    @Autowired
+    private UserRepository _userRepository;
+    @Autowired
+    private SelectionRepository _selectionRepository;
+    @Autowired
+    private SelectionLineRepository _selectionLineRepository;
     /**
      * This method will retrieve the product from the database and call the detail JSP page.
      * If the product can't be found, the 404 page will be shown to the user.
@@ -54,6 +59,68 @@ public class ProductController implements ErrorController {
 
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
+        }
+    }
+
+    @RequestMapping(value = "/addtowishlist", method = RequestMethod.POST)
+    public void addToWishlist(HttpServletRequest req) {
+        try {
+            int id_user = Integer.parseInt(req.getParameter("id_user"));
+            int id_product = Integer.parseInt(req.getParameter("id_product"));
+            int quantity = Integer.parseInt(req.getParameter("quantity"));
+            int type = 1;
+
+            User user = _userRepository.findOne(id_user);
+            Product product = _productRepository.findOne(id_product);
+
+            SelectionLine selectionLine = new SelectionLine();
+            selectionLine.setProduct(product);
+            selectionLine.setQuantity(quantity);
+            List<SelectionLine> list = new LinkedList<>();
+
+            _selectionRepository.save(user.wishList());
+            _selectionLineRepository.save(selectionLine);
+
+            list.add(selectionLine);
+            user.wishList().setSelectionLines(list);
+
+            _selectionRepository.save(user.wishList());
+            _selectionLineRepository.save(selectionLine);
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
+    public void addToCart(HttpServletRequest req) {
+        try {
+            int id_user = Integer.parseInt(req.getParameter("id_user"));
+            int id_product = Integer.parseInt(req.getParameter("id_product"));
+            int quantity = Integer.parseInt(req.getParameter("quantity"));
+            int type = 2;
+
+            User user = _userRepository.findOne(id_user);
+            Product product = _productRepository.findOne(id_product);
+
+            SelectionLine selectionLine = new SelectionLine();
+            selectionLine.setProduct(product);
+            selectionLine.setQuantity(quantity);
+            List<SelectionLine> list = new LinkedList<>();
+
+            _selectionRepository.save(user.cart());
+            _selectionLineRepository.save(selectionLine);
+
+            list.add(selectionLine);
+            user.cart().setSelectionLines(list);
+
+            _selectionRepository.save(user.cart());
+            _selectionLineRepository.save(selectionLine);
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

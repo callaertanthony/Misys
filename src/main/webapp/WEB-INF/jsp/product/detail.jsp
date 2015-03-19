@@ -72,11 +72,11 @@
                                 <span>${product.price}€</span>
                                 <label>Quantity:</label>
                                 <input type="text" value="3" />
-                                <button type="button" class="btn btn-default cart">
+                                <button type="button" class="btn btn-default add-to-cart">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                     Add to cart
                                 </button>
-                                <button type="button" class="btn btn-default wishlist">
+                                <button type="button" class="btn btn-default add-to-wishlist">
                                     <i class="glyphicon glyphicon-heart-empty"></i>
                                     Add to wishlist
                                 </button>

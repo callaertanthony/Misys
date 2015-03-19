@@ -167,3 +167,4 @@
 <script src="${pageContext.request.contextPath}/assets/js/price-range.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/product.js"></script>
