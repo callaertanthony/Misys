@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -34,8 +35,16 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id){
         try {
             Product product = _productRepository.findOne(id);
-            List<Product> products = _productRepository.findByBrand(product.getBrand());
-            products.remove(product);
+            Iterable<Product> allProducts = _productRepository.findAll();
+            List<Product> products = new LinkedList<>();
+
+            for(Product p:allProducts) {
+                if (product.getBrand() == p.getBrand() && product!=p)
+                {
+                    products.add(p);
+                }
+            }
+
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
             mNv.addObject("productsRecommended", products);
