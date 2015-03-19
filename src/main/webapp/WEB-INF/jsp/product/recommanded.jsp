@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -11,100 +12,57 @@
 
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="item active">
+            <c:set var="count" value="0"/>
+
+            <!-- <div class="item active"> -->
+            <c:forEach items="${productsRecommended}" var="product">
+                <c:if test="${count == 0}">
+                    <div class="item">
+                </c:if>
                 <div class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend1.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
+                                <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
+                                    <img src="${product.getPicturelink().getLink()}" alt="${product.name} picture"/>
+                                </a>
+                                <h2>${product.price}€</h2>
+                                <p>${product.name}</p>
+                                <div>
+                                    <label for="product-quantity${product.id}">Quantity:</label>
+                                    <select id="product-quantity${product.id}" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
                             </div>
+                        </div>
+                        <div class="choose">
+                            <ul class="nav nav-pills nav-justified">
+                                <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li> <!--TODO manage quantity -->
+                                <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend2.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
+                <c:if test="${count == 0}">
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend3.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </c:if>
+                <c:set var="count" value="${count+1}"/>
+                <c:if test="${count == 3}">
+                    <c:set var="count" value="0"/>
+                </c:if>
+             </c:forEach>
+            <!-- </div> -->
+
+           <!-- <div class="item">
+
+
+
+            </div>-->
         </div>
         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
             <i class="glyphicon glyphicon-chevron-left"></i>

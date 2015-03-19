@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 /**
  * Created by Guillaume on 3/10/2015.
  */
@@ -32,9 +34,13 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id){
         try {
             Product product = _productRepository.findOne(id);
+            Iterable<Product> products = _productRepository.findAll();
+            ModelAndView mNv = new ModelAndView("product/detail");
+            mNv.addObject("product", product);
+            mNv.addObject("productsRecommended", products);
             if (null == product)
                 return new ModelAndView("404");
-            return new ModelAndView("product/detail", "product", product);
+            return mNv;
 
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
