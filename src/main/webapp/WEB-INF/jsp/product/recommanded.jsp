@@ -33,14 +33,8 @@
 
                                 <p>${productelement.name}</p>
                                 <div>
-                                    <label for="product-quantity${productelement.id}">Quantity:</label>
-                                    <select id="product-quantity${productelement.id}" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <label>Quantity:</label>
+                                    <input type="number" value="1" max="${productelement.stock.quantity}" min="0" />
                                 </div>
                             </div>
                         </div>
