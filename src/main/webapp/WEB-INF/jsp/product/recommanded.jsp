@@ -40,7 +40,7 @@
                         </div>
                         <div class="choose">
                             <ul class="nav nav-pills nav-justified">
-                                <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li> <!--TODO manage quantity -->
+                                <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
                                 <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
                             </ul>
                         </div>

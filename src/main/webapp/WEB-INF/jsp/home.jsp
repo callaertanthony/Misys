@@ -73,8 +73,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="/whishlist/add/${product.id}"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</a></li> <!--TODO manage quantity -->
-                                        <li><a href="/cart/add/${product.id}"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a></li>
+                                        <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
+                                        <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,10 +105,16 @@
                                                 </a>
                                                 <h2>${product.price}€</h2>
                                                 <p>${product.name}</p>
-                                                <label for="product-quantity${product.id}">Quantity:</label>
-                                                <input id="product-quantity${product.id}" type="text" value="3" class="form-control"/>
-                                                <button type="button" class="btn btn-default add-to-cart"><a href="cart/add/${product.id}"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a></button>
-                                                <button type="button" class="btn btn-default add-to-wishlist"><a href="wishlist/add/${product.id}"><i class="glyphicon glyphicon-haert-empty"></i>Add to wishlist</a></button>
+                                                <div>
+                                                    <label>Quantity:</label>
+                                                    <input type="number" value="1" max="${product.stock.quantity}" min="0" />
+                                                </div>
+                                                <div class="choose">
+                                                    <ul class="nav nav-pills nav-justified">
+                                                        <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
+                                                        <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                                                    </ul>
+                                                </div>
                                             </div>
 
                                         </div>
