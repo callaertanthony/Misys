@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="/"><img src="${pageContext.request.contextPath}/assets/images/home/logo.png"
+                        <a href="index.html"><img src="${pageContext.request.contextPath}/assets/images/home/logo.png"
                                                   alt=""/></a>
                     </div>
                     <div class="btn-group pull-right">
