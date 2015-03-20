@@ -73,11 +73,11 @@
                                 <label>Quantity:</label>
                                 <input id="inputQuantity" type="number" value="3" />
                                 <input type="hidden" id="inputId" value="${product.id}">
-                                <button type="button" class="btn btn-default add-to-cart">
+                                <button type="button" class="btn btn-default add-to-cart-btn">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                     Add to cart
                                 </button>
-                                <button type="button" class="btn btn-default add-to-wishlist">
+                                <button type="button" class="btn btn-default add-to-wishlist-btn">
                                     <i class="glyphicon glyphicon-heart-empty"></i>
                                     Add to wishlist
                                 </button>

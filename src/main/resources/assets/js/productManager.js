@@ -2,7 +2,7 @@
  * Created by Olivier on 13/03/2015.
  */
 $(function () {
-    $(document).on("click", ".add-to-wishlist", function () {
+    $(document).on("click", ".add-to-wishlist-btn", function () {
         if ($(this).parents('.product-details').length){
             var input =$('#inputQuantity');
             var id =$('#inputId');
@@ -14,7 +14,7 @@ $(function () {
         addTo(input, id, "addtowishlist")
     })
 
-    $(document).on("click", ".add-to-cart", function () {
+    $(document).on("click", ".add-to-cart-btn", function () {
         if ($(this).parents('.product-details').length){
             var input =$('#inputQuantity');
             var id =$('#inputId');
