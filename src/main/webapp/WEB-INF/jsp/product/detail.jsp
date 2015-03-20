@@ -119,8 +119,12 @@
                     </div>
                 </div><!--/category-tab-->
 
-                <!-- INCLUDING RECOMMANDED ITEMS -->
-                <jsp:include page="recommanded.jsp" />
+
+                <c:if test="${not empty productsRecommended}">
+                    <!-- INCLUDING RECOMMANDED ITEMS -->
+                    <jsp:include page="recommanded.jsp" />
+                </c:if>
+
 
             </div>
         </div>
