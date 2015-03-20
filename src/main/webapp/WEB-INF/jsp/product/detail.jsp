@@ -71,12 +71,13 @@
                             <span>
                                 <span>${product.price}€</span>
                                 <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default cart">
+                                <input id="inputQuantity" type="number" value="3" />
+                                <input type="hidden" id="inputId" value="${product.id}">
+                                <button type="button" class="btn btn-default add-to-cart-btn">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                     Add to cart
                                 </button>
-                                <button type="button" class="btn btn-default wishlist">
+                                <button type="button" class="btn btn-default add-to-wishlist-btn">
                                     <i class="glyphicon glyphicon-heart-empty"></i>
                                     Add to wishlist
                                 </button>
@@ -119,8 +120,12 @@
                     </div>
                 </div><!--/category-tab-->
 
-                <!-- INCLUDING RECOMMANDED ITEMS -->
-                <jsp:include page="recommanded.jsp" />
+
+                <c:if test="${not empty productsRecommended}">
+                    <!-- INCLUDING RECOMMANDED ITEMS -->
+                    <jsp:include page="recommanded.jsp" />
+                </c:if>
+
 
             </div>
         </div>
