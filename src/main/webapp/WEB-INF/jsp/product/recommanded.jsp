@@ -16,60 +16,13 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend1.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend2.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="${pageContext.request.contextPath}/assets/images/home/recommend3.jpg" alt=""/>
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
                                 <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt=""/>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
                                 <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
+                                <button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -83,8 +36,8 @@
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
                                 <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
+                                <button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
@@ -98,8 +51,8 @@
                                 <p>Easy Polo Black Edition</p>
                                 <label>Quantity:</label>
                                 <input type="text" value="3" />
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                <button type="button" class="btn btn-default add-to-wishlist"><i class="fa fa-shopping-wishlist"></i>Add to wishlist</button>
+                                <button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>
+                                <button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button>
                             </div>
                         </div>
                     </div>
