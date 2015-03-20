@@ -12,6 +12,7 @@
 
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+
             <c:set var="count" value="0"/>
 
             <%int i = 0; %>
@@ -20,6 +21,7 @@
                 <c:if test="${count == 0}">
                     <div class="item<%= i++ == 0 ? " active" : ""%>">
                 </c:if>
+
                 <div class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
@@ -40,8 +42,8 @@
                         </div>
                         <div class="choose">
                             <ul class="nav nav-pills nav-justified">
-                                <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                                <li><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
+                                <li><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
                             </ul>
                         </div>
                     </div>
