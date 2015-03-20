@@ -40,15 +40,8 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id){
         try {
             Product product = _productRepository.findOne(id);
-            Iterable<Product> allProducts = _productRepository.findAll();
-            List<Product> products = new LinkedList<>();
-
-            for(Product p:allProducts) {
-                if (product.getBrand() == p.getBrand() && product!=p)
-                {
-                    products.add(p);
-                }
-            }
+            List<Product> products = _productRepository.findAllByBrand(product.getBrand());
+            products.remove(product);
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
@@ -56,7 +49,6 @@ public class ProductController implements ErrorController {
             if (null == product)
                 return new ModelAndView("404");
             return mNv;
-
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
         }
@@ -86,7 +78,6 @@ public class ProductController implements ErrorController {
 
             _selectionRepository.save(user.wishList());
             _selectionLineRepository.save(selectionLine);
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

@@ -73,8 +73,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                        <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                                        <li><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
+                                        <li><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,7 +83,8 @@
 
                 </div><!--features_items-->
 
-                <div class="category-tab"><!--category-tab-->
+                <!--category-tab-->
+                <div class="category-tab">
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#catdvd" data-toggle="tab">DVD</a></li>
@@ -101,7 +102,7 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                                    <img src="${product.getPicturelink().getLink()}" alt="${product.name} picture"/>
+                                                    <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt="${product.name} picture"/>
                                                 </a>
                                                 <h2>${product.price}€</h2>
                                                 <p>${product.name}</p>
@@ -109,10 +110,8 @@
                                                     <label>Quantity:</label>
                                                     <input type="number" value="1" max="${product.stock.quantity}" min="0" />
                                                     <div class="choose">
-                                                        <ul class="nav nav-pills nav-justified">
-                                                            <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                                            <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
-                                                        </ul>
+                                                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-heart-empty"></i></button>
+                                                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
