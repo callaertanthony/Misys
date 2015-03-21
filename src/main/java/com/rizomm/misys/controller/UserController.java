@@ -67,7 +67,7 @@ public class UserController {
             return "user/create";
         }
         // ok, redirect
-        return "redirect:/users";
+        return "redirect:/user/list";
     }
 
     @RequestMapping("/list")

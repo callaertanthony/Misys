@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-Ici les users !
-${list}
+Ici les users :
+${users}
 </body>
 </html>
