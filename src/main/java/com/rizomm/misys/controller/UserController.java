@@ -16,6 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
+/**
+ * Created by anthonycallaert on 05/03/15.
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
