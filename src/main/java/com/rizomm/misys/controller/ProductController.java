@@ -60,7 +60,6 @@ public class ProductController implements ErrorController {
             int id_user = Integer.parseInt(req.getParameter("id_user"));
             int id_product = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
-            int type = 1;
 
             User user = _userRepository.findOne(id_user);
             Product product = _productRepository.findOne(id_product);
@@ -90,7 +89,6 @@ public class ProductController implements ErrorController {
             int id_user = Integer.parseInt(req.getParameter("id_user"));
             int id_product = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
-            int type = 2;
 
             User user = _userRepository.findOne(id_user);
             Product product = _productRepository.findOne(id_product);
@@ -108,7 +106,6 @@ public class ProductController implements ErrorController {
 
             _selectionRepository.save(user.cart());
             _selectionLineRepository.save(selectionLine);
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
