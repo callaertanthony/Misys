@@ -107,7 +107,7 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                                    <img src="${product.getPicturelink().getLink()}" alt="${product.name} picture"/>
+                                                    <img src="${pageContext.request.contextPath}${product.getPicturelink()}" alt="${product.name} picture"/>
                                                 </a>
                                                 <h2>${product.price}€</h2>
                                                 <p>${product.name}</p>

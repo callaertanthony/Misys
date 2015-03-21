@@ -25,10 +25,15 @@ public class PictureLink {
 
     @Basic
     public String getLink() {
-        return "/assets/images/product-details/" + link;
+        return link;
     }
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString(){
+        return "/assets/images/product-details/" + link;
     }
 }
