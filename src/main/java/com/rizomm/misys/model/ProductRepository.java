@@ -12,5 +12,5 @@ import java.util.List;
  */
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    List<Product> findAllByBrand(Brand brand);
+    List<Product> findFirst10ByBrand(Brand brand);
 }

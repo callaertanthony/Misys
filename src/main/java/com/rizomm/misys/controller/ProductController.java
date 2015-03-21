@@ -40,8 +40,17 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id){
         try {
             Product product = _productRepository.findOne(id);
-            List<Product> products = _productRepository.findAllByBrand(product.getBrand());
-            products.remove(product);
+            List<Product> products = _productRepository.findFirst10ByBrand(product.getBrand());
+            if (products.contains(product))
+            {
+                products.remove(product);
+
+            }
+            while (products.size()>9)
+            {
+                products.remove(products.size()-1);
+            }
+
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
@@ -60,6 +69,10 @@ public class ProductController implements ErrorController {
             int id_user = Integer.parseInt(req.getParameter("id_user"));
             int id_product = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
+
+            System.out.println("User : " + id_user);
+            System.out.println("Product : " + id_product);
+            System.out.println("Quantity : " + quantity);
 
             User user = _userRepository.findOne(id_user);
             Product product = _productRepository.findOne(id_product);
@@ -89,6 +102,10 @@ public class ProductController implements ErrorController {
             int id_user = Integer.parseInt(req.getParameter("id_user"));
             int id_product = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
+
+            System.out.println("User : " + id_user);
+            System.out.println("Product : " + id_product);
+            System.out.println("Quantity : " + quantity);
 
             User user = _userRepository.findOne(id_user);
             Product product = _productRepository.findOne(id_product);
