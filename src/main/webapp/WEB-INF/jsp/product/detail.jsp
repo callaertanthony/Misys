@@ -38,6 +38,12 @@
 <section>
     <div class="container">
         <div class="row">
+            <%-- add breacrumb--%>
+            <ol class="breadcrumb_detail breadcrumb">
+                <li><a href="http://localhost:8080/">Home</a></li>
+                <li><a href="http://localhost:8080/product">Library</a></li>
+                <li class="http://localhost:8080/product/detail">Music</li>
+            </ol>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
                 <jsp:include page="../menu.jsp" />
