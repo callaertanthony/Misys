@@ -37,7 +37,7 @@ $(function () {
             var string = "id_user=1&id_product=" + id + "&quantity=" + quantity;
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/product/" + url,
+                url: "http://localhost:8080/misys/product/" + url,
                 data: string,
                 success: function (dataReturn) {
                     alert("success");
