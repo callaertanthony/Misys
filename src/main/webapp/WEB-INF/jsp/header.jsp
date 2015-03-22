@@ -37,11 +37,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-2">
+                    <form action="${pageContext.request.contextPath}/product/search" method="get">
+                        <div class="input-group">
+                            <input type="text" name="searchInput" id="searchInput" class="form-control input-sm"
+                                   placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button type="submit" id="searchBtn" class="btn btn-default">
+                                    <span
+                                            class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-5">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="/account"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
-                            <li><a href="/whishlist"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
+                            <li><a href="/whishlist"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a>
+                            </li>
                             <li><a href="/checkout"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
                             <li><a href="/login"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
                         </ul>
@@ -49,5 +64,7 @@
                 </div>
             </div>
         </div>
-    </div><!--/header-middle-->
-</header><!--/header-->
+    </div>
+    <!--/header-middle-->
+</header>
+<!--/header-->

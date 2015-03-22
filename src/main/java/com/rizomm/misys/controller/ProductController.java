@@ -1,5 +1,6 @@
 package com.rizomm.misys.controller;
 
+import com.rizomm.misys.model.Brand;
 import com.rizomm.misys.model.Product;
 import com.rizomm.misys.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Guillaume on 3/10/2015.
@@ -39,6 +45,38 @@ public class ProductController implements ErrorController {
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
         }
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView searchResult(@RequestParam(required = false) final String searchInput) {
+        ModelAndView mNv = new ModelAndView("product/search");
+        Iterable<Product> products = _productRepository.findAll();
+        Iterator<Product> prod = products.iterator();
+        String[] keysSplit = searchInput.split(" ");
+        List<Brand> brands = new ArrayList<>();
+        while (prod.hasNext()) {
+            Product p = prod.next();
+            Boolean notfind = true;
+            for (String key : keysSplit) {
+                if (p.getName().toLowerCase().contains(key.toLowerCase())) {
+                    notfind = false;
+                    break;
+                }
+            }
+            if (notfind) {
+                prod.remove();
+            } else {
+                if (!brands.contains(p.getBrand())) {
+                    brands.add(p.getBrand());
+                }
+            }
+        }
+        mNv.addObject("products", products);
+        mNv.addObject("stringTest", searchInput);
+        mNv.addObject("brands", brands);
+
+        //todo si un seul produit -> on renvoit sur sa page
+        return mNv;
     }
 
     @Override
