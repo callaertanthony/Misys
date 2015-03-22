@@ -101,8 +101,6 @@
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
                             <li><a href="#details" data-toggle="tab">Details</a></li>
-                            <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
-                            <li><a href="#tag" data-toggle="tab">Tag</a></li>
                             <li class="active"><a href="#reviews"
                                                   data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                         </ul>

@@ -15,27 +15,6 @@
                         <a href="/"><img src="${pageContext.request.contextPath}/assets/images/home/logo.png"
                                                   alt=""/></a>
                     </div>
-                    <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                France
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="">UK</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                €
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="">£</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
