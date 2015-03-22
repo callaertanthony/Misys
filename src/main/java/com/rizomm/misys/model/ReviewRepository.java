@@ -1,13 +1,10 @@
 package com.rizomm.misys.model;
 
-import org.springframework.data.repository.CrudRepository;
-
-import javax.transaction.Transactional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Created by Perrine on 12/03/2015.
  */
 
-@Transactional
-public interface ReviewRepository extends CrudRepository<Review, Integer> {
+public interface ReviewRepository extends JpaRepository<Review, Integer> {
 }
