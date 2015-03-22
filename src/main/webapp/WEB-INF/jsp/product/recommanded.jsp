@@ -17,7 +17,7 @@
 
             <%int i = 0; %>
 
-            <c:forEach items="${productsRecommended}" var="productelement">
+            <c:forEach items="${productsRecommended}" var="productElement">
                 <c:if test="${count == 0}">
                     <div class="item<%= i++ == 0 ? " active" : ""%>">
                 </c:if>
@@ -26,17 +26,17 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="${pageContext.request.contextPath}/product/detail/${productelement.id}">
-                                    <img src="${productelement.getPicturelink()}"
-                                         alt="${productelement.name} picture"/>
+                                <a href="${pageContext.request.contextPath}/product/detail/${productElement.id}">
+                                    <img src="${productElement.getPicturelink()}"
+                                         alt="${productElement.name} picture"/>
                                 </a>
 
-                                <h2>${productelement.price}€</h2>
+                                <h2>${productElement.price}€</h2>
 
-                                <p>${productelement.name}</p>
+                                <p>${productElement.name}</p>
                                 <div>
                                     <label>Quantity:</label>
-                                    <input type="number" value="1" max="${productelement.stock.quantity}" min="0" />
+                                    <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
                                 </div>
                             </div>
                         </div>

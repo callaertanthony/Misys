@@ -27,4 +27,4 @@ VALUES
    'Maquillage', '5000', 'B00JG8GBDR', '2', '1', 'Penguins.jpg');
 
 INSERT INTO `misys`.`review` (`id`, `note`, `review`, `product_id`, `user_id`)
-VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '12', 'Review 2', '1', '1');
+VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '5', 'Review 2', '1', '1');
