@@ -12,6 +12,7 @@
       <mapping class="com.rizomm.misys.model.Brand"/>
       <mapping class="com.rizomm.misys.model.PictureLink"/>
       <mapping class="com.rizomm.misys.model.Review"/>
+      <mapping class="com.rizomm.misys.model.Category"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

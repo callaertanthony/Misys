@@ -1,5 +1,7 @@
 package com.rizomm.misys.controller;
 
+import com.rizomm.misys.model.Category;
+import com.rizomm.misys.model.CategoryRepository;
 import com.rizomm.misys.model.Product;
 import com.rizomm.misys.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by Guillaume on 3/10/2015.
@@ -41,6 +46,33 @@ public class ProductController implements ErrorController {
         }
     }
 
+//-----------------------------------------------------------CATEGORY-------------------------------------------
+
+    @Autowired
+    private CategoryRepository _categoryRepository;
+
+    @RequestMapping(method= RequestMethod.GET)
+    public ModelAndView showCategory() {
+        try {
+            Collection<Category> listCategory = new ArrayList<>();
+            Iterable<Category> it = _categoryRepository.findAll();
+            if (null == it)
+                return new ModelAndView("404");
+            for (Category category : it) {
+                System.out.println("Adding " + category.getCategory());
+                listCategory.add(category);
+            }
+            if (null == listCategory || listCategory.isEmpty())
+                return new ModelAndView("404");
+            return new ModelAndView("detail", "categories", listCategory);
+        } catch (IllegalArgumentException e) {
+            System.out.println();
+            return new ModelAndView("404");
+        }
+
+    }
+
+//-----------------------------------------------------------------------------------------------------------------
     @Override
     public String getErrorPath() {
         return "/error";
