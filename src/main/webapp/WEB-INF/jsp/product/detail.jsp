@@ -71,8 +71,8 @@
                             <span>
                                 <span>${product.price}€</span>
                                 <label>Quantity:</label>
-                                <input id="inputQuantity" type="number" value="3" />
-                                <input type="hidden" id="inputId" value="${product.id}">
+                                <input id="inputQuantity" type="number" value="1" max="${product.stock.quantity}" min="0"/>
+                                <input type="hidden" id="inputId" value="${product.id}"/>
                                 <button type="button" class="btn btn-default add-to-cart-btn">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                     Add to cart
