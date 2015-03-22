@@ -27,7 +27,7 @@
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <a href="${pageContext.request.contextPath}/product/detail/${productelement.id}">
-                                    <img src="${productelement.getPicturelink().getLink()}"
+                                    <img src="${productelement.getPicturelink()}"
                                          alt="${productelement.name} picture"/>
                                 </a>
 
