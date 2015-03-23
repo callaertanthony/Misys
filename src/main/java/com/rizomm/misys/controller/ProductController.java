@@ -50,7 +50,7 @@ public class ProductController implements ErrorController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView searchResult(@RequestParam(required = false) final String searchInput) {
         ModelAndView mNv = new ModelAndView("product/search");
-        Iterable<Product> products = _productRepository.findAll();
+        List<Product> products = _productRepository.findAll();
         Iterator<Product> prod = products.iterator();
         String[] keysSplit = searchInput.split(" ");
         List<Brand> brands = new ArrayList<>();
@@ -75,7 +75,11 @@ public class ProductController implements ErrorController {
         mNv.addObject("stringTest", searchInput);
         mNv.addObject("brands", brands);
 
-        //todo si un seul produit -> on renvoit sur sa page
+        if (products.size() == 1) {
+            return new ModelAndView("product/detail", "product", products.get(0));
+        }
+
+
         return mNv;
     }
 

@@ -45,7 +45,10 @@
             <!------------------------------------------------
                 RIGHT PANEL
              ------------------------------------------------>
-            <div class="col-sm-9 padding-right">
+            <div class="col-sm-9 padding-right" id="resultContainer">
+                <div id="noResult" style="display: none;">
+                    <h3>Aucun résultat trouvé avec ces critères de recherche.</h3>
+                </div>
                 <c:forEach items="${products}" var="product">
                     <div class="col-sm-3 product-result">
                         <div class="product-image-wrapper">

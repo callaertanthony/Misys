@@ -3,6 +3,7 @@ $(function () {
     var prixMin = 0;
     var prixMax = 999999;
     var brandAVal = $('.left-sidebar .brands-name a').first().attr('data-id-brand');
+    var timeout;
 
     // initialisisation du "price range" dans le mene de gauche
     $('#priceRange').slider({
@@ -15,18 +16,28 @@ $(function () {
             var brand = $(this).find('input[id*="productBrandId"]').val();
             if (brandAVal == '') {
                 if (prix < prixMin || prix > prixMax) {
-                    $(this).hide('slow');
+                    $(this).attr('data-show', false).hide('slow');
                 } else {
-                    $(this).show('slow');
+                    $(this).attr('data-show', true).show('slow');
                 }
             } else {
                 if (prix < prixMin || prix > prixMax || brand != brandAVal) {
-                    $(this).hide('slow');
+                    $(this).attr('data-show', false).hide('slow');
                 } else {
-                    $(this).show('slow');
+                    $(this).attr('data-show', true).show('slow');
                 }
             }
-        })
+        });
+        window.clearTimeout(timeout);
+        if (!$('.product-result[data-show="true"]').length) {
+            timeout = window.setTimeout(function () {
+                $('#noResult').show();
+                console.log('lapinou');
+            }, 800);
+        } else {
+
+            $('#noResult').hide();
+        }
     }
 
     $(document).on('click', '.left-sidebar .brands-name a', function () {

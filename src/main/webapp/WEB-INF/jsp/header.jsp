@@ -40,14 +40,17 @@
                 <div class="col-sm-2">
                     <form action="${pageContext.request.contextPath}/product/search" method="get">
                         <div class="input-group">
-                            <input type="text" name="searchInput" id="searchInput" class="form-control input-sm"
-                                   placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button type="submit" id="searchBtn" class="btn btn-default">
+                            <div class="col-sm-8">
+                                <input type="text" name="searchInput" id="searchInput" class="form-control"
+                                       placeholder="Rechercher" style="border: 0px;">
+                            </div>
+                            <div class="col-sm-4">
+
+                            <button type="submit" id="searchBtn" class="btn btn-default">
                                     <span
                                             class="glyphicon glyphicon-search"></span>
                                 </button>
-                            </span>
+                            </div>
                         </div>
                     </form>
                 </div>
