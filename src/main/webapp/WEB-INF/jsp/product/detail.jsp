@@ -40,13 +40,13 @@
         <div class="row">
             <%-- add breacrumb--%>
             <ol class="breadcrumb_detail breadcrumb">
-               <%-- <c:forEach items="${categories}" var="_category">           Quand je décommente cette ligne j'ai une erreur 404 ...--%>
+               <c:forEach items="${categories}" var="_category">
                 <li><a href="http://localhost:8080/"> Accueil</a></li>
                 <li><a href="http://localhost:8080/product">Library</a></li>
-                <li class="http://localhost:8080/produt">Music</li>
+                <li class="http://localhost:8080/product">${_category.id}</li>
                 <%-- j'ai essayé :
-                 <li class="http://localhost:8080/produt">_category.getCategory()</li>
-                 <li class="http://localhost:8080/produt">_category.id</li>
+                 <li class="http://localhost:8080/product">${_category.getCategory()}</li>
+                 <li class="http://localhost:8080/product">${_category.id}</li>                      juste pour afficher qqc ...
                  --%>
             </ol>
             <div class="col-sm-3">

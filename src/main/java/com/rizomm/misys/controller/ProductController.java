@@ -64,7 +64,7 @@ public class ProductController implements ErrorController {
             }
             if (null == listCategory || listCategory.isEmpty())
                 return new ModelAndView("404");
-            return new ModelAndView("detail", "categories", listCategory);
+            return new ModelAndView("product/detail", "categories", listCategory);
         } catch (IllegalArgumentException e) {
             System.out.println();
             return new ModelAndView("404");
