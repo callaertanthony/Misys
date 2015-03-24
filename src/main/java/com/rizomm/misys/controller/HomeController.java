@@ -19,14 +19,14 @@ import java.util.Collection;
 public class HomeController {
 
     @Autowired
-    private ProductRepository _productRepository;
+    private ProductRepository productRepository;
 
 
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView showProductDetail() {
         try {
             Collection<Product> listProducts = new ArrayList<>();
-            Iterable<Product> it = _productRepository.findAll();
+            Iterable<Product> it = productRepository.findAll();
             if (null == it)
                 return new ModelAndView("404");
             for (Product product : it) {

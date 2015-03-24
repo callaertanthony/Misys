@@ -14,6 +14,7 @@ public class User {
     private String nickname;
     private String email;
     private int age;
+    private List<Selection> selections;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -78,17 +79,25 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         User user = (User) o;
 
-        if (age != user.age) return false;
-        if (id != user.id) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
-        if (nickname != null ? !nickname.equals(user.nickname) : user.nickname != null) return false;
+        if (age != user.age)
+            return false;
+        if (id != user.id)
+            return false;
+        if (email != null ? !email.equals(user.email) : user.email != null)
+            return false;
+        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null)
+            return false;
+        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null)
+            return false;
+        if (nickname != null ? !nickname.equals(user.nickname) : user.nickname != null)
+            return false;
 
         return true;
     }
@@ -103,8 +112,6 @@ public class User {
         result = 31 * result + age;
         return result;
     }
-
-    private List<Selection> selections;
 
     @OneToMany
     public List<Selection> getSelections() {
@@ -124,7 +131,7 @@ public class User {
         }
         Selection wishlist = new Selection();
         wishlist.setType(1);
-        wishlist.setUser_id(this);
+        wishlist.setUserId(this);
 
         selections.add(wishlist);
         return wishlist;
@@ -139,7 +146,7 @@ public class User {
         }
         Selection cart = new Selection();
         cart.setType(2);
-        cart.setUser_id(this);
+        cart.setUserId(this);
 
         selections.add(cart);
         return cart;

@@ -31,15 +31,15 @@ public class Selection {
         this.type = type;
     }
 
-    private User user_id;
+    private User userId;
 
     @ManyToOne
-    public User getUser_id() {
-        return user_id;
+    public User getUserId() {
+        return userId;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUserId(User userId) {
+        this.userId = userId;
     }
 
     private List<SelectionLine> selectionLines;

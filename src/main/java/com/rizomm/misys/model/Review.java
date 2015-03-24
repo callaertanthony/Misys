@@ -12,7 +12,7 @@ public class Review {
     private int id;
 
     @Basic
-    private String review;
+    private String comment;
 
     @Basic
     private int note;
@@ -24,12 +24,12 @@ public class Review {
     private User user;
 
     //GETTERS ET SETTERS
-    public String getReview() {
-        return review;
+    public String getComment() {
+        return comment;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+    public void setComment(String review) {
+        this.comment = review;
     }
 
     public int getId() {

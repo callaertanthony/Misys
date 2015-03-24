@@ -90,7 +90,7 @@ public class Product {
     }
 
     public String getPicturelink() {
-        return Constants.Product.imagePath + picture;
+        return Constants.Product.IMAGE_PATH + picture;
     }
 
     public String getPicture() {

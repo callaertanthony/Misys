@@ -5,7 +5,16 @@ package com.rizomm.misys.constants;
  */
 public final class Constants {
 
+    private Constants(){
+        //nothing to do
+    }
+
     public static class Product{
-        public static final String imagePath = "/assets/images/product-details/";
+
+        private Product(){
+            //nothing to do
+        }
+
+        public static final String IMAGE_PATH = "/assets/images/product-details/";
     }
 }

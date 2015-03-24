@@ -21,13 +21,13 @@ import java.util.List;
 public class ProductController implements ErrorController {
 
     @Autowired
-    private ProductRepository _productRepository;
+    private ProductRepository productRepository;
     @Autowired
-    private UserRepository _userRepository;
+    private UserRepository userRepository;
     @Autowired
-    private SelectionRepository _selectionRepository;
+    private SelectionRepository selectionRepository;
     @Autowired
-    private SelectionLineRepository _selectionLineRepository;
+    private SelectionLineRepository selectionLineRepository;
     /**
      * This method will retrieve the product from the database and call the detail JSP page.
      * If the product can't be found, the 404 page will be shown to the user.
@@ -39,8 +39,8 @@ public class ProductController implements ErrorController {
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
     public ModelAndView detailProduct(@PathVariable int id){
         try {
-            Product product = _productRepository.findOne(id);
-            List<Product> products = _productRepository.findFirst10ByBrand(product.getBrand());
+            Product product = productRepository.findOne(id);
+            List<Product> products = productRepository.findFirst10ByBrand(product.getBrand());
             if (products.contains(product))
             {
                 products.remove(product);
@@ -66,30 +66,30 @@ public class ProductController implements ErrorController {
     @RequestMapping(value = "/addtowishlist", method = RequestMethod.POST)
     public void addToWishlist(HttpServletRequest req) {
         try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
+            int idUser = Integer.parseInt(req.getParameter("id_user"));
+            int idProduct = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
 
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
+            System.out.println("User : " + idUser);
+            System.out.println("Product : " + idProduct);
             System.out.println("Quantity : " + quantity);
 
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
+            User user = userRepository.findOne(idUser);
+            Product product = productRepository.findOne(idProduct);
 
             SelectionLine selectionLine = new SelectionLine();
             selectionLine.setProduct(product);
             selectionLine.setQuantity(quantity);
             List<SelectionLine> list = new LinkedList<>();
 
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
+            selectionRepository.save(user.wishList());
+            selectionLineRepository.save(selectionLine);
 
             list.add(selectionLine);
             user.wishList().setSelectionLines(list);
 
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
+            selectionRepository.save(user.wishList());
+            selectionLineRepository.save(selectionLine);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -99,30 +99,30 @@ public class ProductController implements ErrorController {
     @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
     public void addToCart(HttpServletRequest req) {
         try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
+            int idUser = Integer.parseInt(req.getParameter("id_user"));
+            int idProduct = Integer.parseInt(req.getParameter("id_product"));
             int quantity = Integer.parseInt(req.getParameter("quantity"));
 
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
+            System.out.println("User : " + idUser);
+            System.out.println("Product : " + idProduct);
             System.out.println("Quantity : " + quantity);
 
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
+            User user = userRepository.findOne(idUser);
+            Product product = productRepository.findOne(idProduct);
 
             SelectionLine selectionLine = new SelectionLine();
             selectionLine.setProduct(product);
             selectionLine.setQuantity(quantity);
             List<SelectionLine> list = new LinkedList<>();
 
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
+            selectionRepository.save(user.cart());
+            selectionLineRepository.save(selectionLine);
 
             list.add(selectionLine);
             user.cart().setSelectionLines(list);
 
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
+            selectionRepository.save(user.cart());
+            selectionLineRepository.save(selectionLine);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

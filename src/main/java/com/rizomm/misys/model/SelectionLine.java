@@ -30,15 +30,15 @@ public class SelectionLine {
         this.quantity = quantity;
     }
 
-    private Selection selection_id;
+    private Selection selectionId;
 
     @ManyToOne
-    public Selection getSelection_id() {
-        return selection_id;
+    public Selection getSelectionId() {
+        return selectionId;
     }
 
-    public void setSelection_id(Selection selection_id) {
-        this.selection_id = selection_id;
+    public void setSelectionId(Selection selectionId) {
+        this.selectionId = selectionId;
     }
 
     private Product product;

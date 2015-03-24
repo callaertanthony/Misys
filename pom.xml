@@ -10,12 +10,10 @@
 	</parent>
 	<artifactId>misys</artifactId>
 	<packaging>war</packaging>
-	<name>Spring Boot Web JSP Sample</name>
-	<description>Spring Boot Web JSP Sample</description>
-	<url>http://projects.spring.io/spring-boot/</url>
+	<name>Misys application</name>
+	<description>Buy your music</description>
 	<organization>
-		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
+		<name>Rizomm</name>
 	</organization>
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
