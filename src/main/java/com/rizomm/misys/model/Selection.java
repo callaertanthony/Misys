@@ -9,6 +9,9 @@ import java.util.List;
 @Entity
 public class Selection {
     private int id;
+    private int type;
+    private User userId;
+    private List<SelectionLine> selectionLines;
 
     @GeneratedValue
     @Id
@@ -20,8 +23,6 @@ public class Selection {
         this.id = id;
     }
 
-    private int type;
-
     @Basic
     public int getType() {
         return type;
@@ -31,8 +32,6 @@ public class Selection {
         this.type = type;
     }
 
-    private User userId;
-
     @ManyToOne
     public User getUserId() {
         return userId;
@@ -41,8 +40,6 @@ public class Selection {
     public void setUserId(User userId) {
         this.userId = userId;
     }
-
-    private List<SelectionLine> selectionLines;
 
     @OneToMany
     public List<SelectionLine> getSelectionLines() {

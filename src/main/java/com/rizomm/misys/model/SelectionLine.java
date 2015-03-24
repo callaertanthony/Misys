@@ -8,6 +8,9 @@ import javax.persistence.*;
 @Entity
 public class SelectionLine {
     private int id;
+    private int quantity;
+    private Selection selectionId;
+    private Product product;
 
     @GeneratedValue
     @Id
@@ -19,8 +22,6 @@ public class SelectionLine {
         this.id = id;
     }
 
-    private int quantity;
-
     @Basic
     public int getQuantity() {
         return quantity;
@@ -30,8 +31,6 @@ public class SelectionLine {
         this.quantity = quantity;
     }
 
-    private Selection selectionId;
-
     @ManyToOne
     public Selection getSelectionId() {
         return selectionId;
@@ -40,8 +39,6 @@ public class SelectionLine {
     public void setSelectionId(Selection selectionId) {
         this.selectionId = selectionId;
     }
-
-    private Product product;
 
     @ManyToOne
     public Product getProduct() {

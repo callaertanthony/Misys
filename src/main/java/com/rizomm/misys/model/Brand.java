@@ -11,6 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class Brand {
     private int id;
+    private String name;
 
     @GeneratedValue
     @Id
@@ -21,8 +22,6 @@ public class Brand {
     public void setId(int id) {
         this.id = id;
     }
-
-    private String name;
 
     @Basic
     public String getName() {

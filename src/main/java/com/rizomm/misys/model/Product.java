@@ -32,6 +32,8 @@ public class Product {
     @Basic
     @Column(nullable = false)
     private String picture;
+    @OneToMany(targetEntity = Review.class, mappedBy = "product")
+    List<Review> reviews;
 
     public int getId() {
         return id;
@@ -104,9 +106,6 @@ public class Product {
     public boolean haveStock() {
         return this.getStock().getQuantity() > 0;
     }
-
-    @OneToMany(targetEntity = Review.class, mappedBy = "product")
-    List<Review> reviews;
 
     public List<Review> getReviews() {
         return reviews;

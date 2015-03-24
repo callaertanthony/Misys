@@ -11,10 +11,10 @@ public final class Constants {
 
     public static class Product{
 
+        public static final String IMAGE_PATH = "/assets/images/product-details/";
+
         private Product(){
             //nothing to do
         }
-
-        public static final String IMAGE_PATH = "/assets/images/product-details/";
     }
 }
