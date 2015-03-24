@@ -39,15 +39,13 @@
     <div class="container">
         <div class="row">
             <%-- add breacrumb--%>
-            <ol class="breadcrumb_detail breadcrumb">
-               <c:forEach items="${categories}" var="_category">
-                <li><a href="http://localhost:8080/"> Accueil</a></li>
-                <li><a href="http://localhost:8080/product">Library</a></li>
-                <li class="http://localhost:8080/product">${_category.id}</li>
-                <%-- j'ai essayé :
-                 <li class="http://localhost:8080/product">${_category.getCategory()}</li>
-                 <li class="http://localhost:8080/product">${_category.id}</li>                      juste pour afficher qqc ...
-                 --%>
+                <ol class="breadcrumb_detail breadcrumb">
+                <c:forEach items="${categories}" var="_category">
+                    <c:forEach items="${link}" var="_link">
+                            <li><a href="<c:url value="${_link}"/>">${_category}</a></li>
+                    </c:forEach>
+                </c:forEach>
+
             </ol>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
@@ -58,7 +56,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt="${product.name}" />
+                           <img src=" ${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt="${product.name}" />
                         </div>
 
                     </div>
