@@ -44,23 +44,18 @@ public class ProductController implements ErrorController {
             Category category = product.getCategory();
             boolean run = true;
             while (run) {
-                //ajouter la catégorie
-                //Regarder si y'a un papa
-                //Si papa -> on fait run = false pour quitter la klebou
-                //Si pas de papa -> on récupère maman (la catégorie, payday!)
-                
                 if(null != category)
-                    listCategories.add(category); //On ajoute la catégorie à la liste
+                    listCategories.add(category); //Add categoryname in list
 
-                if(category.getIdParent() == 0) //Plus de catégorie parent, on se casse
+                if(category.getIdParent() == 0) //
                     run = false;
                 else
-                    category = _categoryRepository.findOne(category.getIdParent()); //On récupère papa & maman
+                    category = _categoryRepository.findOne(category.getIdParent()); //take parent data
             }
             Collections.reverse(listCategories);
             //Set the data about category et product details in the model and view for the JSP
             ModelAndView modelAndView = new ModelAndView("product/detail", "product", product);
-            modelAndView.addObject("categories", listCategories);                        //add list of category in M&V
+            modelAndView.addObject("categories", listCategories);
             return  modelAndView;
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
