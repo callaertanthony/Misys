@@ -39,13 +39,12 @@
     <div class="container">
         <div class="row">
             <%-- add breacrumb--%>
-                <ol class="breadcrumb_detail breadcrumb">
-                <c:forEach items="${categories}" var="_category">
-                    <c:forEach items="${link}" var="_link">
-                            <li><a href="<c:url value="${_link}"/>">${_category}</a></li>
+            <ol class="breadcrumb_detail breadcrumb">
+                <c:forEach items="${categories}" var="category">
+                    <c:forEach items="${link}" var="link">
+                            <li><a href="${link}"> ${category} </a> </li>
                     </c:forEach>
                 </c:forEach>
-
             </ol>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->

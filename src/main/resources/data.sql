@@ -12,10 +12,10 @@ INSERT INTO `misys`.`brand` (`id`, `name`) VALUES (NULL, 'Sony'), (NULL, 'Univer
 INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'daft-punk.jpg');
 INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'electro-deluxe2.jpg');
 
-INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('1','Rock','http://localhost:8080/','2');
-INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('2','Heavy','http://localhost:8080/','3');
-INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('3','Metal','http://localhost:8080/','4');
-INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('4','Autre','http://localhost:8080/','0');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('1','Rock','http://localhost:8080/1','2');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('2','Heavy','http://localhost:8080/2','3');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('3','Metal','http://localhost:8080/3','4');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('4','Autre','http://localhost:8080/4','0');
 
 INSERT INTO `misys`.`product` (`id`, `description`, `name`, `price`, `reference`, `brand_id`, `stock_id`, `picturelink_id`,`category_id`)
 VALUES

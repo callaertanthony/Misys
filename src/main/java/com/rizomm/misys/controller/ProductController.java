@@ -37,8 +37,8 @@ public class ProductController implements ErrorController {
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
     public ModelAndView detailProduct(@PathVariable int id) {
         try{
-            Collection<String> listCategories = new ArrayList<>();
-            Collection<String> listLinkCategories = new ArrayList<>();
+            Collection<String> listCategories = new ArrayList<>();              //should contain the name of categories
+            Collection<String> listLinkCategories = new ArrayList<>();          //should contain the link of categories
             Product product = _productRepository.findOne(id);
 
             //Get Id of the parent category to make breadcrumb
@@ -48,27 +48,25 @@ public class ProductController implements ErrorController {
             listLinkCategories.add(product.getCategory().getCategoryLink());
             System.out.println("Nom de la premiére categorie : " + product.getCategory().getCategory());
             System.out.println("ID de la premiére categorie : " + product.getCategory().getId());
-
+            System.out.println("Lien : "+ product.getCategory().getCategoryLink());
             //Loop to add all the parents categories in list
             while (idParent != 0) {
                 System.out.println("Nom de la categorie suivante : " + categoryParent.getCategory());
                 System.out.println("ID de la categorie suivante : " + categoryParent.getId());
+                System.out.println("Lien :"+ categoryParent.getCategoryLink());
                 if (null == product || null == categoryParent)
                     return new ModelAndView("404");
 
                 listCategories.add(categoryParent.getCategory());                   //Add parents categories in list
-                listCategories.add(categoryParent.getCategoryLink());
+                listLinkCategories.add(categoryParent.getCategoryLink());
                 idParent = categoryParent.getIdParent();
                 categoryParent = _categoryRepository.findOne(idParent);
 
             }
-            for (int i=0 ; i>=listCategories.size(); i++) {
-                System.out.println("liste de categories : "+listCategories.toString());
-            }
             //Set the data about category et product details in the model and view for the JSP
             ModelAndView modelAndView = new ModelAndView("product/detail", "product", product);
-            modelAndView.addObject("categories", listCategories); //On ajoute l'objet listCategories à la model & view retournée à notre JSP
-            modelAndView.addObject("link", listLinkCategories);
+            modelAndView.addObject("categories", listCategories);                        //add list of category in M&V
+            modelAndView.addObject("link", listLinkCategories);                          //add link to category in M&V
             return  modelAndView;
 
         } catch (IllegalArgumentException e) {
