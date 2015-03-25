@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import sun.util.resources.th.CalendarData_th;
 
 import java.util.*;
 
@@ -37,38 +38,30 @@ public class ProductController implements ErrorController {
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
     public ModelAndView detailProduct(@PathVariable int id) {
         try{
-            Collection<String> listCategories = new ArrayList<>();              //should contain the name of categories
-            Collection<String> listLinkCategories = new ArrayList<>();          //should contain the link of categories
+            List<Category> listCategories = new ArrayList<>();              //should contain the name of categories
             Product product = _productRepository.findOne(id);
 
-            //Get Id of the parent category to make breadcrumb
-            int idParent = product.getCategory().getIdParent();
-            Category categoryParent = _categoryRepository.findOne(idParent);
-            listCategories.add(product.getCategory().getCategory());                //Add the first category in list
-            listLinkCategories.add(product.getCategory().getCategoryLink());
-            System.out.println("Nom de la premiére categorie : " + product.getCategory().getCategory());
-            System.out.println("ID de la premiére categorie : " + product.getCategory().getId());
-            System.out.println("Lien : "+ product.getCategory().getCategoryLink());
-            //Loop to add all the parents categories in list
-            while (idParent != 0) {
-                System.out.println("Nom de la categorie suivante : " + categoryParent.getCategory());
-                System.out.println("ID de la categorie suivante : " + categoryParent.getId());
-                System.out.println("Lien :"+ categoryParent.getCategoryLink());
-                if (null == product || null == categoryParent)
-                    return new ModelAndView("404");
+            Category category = product.getCategory();
+            boolean run = true;
+            while (run) {
+                //ajouter la catégorie
+                //Regarder si y'a un papa
+                //Si papa -> on fait run = false pour quitter la klebou
+                //Si pas de papa -> on récupère maman (la catégorie, payday!)
+                
+                if(null != category)
+                    listCategories.add(category); //On ajoute la catégorie à la liste
 
-                listCategories.add(categoryParent.getCategory());                   //Add parents categories in list
-                listLinkCategories.add(categoryParent.getCategoryLink());
-                idParent = categoryParent.getIdParent();
-                categoryParent = _categoryRepository.findOne(idParent);
-
+                if(category.getIdParent() == 0) //Plus de catégorie parent, on se casse
+                    run = false;
+                else
+                    category = _categoryRepository.findOne(category.getIdParent()); //On récupère papa & maman
             }
+            Collections.reverse(listCategories);
             //Set the data about category et product details in the model and view for the JSP
             ModelAndView modelAndView = new ModelAndView("product/detail", "product", product);
             modelAndView.addObject("categories", listCategories);                        //add list of category in M&V
-            modelAndView.addObject("link", listLinkCategories);                          //add link to category in M&V
             return  modelAndView;
-
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
         }

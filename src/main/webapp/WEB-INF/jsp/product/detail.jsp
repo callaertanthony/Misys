@@ -41,9 +41,7 @@
             <%-- add breacrumb--%>
             <ol class="breadcrumb_detail breadcrumb">
                 <c:forEach items="${categories}" var="category">
-                    <c:forEach items="${link}" var="link">
-                            <li><a href="${link}"> ${category} </a> </li>
-                    </c:forEach>
+                    <li><a href="${pageContext.request.contextPath}/category/${category.getCategoryLink()}"> ${category.getCategory()} </a> </li>
                 </c:forEach>
             </ol>
             <div class="col-sm-3">
