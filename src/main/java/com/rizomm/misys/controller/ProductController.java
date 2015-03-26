@@ -50,7 +50,9 @@ public class ProductController implements ErrorController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView searchResult(@RequestParam(required = false) final String searchInput) {
         ModelAndView mNv = new ModelAndView("product/search");
-        List<Product> products = _productRepository.findAll();
+
+        List<Product> products = _productRepository.findByNameContaining(searchInput);
+        System.out.println("List size is: " + products.size());
         Iterator<Product> prod = products.iterator();
         String[] keysSplit = searchInput.split(" ");
         List<Brand> brands = new ArrayList<>();
