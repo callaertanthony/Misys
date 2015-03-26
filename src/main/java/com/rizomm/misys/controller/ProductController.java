@@ -1,9 +1,6 @@
 package com.rizomm.misys.controller;
 
-import com.rizomm.misys.model.Category;
-import com.rizomm.misys.model.CategoryRepository;
-import com.rizomm.misys.model.Product;
-import com.rizomm.misys.model.ProductRepository;
+import com.rizomm.misys.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -52,7 +49,6 @@ public class ProductController implements ErrorController {
             if (products.contains(product))
             {
                 products.remove(product);
-
             }
             while (products.size()>9)
             {

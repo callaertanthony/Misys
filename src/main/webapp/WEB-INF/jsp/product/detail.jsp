@@ -70,7 +70,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                           <img src=" ${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt="${product.name}" />
+                           <img src=" ${pageContext.request.contextPath}${product.getPicturelink()}" alt="${product.name}" />
                         </div>
 
                     </div>
