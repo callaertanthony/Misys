@@ -9,9 +9,6 @@ VALUES ('1', '12', 't@t.fr', 'Charles', 'Hot', 'Charlotte'), ('2', '99', 'z@z.co
 
 INSERT INTO `misys`.`brand` (`id`, `name`) VALUES (NULL, 'Sony'), (NULL, 'Universal');
 
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'daft-punk.jpg');
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'electro-deluxe2.jpg');
-
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('1','Rock','Rock','2');
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('2','Heavy','Heavy','3');
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('3','Metal','Metal','4');
@@ -26,15 +23,26 @@ INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VA
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('12','test8','Autre','0');
 
 
-
-INSERT INTO `misys`.`product` (`id`, `description`, `name`, `price`, `reference`, `brand_id`, `stock_id`, `picturelink_id`,`category_id`)
+INSERT INTO `misys`.`product` (`id`, `description`, `name`, `price`, `reference`, `brand_id`, `stock_id`, `picture`, `category_id`)
 VALUES
   (NULL,
    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu vestibulum ipsum. Quisque bibendum ut lorem eu dictum.',
-   'Daft-Punk', '19', 'B00JG8GBDM', '1', '2', '1','1'),
+   'Batman', '999', 'B00JG8GBDM', '1', '2', 'Penguins.jpg','1'),
   (NULL,
    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu vestibulum ipsum. Quisque bibendum ut lorem eu dictum. Nullam sit amet tempor enim, sed lobortis sapien.',
-   'Electro-Deluxe', '15', 'B00JG8GBDS', '2', '5', '2','1');
+   'Batwoman', '99', 'B00JG8GBDS', '2', '5', 'Penguins.jpg','1'),
+   (NULL,
+   'La bat-mobile est super rapide !',
+   'Batmobile', '50', 'B00JG8GBDV', '1', '3', 'Penguins.jpg','1'),
+   (NULL,
+   'Le bat-grappin pour faire comme les ninjas !',
+   'Batgrappin', '25', 'B00JG8GBDG', '1', '6', 'Penguins.jpg','1'),
+   (NULL,
+   'Le i-bat, juste entre le i pelle et le i brouette',
+   'Ibat', '75', 'B00JG8GBDI', '1', '4', 'Penguins.jpg','1'),
+   (NULL,
+   'Le maquillage de batwoman, super pratique quand même.',
+   'Maquillage', '5000', 'B00JG8GBDR', '2', '1', 'Penguins.jpg','1');
 
 INSERT INTO `misys`.`review` (`id`, `note`, `review`, `product_id`, `user_id`)
 VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '5', 'Review 2', '1', '1');
