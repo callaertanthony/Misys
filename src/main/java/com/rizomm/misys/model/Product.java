@@ -111,7 +111,6 @@ public class Product {
 
 
     @ManyToOne(optional = false)
-    @OneToOne(optional = false)
     private Category category;
 
     public Category getCategory() {
