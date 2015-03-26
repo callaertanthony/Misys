@@ -7,12 +7,10 @@ import com.rizomm.misys.model.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import sun.util.resources.th.CalendarData_th;
 
 import java.util.*;
 
@@ -53,9 +51,11 @@ public class ProductController implements ErrorController {
                     category = _categoryRepository.findOne(category.getIdParent()); //take parent data
             }
             Collections.reverse(listCategories);
+
             //Set the data about category et product details in the model and view for the JSP
             ModelAndView modelAndView = new ModelAndView("product/detail", "product", product);
             modelAndView.addObject("categories", listCategories);
+
             return  modelAndView;
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");

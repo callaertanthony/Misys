@@ -39,11 +39,28 @@
     <div class="container">
         <div class="row">
             <%-- add breacrumb--%>
-            <ol class="breadcrumb_detail breadcrumb">
-                <c:forEach items="${categories}" var="category">
-                    <li><a href="${pageContext.request.contextPath}/category/${category.getCategoryLink()}"> ${category.getCategory()} </a> </li>
-                </c:forEach>
-            </ol>
+            <%--
+                If the list size is more than 10 elements, we only show the root and the three latest categories to the
+                client. Otherwise, we show the full breadcrumb.
+             --%>
+            <c:choose>
+                <c:when test="${categories.size()<='10'}">
+                    <ol class="breadcrumb_detail breadcrumb">
+                        <c:forEach items="${categories}" var="category">
+                            <li><a href="${pageContext.request.contextPath}/category/${category.getCategoryLink()}"> ${category.getCategory()} </a> </li>
+                        </c:forEach>
+                    </ol>
+                </c:when>
+                <c:otherwise>
+                    <ol class="breadcrumb_detail breadcrumb">
+                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(0).getCategoryLink()}"> ${categories.get(0).getCategory()}</a></li>
+                        <li> (...) </li>
+                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-3).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a> </li>
+                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-2).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a> </li>
+                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-1).getCategoryLink()}"> ${categories.get(categories.size()-1).getCategory()} </a> </li>
+                    </ol>
+                </c:otherwise>
+            </c:choose>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
                 <jsp:include page="../menu.jsp" />
