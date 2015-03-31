@@ -31,11 +31,11 @@ public class ProductController implements ErrorController {
      * If the product can't be found, the 404 page will be shown to the user.
      *
      * @param id The product Id (will be matched with the database)
-     * @return  Call the detail JSP with the product object if it was found into the database. Otherwise, the 404 JSP
-     *          is called.
+     * @return Call the detail JSP with the product object if it was found into the database. Otherwise, the 404 JSP
+     * is called.
      */
-    @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
-    public ModelAndView detailProduct(@PathVariable int id){
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+    public ModelAndView detailProduct(@PathVariable int id) {
         try {
             Product product = _productRepository.findOne(id);
             if (null == product)
@@ -51,26 +51,52 @@ public class ProductController implements ErrorController {
     public ModelAndView searchResult(@RequestParam(required = false) final String searchInput) {
         ModelAndView mNv = new ModelAndView("product/search");
 
-        List<Product> products = _productRepository.findByNameContaining(searchInput);
-        System.out.println("List size is: " + products.size());
-        Iterator<Product> prod = products.iterator();
         String[] keysSplit = searchInput.split(" ");
-        List<Brand> brands = new ArrayList<>();
-        while (prod.hasNext()) {
-            Product p = prod.next();
-            Boolean notfind = true;
-            for (String key : keysSplit) {
-                if (p.getName().toLowerCase().contains(key.toLowerCase())) {
-                    notfind = false;
-                    break;
+
+        List<Product> products = _productRepository.findByNameContaining(keysSplit[0]);
+
+        //recherche par terme dans le nom
+        for (String key : keysSplit) {
+            List<Product> productsByName = _productRepository.findByNameContaining(key);
+            Iterator<Product> prod = products.iterator();
+            while (prod.hasNext()) {
+                Product p = prod.next();
+                if (!productsByName.contains(p)) {
+                    prod.remove();
                 }
             }
-            if (notfind) {
-                prod.remove();
-            } else {
-                if (!brands.contains(p.getBrand())) {
-                    brands.add(p.getBrand());
+        }
+
+        // recherche par ref
+        List<Product> productByRef = _productRepository.findByReferenceContaining(searchInput);
+        for (Product prod : productByRef) {
+            if (!products.contains(prod)) {
+                products.add(prod);
+            }
+        }
+
+        //recherche par la description
+        List<Product> productsByDesc = _productRepository.findByDescriptionContaining(keysSplit[0]);
+        for (String key : keysSplit) {
+            List<Product> productsByD = _productRepository.findByDescriptionContaining(key);
+            Iterator<Product> prod = productsByDesc.iterator();
+            while (prod.hasNext()) {
+                Product p = prod.next();
+                if (!productsByD.contains(p)) {
+                    prod.remove();
                 }
+            }
+        }
+        for (Product prod : productsByDesc) {
+            if (!products.contains(prod)) {
+                products.add(prod);
+            }
+        }
+
+        List<Brand> brands = new ArrayList<>();
+        for (Product p : products) {
+            if (!brands.contains(p.getBrand())) {
+                brands.add(p.getBrand());
             }
         }
         mNv.addObject("products", products);
@@ -80,8 +106,6 @@ public class ProductController implements ErrorController {
         if (products.size() == 1) {
             return new ModelAndView("product/detail", "product", products.get(0));
         }
-
-
         return mNv;
     }
 
