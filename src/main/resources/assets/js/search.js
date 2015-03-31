@@ -28,14 +28,14 @@ $(function () {
                 }
             }
         });
-        //window.clearTimeout(timeout);
-        //if (!$('.product-result[data-show="true"]').length) {
-        //    timeout = window.setTimeout(function () {
-        //        $('#noResult').show();
-        //    }, 800);
-        //} else {
-        //    $('#noResult').hide();
-        //}
+        window.clearTimeout(timeout);
+        if (!$('.product-result[data-show="true"]').length) {
+            timeout = window.setTimeout(function () {
+                $('#noResult').show();
+            }, 400);
+        } else {
+            $('#noResult').hide();
+        }
     }
 
     $(document).on('click', '.left-sidebar .brands-name a', function () {
@@ -50,5 +50,7 @@ $(function () {
         showOrHide();
     });
 
-    showOrHide();
+    if ($('.product-result').length == 0) {
+        $('#noResult').show();
+    }
 });
