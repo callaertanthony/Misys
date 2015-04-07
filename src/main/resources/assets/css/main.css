@@ -2520,4 +2520,16 @@ h2.title {
   color: #FE980F;
 }
 
+/*  breadcrumb design  --------------*/
+
+.breadcrumb_detail {
+  background-color: #ffffff;
+  color: #FE980F;
+}
+
+a:link, a:visited, a:hover {
+  color: #b4b1ab;
+  /* ---------------------------------- */
+
+}
 

@@ -21,7 +21,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}"
+                                         alt="${products[0].name}"/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -36,7 +37,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}"
+                                         alt="${products[0].name}"/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -51,7 +53,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}"
+                                         alt="${products[0].name}"/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -66,7 +69,8 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink().getLink()}" alt="${products[0].name}" />
+                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}"
+                                         alt="${products[0].name}"/>
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -167,3 +171,4 @@
 <script src="${pageContext.request.contextPath}/assets/js/price-range.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/productManager.js"></script>

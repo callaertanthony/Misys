@@ -38,6 +38,39 @@
 <section>
     <div class="container">
         <div class="row">
+            <%-- add breacrumb--%>
+            <%--
+                If the list size is more than 10 elements, we only show the root and the three latest categories to the
+                client. Otherwise, we show the full breadcrumb.
+             --%>
+            <c:choose>
+                <c:when test="${categories.size()<='10'}">
+                    <ol class="breadcrumb_detail breadcrumb">
+                        <c:forEach items="${categories}" var="category">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/category/${category.getCategoryLink()}"> ${category.getCategory()} </a>
+                            </li>
+                        </c:forEach>
+                    </ol>
+                </c:when>
+                <c:otherwise>
+                    <ol class="breadcrumb_detail breadcrumb">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/category/${categories.get(0).getCategoryLink()}"> ${categories.get(0).getCategory()}</a>
+                        </li>
+                        <li> (...)</li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-3).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-2).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-1).getCategoryLink()}"> ${categories.get(categories.size()-1).getCategory()} </a>
+                        </li>
+                    </ol>
+                </c:otherwise>
+            </c:choose>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
                 <jsp:include page="../menu.jsp" />
@@ -47,7 +80,8 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="${pageContext.request.contextPath}${product.getPicturelink().getLink()}" alt="${product.name}" />
+                            <img src=" ${pageContext.request.contextPath}${product.getPicturelink()}"
+                                 alt="${product.name}"/>
                         </div>
 
                     </div>
@@ -71,12 +105,14 @@
                             <span>
                                 <span>${product.price}€</span>
                                 <label>Quantity:</label>
-                                <input type="text" value="3" />
-                                <button type="button" class="btn btn-default cart">
+                                <input id="inputQuantity" type="number" value="1" max="${product.stock.quantity}"
+                                       min="0"/>
+                                <input type="hidden" id="inputId" value="${product.id}"/>
+                                <button type="button" class="btn btn-default add-to-cart-btn">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                     Add to cart
                                 </button>
-                                <button type="button" class="btn btn-default wishlist">
+                                <button type="button" class="btn btn-default add-to-wishlist-btn">
                                     <i class="glyphicon glyphicon-heart-empty"></i>
                                     Add to wishlist
                                 </button>
@@ -100,8 +136,6 @@
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
                             <li><a href="#details" data-toggle="tab">Details</a></li>
-                            <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
-                            <li><a href="#tag" data-toggle="tab">Tag</a></li>
                             <li class="active"><a href="#reviews"
                                                   data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                         </ul>
@@ -119,8 +153,12 @@
                     </div>
                 </div><!--/category-tab-->
 
-                <!-- INCLUDING RECOMMANDED ITEMS -->
-                <jsp:include page="recommanded.jsp" />
+
+                <c:if test="${not empty productsRecommended}">
+                    <!-- INCLUDING RECOMMANDED ITEMS -->
+                    <jsp:include page="recommanded.jsp"/>
+                </c:if>
+
 
             </div>
         </div>

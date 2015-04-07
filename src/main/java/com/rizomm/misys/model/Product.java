@@ -1,5 +1,7 @@
 package com.rizomm.misys.model;
 
+import com.rizomm.misys.constants.Constants;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -27,8 +29,9 @@ public class Product {
     @Basic
     @Column(unique = true, nullable = false)
     private String reference;
-    @OneToOne(optional = false)
-    private PictureLink picturelink;
+    @Basic
+    @Column(nullable = false)
+    private String picture;
 
     public int getId() {
         return id;
@@ -86,12 +89,16 @@ public class Product {
         this.reference = reference;
     }
 
-    public PictureLink getPicturelink() {
-        return picturelink;
+    public String getPicturelink() {
+        return Constants.Product.imagePath + picture;
     }
 
-    public void setPicturelink(PictureLink picturelink) {
-        this.picturelink = picturelink;
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public boolean haveStock() {
@@ -110,4 +117,14 @@ public class Product {
     }
 
 
+    @ManyToOne(optional = false)
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

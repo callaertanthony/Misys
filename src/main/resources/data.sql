@@ -9,17 +9,33 @@ VALUES ('1', '12', 't@t.fr', 'Charles', 'Hot', 'Charlotte'), ('2', '99', 'z@z.co
 
 INSERT INTO `misys`.`brand` (`id`, `name`) VALUES (NULL, 'Sony'), (NULL, 'Universal');
 
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'Penguins.jpg');
-INSERT INTO `misys`.`picture_link` (`id`, `link`) VALUES (NULL, 'Penguins.jpg');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('1','Rock','Rock','2');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('2','Heavy','Heavy','3');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('3','Metal','Metal','4');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('4','Autre','Autre','5');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('5','test1','test1','6');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('6','test2','test2','7');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('7','test3','Autre','8');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('8','test4','Autre','9');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('9','test5','Autre','10');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('10','test6','Autre','11');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('11','test7','Autre','12');
+INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('12','test8','Autre','0');
 
-INSERT INTO `misys`.`product` (`id`, `description`, `name`, `price`, `reference`, `brand_id`, `stock_id`, `picturelink_id`)
+
+INSERT INTO `misys`.`product` (`id`, `description`, `name`, `picture`, `price`, `reference`, `brand_id`, `category_id`, `stock_id`)
 VALUES
   (NULL,
-   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu vestibulum ipsum. Quisque bibendum ut lorem eu dictum.',
-   'Batman', '999', 'B00JG8GBDM', '1', '2', '1'),
+  'Batman! Le vrai le dur!', 'Batman', 'Penguins.jpg', '999', 'B00JG8GBDM', '1', '2','1'),
   (NULL,
-   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu vestibulum ipsum. Quisque bibendum ut lorem eu dictum. Nullam sit amet tempor enim, sed lobortis sapien.',
-   'Batwoman', '99', 'B00JG8GBDS', '2', '5', '2');
+  'P1', 'P1', 'Penguins.jpg', '99', 'B00JG8GBDW', '1', '5','2'),
+  (NULL,
+  'P2', 'P2', 'Penguins.jpg', '99', 'B00JG8GBDR', '1', '6','3'),
+  (NULL,
+  'P3', 'P3', 'Penguins.jpg', '99', 'B00JG8GBDG', '1', '3','4'),
+  (NULL,
+  'P4', 'P4', 'Penguins.jpg', '99', 'B00JG8GBDB', '1', '8','5');
 
 INSERT INTO `misys`.`review` (`id`, `note`, `review`, `product_id`, `user_id`)
-VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '12', 'Review 2', '1', '1');
+VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '5', 'Review 2', '1', '1');
+

@@ -80,7 +80,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#dvd">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#vod">
                         <span class="badge pull-right"><i class="glyphicon glyphicon-download"></i></span>
                         VOD
                     </a>
