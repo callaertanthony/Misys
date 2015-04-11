@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.*;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,37 +25,54 @@ public class ProductController implements ErrorController {
     @Autowired
     private ProductRepository _productRepository;
     @Autowired
+    private CategoryRepository _categoryRepository;
+    @Autowired
     private UserRepository _userRepository;
     @Autowired
     private SelectionRepository _selectionRepository;
     @Autowired
     private SelectionLineRepository _selectionLineRepository;
     /**
-     * This method will retrieve the product from the database and call the detail JSP page.
-     * If the product can't be found, the 404 page will be shown to the user.
+     * This method will retrieve the product & category from the database and call the detail JSP page.
+     * If the product or category can't be found, the 404 page will be shown to the user.
      *
      * @param id The product Id (will be matched with the database)
      * @return  Call the detail JSP with the product object if it was found into the database. Otherwise, the 404 JSP
      *          is called.
      */
     @RequestMapping(value="/detail/{id}", method = RequestMethod.GET)
-    public ModelAndView detailProduct(@PathVariable int id){
-        try {
+    public ModelAndView detailProduct(@PathVariable int id) {
+        try{
+            List<Category> listCategories = new ArrayList<>();              //should contain the name of categories
             Product product = _productRepository.findOne(id);
             List<Product> products = _productRepository.findFirst10ByBrand(product.getBrand());
             if (products.contains(product))
             {
                 products.remove(product);
-
             }
             while (products.size()>9)
             {
                 products.remove(products.size()-1);
             }
 
+            Category category = product.getCategory();
+            boolean run = true;
+            while (run) {
+                if(null != category)
+                    listCategories.add(category); //Add categoryname in list
+
+                if(category.getIdParent() == 0) //
+                    run = false;
+                else
+                    category = _categoryRepository.findOne(category.getIdParent()); //take parent data
+            }
+            Collections.reverse(listCategories);
+
+
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
+            mNv.addObject("categories", listCategories);
             mNv.addObject("productsRecommended", products);
             if (null == product)
                 return new ModelAndView("404");

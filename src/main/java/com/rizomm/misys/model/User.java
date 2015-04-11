@@ -16,7 +16,7 @@ public class User {
     private int age;
 
     @Id
-    @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @Column(nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;
     }
@@ -26,7 +26,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "first_name", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(nullable = false, insertable = true, updatable = true, length = 100)
     public String getFirstName() {
         return firstName;
     }
@@ -36,7 +36,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "last_name", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(nullable = false, insertable = true, updatable = true, length = 100)
     public String getLastName() {
         return lastName;
     }
@@ -46,7 +46,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "nickname", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(nullable = false, insertable = true, updatable = true, length = 100)
     public String getNickname() {
         return nickname;
     }
@@ -56,7 +56,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "email", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(nullable = false, insertable = true, updatable = true, length = 100)
     public String getEmail() {
         return email;
     }
@@ -66,7 +66,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "age", nullable = false, insertable = true, updatable = true)
+    @Column(nullable = false, insertable = true, updatable = true)
     public int getAge() {
         return age;
     }
