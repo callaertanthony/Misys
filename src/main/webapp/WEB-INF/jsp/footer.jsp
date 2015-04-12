@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -21,7 +22,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" alt="${products[0].name}" />
+                                    <img src="<spring:url value="${products[0].getPicturelink()}"/>" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -36,7 +37,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" alt="${products[0].name}" />
+                                    <img src="<spring:url value="${products[0].getPicturelink()}"/>" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -51,7 +52,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" alt="${products[0].name}" />
+                                    <img src="<spring:url value="${products[0].getPicturelink()}"/>" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -66,7 +67,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" alt="${products[0].name}" />
+                                    <img src="<spring:url value="${products[0].getPicturelink()}"/>" alt="${products[0].name}" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="${pageContext.request.contextPath}/assets/images/home/map.png" alt=""/>
+                        <img src="<spring:url value="/assets/images/home/map.png"/>" alt=""/>
                         <p>60 Boulevard VAUBAN - 59016 LILLE cedex</p>
                     </div>
                 </div>
@@ -161,10 +162,10 @@
     </div>
 
 </footer><!--/Footer-->
-<script src="${pageContext.request.contextPath}/assets/js/jquery.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollUp.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/price-range.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.prettyPhoto.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/productManager.js"></script>
+<script src="<spring:url value="/assets/js/jquery.js"/>"></script>
+<script src="<spring:url value="/assets/js/bootstrap.min.js"/>" ></script>
+<script src="<spring:url value="/assets/js/jquery.scrollUp.min.js"/>" ></script>
+<script src="<spring:url value="/assets/js/price-range.js"/>" ></script>
+<script src="<spring:url value="/assets/js/jquery.prettyPhoto.js"/>" ></script>
+<script src="<spring:url value="/assets/js/main.js"/>" ></script>
+<script src="<spring:url value="/assets/js/productManager.js"/>" ></script>

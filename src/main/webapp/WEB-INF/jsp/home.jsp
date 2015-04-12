@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
@@ -18,15 +19,15 @@
     <title>Product Details | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/price-range.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/animate.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/responsive.css" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/price-range.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/animate.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/main.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/responsive.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
+    <script src="<spring:url value="/assets/js/html5shiv.js"/>"></script>
+    <script src="<spring:url value="/assets/js/respond.min.js"/>" ></script>
     <![endif]-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head><!--/head-->
@@ -59,8 +60,8 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                            <img src="${pageContext.request.contextPath}${product.getPicturelink()}" alt="${product.name} picture"/>
+                                        <a href="<spring:url value="/product/detail/${product.id}"/>" >
+                                            <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
                                         </a>
                                         <h2>${product.price}€</h2>
 
@@ -101,8 +102,8 @@
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                                    <img src="${pageContext.request.contextPath}${product.getPicturelink()}" alt="${product.name} picture"/>
+                                                <a href="<spring:url value="/product/detail/${product.id}"/>" >
+                                                    <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
                                                 </a>
                                                 <h2>${product.price}€</h2>
                                                 <p>${product.name}</p>

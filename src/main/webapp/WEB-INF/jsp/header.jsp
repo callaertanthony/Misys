@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -12,8 +13,9 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="/"><img src="${pageContext.request.contextPath}/assets/images/home/logo.png"
-                                                  alt=""/></a>
+                        <a href=<spring:url value="/"/> >
+                            <img src="<spring:url value="/assets/images/home/logo.png"/>" alt=""/>
+                        </a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -40,10 +42,10 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/account"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
-                            <li><a href="/whishlist"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
-                            <li><a href="/checkout"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
-                            <li><a href="/login"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
+                            <li><a href="<spring:url value="/account" />"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
+                            <li><a href="<spring:url value="/whishlist" />"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
+                            <li><a href="<spring:url value="/checkout" />"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
+                            <li><a href="<spring:url value="/login" />"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
                         </ul>
                     </div>
                 </div>

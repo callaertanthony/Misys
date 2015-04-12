@@ -10,6 +10,7 @@
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
 <%@taglib prefix="fn" uri="/WEB-INF/fn.tld" %>
 <%@taglib prefix="fmt" uri="/WEB-INF/fmt.tld" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
@@ -19,15 +20,15 @@
     <meta name="author" content="">
     <title>Product Details | E-Shopper</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/price-range.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/animate.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/responsive.css" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/price-range.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/animate.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/main.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/responsive.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
+    <script src="<spring:url value="/assets/js/html5shiv.js"/>" ></script>
+    <script src="<spring:url value="/assets/js/respond.min.js"/>" ></script>
     <![endif]-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head><!--/head-->
@@ -47,17 +48,17 @@
                 <c:when test="${categories.size()<='10'}">
                     <ol class="breadcrumb_detail breadcrumb">
                         <c:forEach items="${categories}" var="category">
-                            <li><a href="${pageContext.request.contextPath}/category/${category.getCategoryLink()}"> ${category.getCategory()} </a> </li>
+                            <li><a href="<spring:url value="/category/${category.getCategoryLink()}"/>" > ${category.getCategory()} </a> </li>
                         </c:forEach>
                     </ol>
                 </c:when>
                 <c:otherwise>
                     <ol class="breadcrumb_detail breadcrumb">
-                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(0).getCategoryLink()}"> ${categories.get(0).getCategory()}</a></li>
+                        <li><a href="<spring:url value="/category/${categories.get(0).getCategoryLink()}"/>" > ${categories.get(0).getCategory()}</a></li>
                         <li> (...) </li>
-                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-3).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a> </li>
-                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-2).getCategoryLink()}"> ${categories.get(categories.size()-2).getCategory()} </a> </li>
-                        <li><a href="${pageContext.request.contextPath}/category/${categories.get(categories.size()-1).getCategoryLink()}"> ${categories.get(categories.size()-1).getCategory()} </a> </li>
+                        <li><a href="<spring:url value="/category/${categories.get(categories.size()-3).getCategoryLink()}"/>" > ${categories.get(categories.size()-2).getCategory()} </a> </li>
+                        <li><a href="<spring:url value="/category/${categories.get(categories.size()-2).getCategoryLink()}"/>" > ${categories.get(categories.size()-2).getCategory()} </a> </li>
+                        <li><a href="<spring:url value="/category/${categories.get(categories.size()-1).getCategoryLink()}"/>" > ${categories.get(categories.size()-1).getCategory()} </a> </li>
                     </ol>
                 </c:otherwise>
             </c:choose>
@@ -70,7 +71,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                           <img src=" ${pageContext.request.contextPath}${product.getPicturelink()}" alt="${product.name}" />
+                           <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name}" />
                         </div>
 
                     </div>
@@ -114,7 +115,7 @@
                                 </c:otherwise>
                             </c:choose>
                             <p><b>Brand:</b> ${product.getBrand().getName()}</p>
-                            <a href=""><img src="${pageContext.request.contextPath}/assets/images/product-details/share.png"
+                            <a href=""><img src="<spring:url value="/assets/images/product-details/share.png"/>"
                                     class="share img-responsive" alt=""/></a>
                         </div><!--/product-information-->
                     </div>

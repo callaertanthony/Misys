@@ -26,7 +26,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="${pageContext.request.contextPath}/product/detail/${productElement.id}">
+                                <a href="<spring:url value="/product/detail/${productElement.id}"/>" >
                                     <img src="${productElement.getPicturelink()}"
                                          alt="${productElement.name} picture"/>
                                 </a>
