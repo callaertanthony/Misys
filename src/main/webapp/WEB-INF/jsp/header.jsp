@@ -24,7 +24,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="<spring:url value="/account"/>"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
                             <li><a href="<spring:url value="/whishlist"/>"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
-                            <li><a href="<spring:url value="/checkou"/>t"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
+                            <li><a href="<spring:url value="/shop/cart"/>"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
                             <li><a href="<spring:url value="/login"/>"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
                         </ul>
                     </div>

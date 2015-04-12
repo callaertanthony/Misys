@@ -1567,7 +1567,7 @@ h2.title {
 }
 
 
-#cart_items .cart_info .cart_menu {
+.cart_menu {
   background: #FE980F;
   color: #fff;
   font-size: 16px;
@@ -1630,6 +1630,11 @@ h2.title {
 .cart_product {
   display: block;
   margin: 15px -70px 10px 25px;
+}
+
+.cart_product_img {
+    width: 100px;
+    height: 100px;
 }
 
 .cart_quantity_button a {
