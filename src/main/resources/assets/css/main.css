@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -263,7 +262,7 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(../../../../../../Desktop/Eshopper/images/home/searchicon.png);
+  background-image: url(/assets/images/home/searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
 }
@@ -569,7 +568,8 @@ ul.sub-menu {
 
 
 #slider {
-  padding-bottom: 45px;
+    padding-bottom: 45px;
+    height: 420px;
 }
 
 .carousel-indicators li {
@@ -846,9 +846,10 @@ h2.title {
 }
 
 .product-image-wrapper{
+    width: 260px;
+    height: 420px;
 	border:1px solid #F7F7F5;
 	overflow: hidden;
-	margin-bottom:30px;
 }
 
 .single-products {
@@ -899,7 +900,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -967,12 +967,14 @@ h2.title {
 }
 
 .add-to-cart:hover {
-  background: #FE980F;
-  color: #FFFFFF;
+    background: #FE980F;
+    color: #FFFFFF;
 }
 
 .choose {
-  border-top: 1px solid #F7F7F0;
+    border-top: 1px solid #F7F7F0;
+    bottom: 0;
+    position: absolute;
 }
 
 .choose ul li a {
@@ -996,7 +998,7 @@ h2.title {
   overflow: hidden;
 }
 
-.category-tab ul {
+.category-tab ul.menu {
   background: #40403E;
   border-bottom: 1px solid #FE980F;
   list-style: none outside none;
@@ -2141,7 +2143,6 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
   overflow: hidden;
 }
 
@@ -2530,5 +2531,17 @@ a:link, a:visited, a:hover{
     color: #b4b1ab;
 /* ---------------------------------- */
 
+}
+
+/* media screen 600------------------ */
+@media screen and (max-width: 800px) {
+    #slider {
+        display: none;
+        clear: both;
+    }
+
+    .product-image-wrapper {
+        width: 100%;
+    }
 }
 

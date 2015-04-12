@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -7,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="recommended_items"><!--recommended_items-->
     <h2 class="title text-center">recommended items</h2>
 
@@ -14,7 +15,6 @@
         <div class="carousel-inner">
 
             <c:set var="count" value="0"/>
-
             <%int i = 0; %>
 
             <c:forEach items="${productsRecommended}" var="productElement">
@@ -26,8 +26,8 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="${pageContext.request.contextPath}/product/detail/${productElement.id}">
-                                    <img src="${productElement.getPicturelink()}"
+                                <a href="<spring:url value="/product/detail/${productElement.id}"/>">
+                                    <img src="<spring:url value="${productElement.getPicturelink()}"/>">
                                          alt="${productElement.name} picture"/>
                                 </a>
 

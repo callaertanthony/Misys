@@ -28,11 +28,11 @@ VALUES
   (NULL,
   'Batman! Le vrai le dur!', 'Batman', 'Penguins.jpg', '999', 'B00JG8GBDM', '1', '2','1'),
   (NULL,
-  'P1', 'P1', 'Penguins.jpg', '99', 'B00JG8GBDW', '1', '5','2'),
+  'P1', 'P1', 'electro-deluxe.jpg', '99', 'B00JG8GBDW', '1', '5','2'),
   (NULL,
-  'P2', 'P2', 'Penguins.jpg', '99', 'B00JG8GBDR', '1', '6','3'),
+  'P2', 'P2', 'electro-deluxe2.jpg', '99', 'B00JG8GBDR', '1', '6','3'),
   (NULL,
-  'P3', 'P3', 'Penguins.jpg', '99', 'B00JG8GBDG', '1', '3','4'),
+  'P3', 'P3', 'daft-punk.jpg', '99', 'B00JG8GBDG', '1', '3','4'),
   (NULL,
   'P4', 'P4', 'Penguins.jpg', '99', 'B00JG8GBDB', '1', '8','5');
 

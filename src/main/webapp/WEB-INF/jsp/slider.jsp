@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <section id="slider"><!--slider-->
     <div class="container">
         <div class="row">
@@ -26,8 +27,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" class="girl img-responsive" alt="" />
-                                <img src="${pageContext.request.contextPath}/images/home/pricing.png"  class="pricing" alt="" />
+                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="/assets/images/home/pricing.png"/>"  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
@@ -38,8 +39,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" class="girl img-responsive" alt="" />
-                                <img src="${pageContext.request.contextPath}/images/home/pricing.png"  class="pricing" alt="" />
+                                <img src="<spring:url value="${products[1].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="/assets/images/home/pricing.png"/>"  class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -51,8 +52,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="${pageContext.request.contextPath}${products[0].getPicturelink()}" class="girl img-responsive" alt="" />
-                                <img src="${pageContext.request.contextPath}/images/home/pricing.png" class="pricing" alt="" />
+                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="/assets/images/home/pricing.png"/>" class="pricing" alt="" />
                             </div>
                         </div>
                     </div>
