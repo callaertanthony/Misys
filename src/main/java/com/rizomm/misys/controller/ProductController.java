@@ -1,6 +1,7 @@
 package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.*;
+import com.rizomm.misys.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -67,8 +68,6 @@ public class ProductController implements ErrorController {
                     category = _categoryRepository.findOne(category.getIdParent()); //take parent data
             }
             Collections.reverse(listCategories);
-
-
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);

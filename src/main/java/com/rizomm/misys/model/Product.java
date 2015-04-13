@@ -1,6 +1,6 @@
 package com.rizomm.misys.model;
 
-import com.rizomm.misys.constants.Constants;
+import com.rizomm.misys.common.Constants;
 
 import javax.persistence.*;
 import java.util.List;

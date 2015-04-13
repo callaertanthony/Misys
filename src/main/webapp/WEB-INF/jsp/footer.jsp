@@ -168,4 +168,4 @@
 <script src="<spring:url value="/assets/js/price-range.js"/>" ></script>
 <script src="<spring:url value="/assets/js/jquery.prettyPhoto.js"/>" ></script>
 <script src="<spring:url value="/assets/js/main.js"/>" ></script>
-<script src="<spring:url value="/assets/js/productManager.js"/>" ></script>
+<script src="<spring:url value="/assets/js/cartManager.js"/>" ></script>

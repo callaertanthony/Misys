@@ -73,7 +73,6 @@
                         <div class="view-product">
                            <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name}" />
                         </div>
-
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
