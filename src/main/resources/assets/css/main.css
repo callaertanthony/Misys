@@ -591,8 +591,9 @@ ul.sub-menu {
   top: 52%;
 }
 
-.girl {
-  margin-left: 0;
+.slider {
+    margin-left: 0;
+    position: absolute;
 }
 
 .item h1 {

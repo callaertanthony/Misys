@@ -27,7 +27,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="slider img-responsive" alt="" />
                                 <img src="<spring:url value="/assets/images/home/pricing.png"/>"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<spring:url value="${products[1].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="${products[1].getPicturelink()}"/>" class="slider img-responsive" alt="" />
                                 <img src="<spring:url value="/assets/images/home/pricing.png"/>"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="girl img-responsive" alt="" />
+                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="slider img-responsive" alt="" />
                                 <img src="<spring:url value="/assets/images/home/pricing.png"/>" class="pricing" alt="" />
                             </div>
                         </div>
