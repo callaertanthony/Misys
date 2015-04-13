@@ -1,10 +1,10 @@
 package com.rizomm.misys.controller;
 
-import com.rizomm.misys.model.UserRepository;
+import com.rizomm.misys.repository.UserRepository;
+import com.rizomm.misys.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
@@ -16,11 +16,11 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @RequestMapping("/list")
-    public String showUserList(Map<String, Object> model){
-        model.put("list", userRepository.findAll());
+    public String showUserList(Map<String, Object> model) {
+        model.put("list", userService.getAllUsers());
         return "user/list";
     }
 }
