@@ -2,6 +2,9 @@ package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.*;
 import com.rizomm.misys.repository.*;
+import com.rizomm.misys.service.product.CategoryService;
+import com.rizomm.misys.service.product.ProductService;
+import com.rizomm.misys.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -24,11 +27,11 @@ import java.util.List;
 public class ProductController implements ErrorController {
 
     @Autowired
-    private ProductRepository _productRepository;
+    private ProductService productService;
     @Autowired
-    private CategoryRepository _categoryRepository;
+    private CategoryService categoryService;
     @Autowired
-    private UserRepository _userRepository;
+    private UserService userService;
     @Autowired
     private SelectionRepository _selectionRepository;
     @Autowired
@@ -45,8 +48,9 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id) {
         try{
             List<Category> listCategories = new ArrayList<>();              //should contain the name of categories
-            Product product = _productRepository.findOne(id);
-            List<Product> products = _productRepository.findFirst10ByBrand(product.getBrand());
+            Product product = productService.getOneById(id)
+                .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id)));
+            Set<Product> products = productService.getFirst10ByBrand(product.getBrand());
             if (products.contains(product))
             {
                 products.remove(product);
@@ -65,9 +69,12 @@ public class ProductController implements ErrorController {
                 if(category.getIdParent() == 0) //
                     run = false;
                 else
-                    category = _categoryRepository.findOne(category.getIdParent()); //take parent data
+                    category = categoryService.getOneById(category.getIdParent()) //take parent data
+                        .orElseThrow(() -> new NoSuchElementException(String.format("Category=%s not found", id)));
             }
             Collections.reverse(listCategories);
+
+
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
@@ -92,8 +99,10 @@ public class ProductController implements ErrorController {
             System.out.println("Product : " + id_product);
             System.out.println("Quantity : " + quantity);
 
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
+            User user = userService.getOneById(id_user)
+                .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id_user)));
+            Product product = productService.getOneById(id_product)
+                .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id_product)));
 
             SelectionLine selectionLine = new SelectionLine();
             selectionLine.setProduct(product);
@@ -125,8 +134,10 @@ public class ProductController implements ErrorController {
             System.out.println("Product : " + id_product);
             System.out.println("Quantity : " + quantity);
 
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
+            User user = userService.getOneById(id_user)
+                    .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id_user)));
+            Product product = productService.getOneById(id_product)
+                    .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id_product)));
 
             SelectionLine selectionLine = new SelectionLine();
             selectionLine.setProduct(product);

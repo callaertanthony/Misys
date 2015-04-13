@@ -1,7 +1,7 @@
 package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.Product;
-import com.rizomm.misys.repository.ProductRepository;
+import com.rizomm.misys.service.product.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,18 +15,18 @@ import java.util.Collection;
  * Created by Guillaume on 3/12/2015.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.HEAD})
 public class HomeController {
 
     @Autowired
-    private ProductRepository _productRepository;
+    private ProductService productService;
 
 
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView showProductDetail() {
         try {
             Collection<Product> listProducts = new ArrayList<>();
-            Iterable<Product> it = _productRepository.findAll();
+            Iterable<Product> it = productService.getAllProducts();
             if (null == it)
                 return new ModelAndView("404");
             for (Product product : it) {
