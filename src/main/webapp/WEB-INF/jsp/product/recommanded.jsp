@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
@@ -7,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="recommended_items"><!--recommended_items-->
     <h2 class="title text-center">recommended items</h2>
 
@@ -14,7 +15,6 @@
         <div class="carousel-inner">
 
             <c:set var="count" value="0"/>
-
             <%int i = 0; %>
 
             <c:forEach items="${productsRecommended}" var="productElement">
@@ -26,33 +26,24 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <a href="${pageContext.request.contextPath}/product/detail/${productElement.id}">
-                                    <img src="${productElement.getPicturelink()}"
+                                <a href="<spring:url value="/product/detail/${productElement.id}"/>">
+                                    <img src="<spring:url value="${productElement.getPicturelink()}"/>">
                                          alt="${productElement.name} picture"/>
                                 </a>
 
                                 <h2>${productElement.price}€</h2>
 
                                 <p>${productElement.name}</p>
-
                                 <div>
                                     <label>Quantity:</label>
-                                    <input type="number" value="1" max="${productElement.stock.quantity}" min="0"/>
+                                    <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
                                 </div>
                             </div>
                         </div>
                         <div class="choose">
                             <ul class="nav nav-pills nav-justified">
-                                <li>
-                                    <button type="button" class="btn btn-default add-to-wishlist-btn"><i
-                                            class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="btn btn-default add-to-cart-btn"><i
-                                            class="glyphicon glyphicon-shopping-cart"></i>Add to cart
-                                    </button>
-                                </li>
+                                <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
+                                <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
                             </ul>
                         </div>
                     </div>
@@ -63,12 +54,12 @@
                     </div>
                     <c:set var="count" value="0"/>
                 </c:if>
-            </c:forEach>
+             </c:forEach>
             <c:if test="${count != 0}">
         </div>
 
         </c:if>
-    </div>
+        </div>
 
     <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
             <i class="glyphicon glyphicon-chevron-left"></i>

@@ -3,9 +3,9 @@
  */
 $(function () {
     $(document).on("click", ".add-to-wishlist-btn", function () {
-        if ($(this).parents('.product-details').length) {
-            var input = $('#inputQuantity');
-            var id = $('#inputId').val();
+        if ($(this).parents('.product-details').length){
+            var input =$('#inputQuantity');
+            var id =$('#inputId').val();
         } else {
             var input = $(this).parents('.product-image-wrapper').first().find('input[type="number"]');
             var id = $(this).parents('.product-image-wrapper').first().find('a[href*="product/detail"]').first().attr('href').replace('/product/detail/', '');
@@ -15,9 +15,9 @@ $(function () {
     })
 
     $(document).on("click", ".add-to-cart-btn", function () {
-        if ($(this).parents('.product-details').length) {
-            var input = $('#inputQuantity');
-            var id = $('#inputId').val();
+        if ($(this).parents('.product-details').length){
+            var input =$('#inputQuantity');
+            var id =$('#inputId').val();
         } else {
             var input = $(this).parents('.product-image-wrapper').first().find('input[type="number"]');
             var id = $(this).parents('.product-image-wrapper').first().find('a[href*="product/detail"]').first().attr('href').replace('/product/detail/', '');
@@ -27,11 +27,11 @@ $(function () {
 
     })
 
-    function addTo(input, id, url) {
+    function addTo(input, id, url){
         //test de la quantité
         var quantityS = input.val();
         var quantity = parseInt(quantityS);
-        if (isNaN(quantity) || quantity == 0 || quantity == "" || quantity == undefined || input.attr('min') > quantity || input.attr('max') < quantity) {
+        if (isNaN(quantity)|| quantity == 0 || quantity == "" || quantity == undefined || input.attr('min') > quantity || input.attr('max') < quantity) {
             input.addClass('error');
         } else {
             var string = "id_user=1&id_product=" + id + "&quantity=" + quantity;
@@ -50,9 +50,9 @@ $(function () {
     }
 
     /*
-     eneleve la classe error sur les input de quantity
-     */
-    $(document).on("change", 'input.error', function () {
+        eneleve la classe error sur les input de quantity
+    */
+    $(document).on("change", 'input.error', function(){
         $(this).removeClass('error');
     })
 })

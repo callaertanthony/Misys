@@ -115,9 +115,10 @@ public class User {
         this.selections = selections;
     }
 
-    public Selection wishList() {
-        for (Selection selection : selections) {
-            if (selection.getType() == 1) {
+    public Selection wishList()
+    {
+        for(Selection selection: selections){
+            if (selection.getType() == 1){
                 return selection;
             }
         }
@@ -129,9 +130,10 @@ public class User {
         return wishlist;
     }
 
-    public Selection cart() {
-        for (Selection selection : selections) {
-            if (selection.getType() == 2) {
+    public Selection cart()
+    {
+        for(Selection selection: selections){
+            if (selection.getType() == 2){
                 return selection;
             }
         }
