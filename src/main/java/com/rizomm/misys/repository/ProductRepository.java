@@ -12,4 +12,10 @@ import java.util.Set;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     Set<Product> findFirst10ByBrand(Brand brand);
+
+    Set<Product> findByNameContaining(String name);
+
+    Set<Product> findByReferenceContaining(String reference);
+
+    Set<Product> findByDescriptionContaining(String description);
 }

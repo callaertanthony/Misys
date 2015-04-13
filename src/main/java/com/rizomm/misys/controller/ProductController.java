@@ -2,6 +2,8 @@ package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.*;
 import com.rizomm.misys.repository.*;
+import com.rizomm.misys.repository.SelectionLineRepository;
+import com.rizomm.misys.repository.SelectionRepository;
 import com.rizomm.misys.service.product.CategoryService;
 import com.rizomm.misys.service.product.ProductService;
 import com.rizomm.misys.service.user.UserService;
@@ -165,11 +167,11 @@ public class ProductController implements ErrorController {
 
         String[] keysSplit = searchInput.split(" ");
 
-        List<Product> products = _productRepository.findByNameContaining(keysSplit[0]);
+        List<Product> products = new ArrayList<>(productService.getAllByNameContaining(keysSplit[0]));
 
         //recherche par terme dans le nom
         for (String key : keysSplit) {
-            List<Product> productsByName = _productRepository.findByNameContaining(key);
+            Set<Product> productsByName = productService.getAllByNameContaining(key);
             Iterator<Product> prod = products.iterator();
             while (prod.hasNext()) {
                 Product p = prod.next();
@@ -180,7 +182,7 @@ public class ProductController implements ErrorController {
         }
 
         // recherche par ref
-        List<Product> productByRef = _productRepository.findByReferenceContaining(searchInput);
+        Set<Product> productByRef = productService.getAllByReferenceContaining(searchInput);
         for (Product prod : productByRef) {
             if (!products.contains(prod)) {
                 products.add(prod);
@@ -188,9 +190,9 @@ public class ProductController implements ErrorController {
         }
 
         //recherche par la description
-        List<Product> productsByDesc = _productRepository.findByDescriptionContaining(keysSplit[0]);
+        Set<Product> productsByDesc = productService.getAllByDescriptionContaining(keysSplit[0]);
         for (String key : keysSplit) {
-            List<Product> productsByD = _productRepository.findByDescriptionContaining(key);
+            Set<Product> productsByD = productService.getAllByDescriptionContaining(key);
             Iterator<Product> prod = productsByDesc.iterator();
             while (prod.hasNext()) {
                 Product p = prod.next();

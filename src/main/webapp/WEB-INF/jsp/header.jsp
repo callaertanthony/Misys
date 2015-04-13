@@ -19,24 +19,7 @@
                                                   alt=""/></a>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <form action="${pageContext.request.contextPath}/product/search" method="get">
-                        <div class="input-group">
-                            <div class="col-sm-8">
-                                <input type="text" name="searchInput" id="searchInput" class="form-control"
-                                       placeholder="Rechercher" style="border: 0px;">
-                            </div>
-                            <div class="col-sm-4">
-
-                            <button type="submit" id="searchBtn" class="btn btn-default">
-                                    <span
-                                            class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-sm-5">
+                <div class="col-sm-7">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="<spring:url value="/account"/>"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
@@ -49,4 +32,31 @@
             </div>
         </div>
     </div><!--/header-middle-->
+    <div class="header-bottom"><!--header-bottom-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="navbar-header">
+                        <!-- TODO DO BREADCUMB WILL FILL WELL HERE? -->
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <form action="${pageContext.request.contextPath}/product/search" method="get">
+                        <div class="input-group">
+                            <div class="col-sm-8">
+                                <input type="text" name="searchInput" id="searchInput" class="form-control pull-right"
+                                       placeholder="Rechercher" style="border: 0px;">
+                            </div>
+                            <div class="col-sm-4">
+
+                                <button type="submit" id="searchBtn" class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </header><!--/header-->

@@ -32,7 +32,7 @@
 <body>
     <div class="container text-center">
         <div class="logo-404">
-            <a href="/"><img src="<spring:url value="/images/home/logo.png"/>" alt="" /></a>
+            <a href="/"><img src="<spring:url value="/assets/images/home/logo.png"/>" alt="" /></a>
         </div>
         <div class="content-404">
             <h1><b>OPPS!</b> An unexpected error occured.</h1>

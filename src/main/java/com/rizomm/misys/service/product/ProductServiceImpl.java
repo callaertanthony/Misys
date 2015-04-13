@@ -59,4 +59,22 @@ public class ProductServiceImpl implements ProductService {
         Set<Product> products = new HashSet<>(productRepository.findAll());
         return products;
     }
+
+    @Override
+    public Set<Product> getAllByNameContaining(String name) {
+        Set<Product> products = new HashSet<>(productRepository.findByNameContaining(name));
+        return products;
+    }
+
+    @Override
+    public Set<Product> getAllByReferenceContaining(String reference) {
+        Set<Product> products = new HashSet<>(productRepository.findByReferenceContaining(reference));
+        return products;
+    }
+
+    @Override
+    public Set<Product> getAllByDescriptionContaining(String description) {
+        Set<Product> products = new HashSet<>(productRepository.findByDescriptionContaining(description));
+        return products;
+    }
 }

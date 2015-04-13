@@ -9,17 +9,19 @@
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
 <%@taglib prefix="fn" uri="/WEB-INF/fn.tld" %>
 <%@taglib prefix="fmt" uri="/WEB-INF/fmt.tld" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <html>
 <head>
     <title>Search | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/price-range.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/animate.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/responsive.css" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/price-range.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/animate.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/main.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/responsive.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
@@ -57,8 +59,8 @@
 
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <a href="${pageContext.request.contextPath}/product/detail/${product.id}">
-                                        <img src="${product.getPicturelink()}"
+                                    <a href="<spring:url value="/product/detail/${product.id}"/>">
+                                        <img src="<spring:url value="${product.getPicturelink()}"/>"
                                              alt="${product.name} picture"/>
                                     </a>
 
@@ -69,10 +71,10 @@
                                     <input id="product-quantity${product.id}" type="text" value="3"
                                            class="form-control"/>
                                     <button type="button" class="btn btn-default add-to-cart"><a
-                                            href="cart/add/${product.id}"><i
+                                            href="<spring:url value="cart/add/${product.id}"/>"><i
                                             class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a></button>
                                     <button type="button" class="btn btn-default add-to-wishlist"><a
-                                            href="wishlist/add/${product.id}"><i
+                                            href="<spring:url value="wishlist/add/${product.id}"/>"><i
                                             class="glyphicon glyphicon-haert-empty"></i>Add to wishlist</a></button>
                                 </div>
 
@@ -87,6 +89,6 @@
 
 <!-- INCLUDE FOOTER -->
 <jsp:include page="../footer.jsp"/>
-<script src="${pageContext.request.contextPath}/assets/js/search.js"></script>
+<script src="<spring:url value="/assets/js/search.js"/>"></script>
 </body>
 </html>

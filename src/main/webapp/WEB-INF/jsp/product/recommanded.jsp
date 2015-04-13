@@ -27,8 +27,7 @@
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <a href="<spring:url value="/product/detail/${productElement.id}"/>">
-                                    <img src="<spring:url value="${productElement.getPicturelink()}"/>">
-                                         alt="${productElement.name} picture"/>
+                                    <img src="<spring:url value="${productElement.getPicturelink()}"/>" alt="${productElement.name} picture"/>
                                 </a>
 
                                 <h2>${productElement.price}€</h2>

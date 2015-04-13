@@ -18,4 +18,10 @@ public interface ProductService {
     Optional<Product> getOneById(int id);
 
     Set<Product> getAllProducts();
+
+    Set<Product> getAllByNameContaining(String name);
+
+    Set<Product> getAllByReferenceContaining(String reference);
+
+    Set<Product> getAllByDescriptionContaining(String description);
 }
