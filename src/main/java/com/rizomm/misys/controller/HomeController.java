@@ -30,7 +30,6 @@ public class HomeController {
             if (null == it)
                 return new ModelAndView("404");
             for (Product product : it) {
-                System.out.println("Adding " + product.getName());
                 listProducts.add(product);
             }
             if (null == listProducts || listProducts.isEmpty())

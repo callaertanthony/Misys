@@ -69,12 +69,14 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                        <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Liste de souhaits</button></li>
+                                        <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Ajouter au panier</button></li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
                     </c:forEach>

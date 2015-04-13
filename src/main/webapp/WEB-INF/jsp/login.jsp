@@ -58,7 +58,10 @@
                         <form action="#">
                             <input type="text" placeholder="Name">
                             <input type="email" placeholder="Email Address">
+                            <input type="address" placeholder="Address">
+                            <input type="phone" placeholder="Phone">
                             <input type="password" placeholder="Password">
+                            <input type="password" placeholder="Confirm password">
                             <button type="submit" class="btn btn-default">Signup</button>
                         </form>
                     </div><!--/sign up form-->
@@ -66,7 +69,6 @@
             </div>
         </div>
     </section>
-
     <!-- INCLUDE FOOTER -->
     <jsp:include page="footer.jsp" />
 </body>
