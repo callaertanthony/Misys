@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * Created by anthonycallaert on 12/04/15.
@@ -41,7 +42,7 @@ public class CartController {
     @RequestMapping(value="/shop/cart", method = RequestMethod.GET)
     public ModelAndView getCartPage() {
         ModelAndView modelAndView = new ModelAndView("shop/cart");
-        Collection<Product> products = cartService.getProducts();
+        HashMap<Product, Integer> products = cartService.getProducts();
         modelAndView.addObject("products", products);
         return modelAndView;
     }

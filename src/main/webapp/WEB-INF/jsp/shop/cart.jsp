@@ -57,19 +57,19 @@
                 <c:forEach items="${products}" var="product">
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="<spring:url value="${product.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
+                            <a href=""><img src="<spring:url value="${product.key.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="<spring:url value="/product/detail/${product.id}"/>}">${product.name}</a></h4>
-                            <p>Réf produit: ${product.reference}</p>
+                            <h4><a href="<spring:url value="/product/detail/${product.key.id}"/>}">${product.key.name}</a></h4>
+                            <p>Réf produit: ${product.key.reference}</p>
                         </td>
                         <td class="cart_price">
-                            <p>${product.price}</p>
+                            <p>${product.key.price}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
                                 <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+                                <input class="cart_quantity_input" type="text" name="quantity" value="${product.value}" autocomplete="off" size="2">
                                 <a class="cart_quantity_down" href=""> - </a>
                             </div>
                         </td>
