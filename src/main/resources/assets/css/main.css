@@ -916,7 +916,10 @@ h2.title {
   width: 100%;
 }
 
-.product-overlay .add-to-cart {
+.add-to-cart, .add-to-wishlist {
+    width: 100%;
+    border: 0;
+    /*
   background:#fff;
   border: 0 none;
   border-radius: 0;
@@ -924,11 +927,12 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   margin-bottom: 25px;
+  */
 }
 
-.product-overlay .add-to-cart:hover {
-  background:#fff;
-  color: #FE980F;
+ .add-to-cart:hover, .add-to-wishlist:hover {
+     background: #FE980F;
+     color: #FFFFFF;
 }
 
 
@@ -938,7 +942,7 @@ h2.title {
   font-weight: 400;
   color: #fff;
 }
-
+/*
 
 
 .add-to-cart {
@@ -957,7 +961,7 @@ h2.title {
   border-radius: 0;
   color: #FFFFFF;
 }
-
+*/
 .add-to{
   margin-bottom: 10px;
 }
@@ -965,12 +969,12 @@ h2.title {
 .add-to-cart i{
 	margin-right:5px;
 }
-
+/*
 .add-to-cart:hover {
     background: #FE980F;
     color: #FFFFFF;
 }
-
+*/
 .choose {
     border-top: 1px solid #F7F7F0;
 }
