@@ -53,16 +53,16 @@
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Les produits du moment</h2>
                     <c:forEach items="${products}" var="product">
-                    <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
-                        <input name="productId" type="hidden" value="${product.id}"/>
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <a href="<spring:url value="/product/detail/${product.id}"/>">
-                                            <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
-                                        </a>
-                                        <h2>${product.price}€</h2>
+                        <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
+                            <input name="productId" type="hidden" value="${product.id}"/>
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a href="<spring:url value="/product/detail/${product.id}"/>">
+                                                <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
+                                            </a>
+                                            <h2>${product.price}€</h2>
 
                                             <p>${product.name}</p>
                                             <div>

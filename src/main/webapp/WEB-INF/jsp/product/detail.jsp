@@ -70,55 +70,68 @@
 
                 <div class="col-sm-9 padding-right">
                     <div class="product-details"><!--product-details-->
-                        <div class="col-sm-5">
-                            <div class="view-product">
-                               <img src="<spring:url value="/${product.getPicturelink()}"/>" alt="${product.name}" />
+                        <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
+                            <input name="productId" type="hidden" value="${product.id}"/>
+                            <div class="col-sm-5">
+                                <div class="view-product">
+                                   <img src="<spring:url value="/${product.getPicturelink()}"/>" alt="${product.name}" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="product-information"><!--/product-information-->
-                                <h2>${product.name}</h2>
-                                <p>Web ID: ${product.reference}</p>
-                                <c:set var="noteMoyenne" value="0"/>
-                                <c:forEach items="${product.reviews}" var="item">
-                                    <c:set var="noteMoyenne" value="${noteMoyenne+item.note}"/>
-                                </c:forEach>
-                                <c:choose>
-                                    <c:when test="${noteMoyenne<='0'}">
-                                        <p>Note: 0/5</p>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
-                                        <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
-                                    </c:otherwise>
-                                </c:choose>
-                                <span>
-                                    <span>${product.price}€</span>
-                                    <label>Quantity:</label>
-                                    <input id="inputQuantity" type="number" value="1" max="${product.stock.quantity}" min="0"/>
-                                    <input type="hidden" id="inputId" value="${product.id}"/>
-                                    <button type="button" class="btn btn-default add-to-cart-btn">
-                                        <i class="glyphicon glyphicon-credit-card"></i>
-                                        Add to cart
-                                    </button>
-                                    <button type="button" class="btn btn-default add-to-wishlist-btn">
-                                        <i class="glyphicon glyphicon-heart-empty"></i>
-                                        Add to wishlist
-                                    </button>
-                                </span>
-                                <c:choose>
-                                    <c:when test="${product.haveStock()}">
-                                        <p><b>Availability:</b> In Stock</p>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <p><b>Availability:</b> Out of stock</p>
-                                    </c:otherwise>
-                                </c:choose>
-                                <p><b>Brand:</b> ${product.getBrand().getName()}</p>
-                                <a href=""><img src="<spring:url value="/assets/images/product-details/share.png"/>"
-                                        class="share img-responsive" alt=""/></a>
-                            </div><!--/product-information-->
-                        </div>
+                            <div class="col-sm-7">
+                                <div class="product-information"><!--/product-information-->
+                                    <h2>${product.name}</h2>
+                                    <p>Web ID: ${product.reference}</p>
+                                    <c:set var="noteMoyenne" value="0"/>
+                                    <c:forEach items="${product.reviews}" var="item">
+                                        <c:set var="noteMoyenne" value="${noteMoyenne+item.note}"/>
+                                    </c:forEach>
+                                    <c:choose>
+                                        <c:when test="${noteMoyenne<='0'}">
+                                            <p>Note: 0/5</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:set var="noteMoyenne" value="${noteMoyenne / fn:length(product.reviews)}"/>
+                                            <p>Note: <fmt:formatNumber value="${noteMoyenne}" maxFractionDigits="2"/>/5</p>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <span>
+                                        <span>${product.price}€</span>
+                                        <label>Quantity:</label>
+                                        <input id="quantity" type="number" value="1" max="${product.stock.quantity}" min="1"/>
+                                        <input type="hidden" id="inputId" value="${product.id}"/>
+
+                                        <div class="choose">
+
+                                            <ul class="nav nav-pills nav-stacked">
+                                                <li>
+                                                    <button type="button" class="btn btn-default add-to-wishlist"
+                                                            formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}">
+                                                        <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="btn btn-default add-to-cart"
+                                                            formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
+                                                        <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <c:choose>
+                                        <c:when test="${product.haveStock()}">
+                                            <p><b>Availability:</b> In Stock</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <p><b>Availability:</b> Out of stock</p>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <p><b>Brand:</b> ${product.getBrand().getName()}</p>
+                                    <a href=""><img src="<spring:url value="/assets/images/product-details/share.png"/>"
+                                            class="share img-responsive" alt=""/></a>
+                                </div><!--/product-information-->
+                            </div>
+                        </form>
                     </div><!--/product-details-->
 
                     <div class="category-tab shop-details-tab"><!--category-tab-->
