@@ -1,9 +1,6 @@
 package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.*;
-import com.rizomm.misys.repository.*;
-import com.rizomm.misys.repository.SelectionLineRepository;
-import com.rizomm.misys.repository.SelectionRepository;
 import com.rizomm.misys.service.product.CategoryService;
 import com.rizomm.misys.service.product.ProductService;
 import com.rizomm.misys.service.user.UserService;
@@ -18,8 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,10 +30,6 @@ public class ProductController implements ErrorController {
     private CategoryService categoryService;
     @Autowired
     private UserService userService;
-    @Autowired
-    private SelectionRepository _selectionRepository;
-    @Autowired
-    private SelectionLineRepository _selectionLineRepository;
     /**
      * This method will retrieve the product & category from the database and call the detail JSP page.
      * If the product or category can't be found, the 404 page will be shown to the user.
@@ -88,76 +79,6 @@ public class ProductController implements ErrorController {
             return mNv;
         } catch (IllegalArgumentException e) {
             return new ModelAndView("404");
-        }
-    }
-
-    @RequestMapping(value = "/addtowishlist", method = RequestMethod.POST)
-    public void addToWishlist(HttpServletRequest req) {
-        try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
-            int quantity = Integer.parseInt(req.getParameter("quantity"));
-
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
-            System.out.println("Quantity : " + quantity);
-
-            User user = userService.getOneById(id_user)
-                .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id_user)));
-            Product product = productService.getOneById(id_product)
-                .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id_product)));
-
-            SelectionLine selectionLine = new SelectionLine();
-            selectionLine.setProduct(product);
-            selectionLine.setQuantity(quantity);
-            List<SelectionLine> list = new LinkedList<>();
-
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
-
-            list.add(selectionLine);
-            user.wishList().setSelectionLines(list);
-
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
-    public void addToCart(HttpServletRequest req) {
-        try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
-            int quantity = Integer.parseInt(req.getParameter("quantity"));
-
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
-            System.out.println("Quantity : " + quantity);
-
-            User user = userService.getOneById(id_user)
-                    .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id_user)));
-            Product product = productService.getOneById(id_product)
-                    .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id_product)));
-
-            SelectionLine selectionLine = new SelectionLine();
-            selectionLine.setProduct(product);
-            selectionLine.setQuantity(quantity);
-            List<SelectionLine> list = new LinkedList<>();
-
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
-
-            list.add(selectionLine);
-            user.cart().setSelectionLines(list);
-
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 

@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="/WEB-INF/c.tld" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -35,37 +36,23 @@
     <section id="form">
         <div class="container">
             <div class="row">
+                <div class="col-sm-4"></div>
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="login-form"><!--login form-->
                         <h2>Login to your account</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email Address">
+                        <form:form method="post" modelAttribute="error" class="form-horizontal" role="form" action="">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                            <input type="email" name="email" id="email" required autofocus class="form-control" placeholder="Email Address" />
+                            <input type="password" name="password" id="password" required class="form-control" placeholder="Password"/>
                                 <span>
-                                    <input type="checkbox" class="checkbox">
+                                    <input type="checkbox" name="remember-me" id="remember-me" class="checkbox"/>
                                     Keep me signed in
                                 </span>
                             <button type="submit" class="btn btn-default">Login</button>
-                        </form>
+                        </form:form>
                     </div><!--/login form-->
                 </div>
-                <div class="col-sm-1">
-                    <h2 class="or">OR</h2>
-                </div>
-                <div class="col-sm-4">
-                    <div class="signup-form"><!--sign up form-->
-                        <h2>New User Signup!</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email Address">
-                            <input type="address" placeholder="Address">
-                            <input type="phone" placeholder="Phone">
-                            <input type="password" placeholder="Password">
-                            <input type="password" placeholder="Confirm password">
-                            <button type="submit" class="btn btn-default">Signup</button>
-                        </form>
-                    </div><!--/sign up form-->
-                </div>
+                <div class="col-sm-4"></div>
             </div>
         </div>
     </section>

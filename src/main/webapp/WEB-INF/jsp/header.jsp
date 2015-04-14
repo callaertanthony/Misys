@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <header id="header"><!--header-->
     <div class="header-middle"><!--header-middle-->
@@ -22,10 +24,21 @@
                 <div class="col-sm-7">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="<spring:url value="/account"/>"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
                             <li><a href="<spring:url value="/wishlist"/>"><i class="glyphicon glyphicon-heart-empty"></i> Liste d'envies</a></li>
                             <li><a href="<spring:url value="/shop/cart"/>"><i class="glyphicon glyphicon-shopping-cart"></i> Panier</a></li>
-                            <li><a href="<spring:url value="/login"/>"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
+                            <spring:url var="logoutUrl" value="/logout"/>
+                            <sec:authorize access="isAuthenticated()">
+                                <li><a href="<spring:url value="/account/view"/>"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
+                                <li>
+                                    <form:form action="${logoutUrl}" method="post" class="form-inline left">
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  class="form-control"/>
+                                        <button type="submit" class="submitLink">Se déconnecter</button>
+                                    </form:form>
+                                </li>
+                            </sec:authorize>
+                            <sec:authorize access="!isAuthenticated()">
+                                <li><a href="<spring:url value="/login"/>"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
+                            </sec:authorize>
                         </ul>
                     </div>
                 </div>
