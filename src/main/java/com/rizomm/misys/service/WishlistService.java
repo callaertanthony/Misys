@@ -13,4 +13,8 @@ public interface WishlistService {
     WishList addProductByForm(WishlistProductForm wishlistProductForm);
 
     Collection<Product> getProducts();
+
+    void removeProduct(int id);
+
+    void removeAllProducts();
 }

@@ -35,12 +35,6 @@
 <jsp:include page="../header.jsp" />
 <section id="cart_items">
     <div class="container">
-        <div class="breadcrumbs">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
-            </ol>
-        </div>
         <div class="table-responsive cart_info">
             <table class="table table-condensed">
                 <thead>
@@ -54,35 +48,57 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${products}" var="product">
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="<spring:url value="${product.key.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
+                <c:choose>
+                    <c:when test="${not empty products}">
+                        <c:forEach items="${products}" var="product">
+                            <tr>
+                                <td class="cart_product">
+                                    <a href=""><img src="<spring:url value="${product.key.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="<spring:url value="/product/detail/${product.key.id}"/>}">${product.key.name}</a></h4>
+                                    <p>Réf produit: ${product.key.reference}</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>${product.key.price}</p>
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="cart_quantity_button">
+                                        <a class="cart_quantity_up" href=""> + </a>
+                                        <input class="cart_quantity_input" type="text" name="quantity" value="${product.value}" autocomplete="off" size="2">
+                                        <a class="cart_quantity_down" href=""> - </a>
+                                    </div>
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">$?</p>
+                                </td>
+                                <td class="cart_delete">
+                                    <form id="productForm-${product.key.id}" name="productForm-${product.key.id}" class="productForm">
+                                        <input name="productId" type="hidden" value="${product.key.id}"/>
+                                        <button type="button" class="btn btn-default remove-from-cart"
+                                                formaction="<spring:url value="/remove-from-cart"/>" form="productForm-${product.key.id}">
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </c:when>
+                    <c:otherwise>
+                        <td>
+                            <p>No product added to your cart yet.</p>
                         </td>
-                        <td class="cart_description">
-                            <h4><a href="<spring:url value="/product/detail/${product.key.id}"/>}">${product.key.name}</a></h4>
-                            <p>Réf produit: ${product.key.reference}</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>${product.key.price}</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="${product.value}" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$?</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="glyphicon glyphicon-remove"></i></a>
-                        </td>
-                    </tr>
-                </c:forEach>
+                    </c:otherwise>
+                </c:choose>
                 </tbody>
             </table>
+            <form id="productForm-${product.key.id}" name="productForm-${product.key.id}" class="productForm">
+                <input name="productId" type="hidden" value="${product.key.id}"/>
+                <button type="button" class="btn btn-default remove-all-from-cart"
+                        formaction="<spring:url value="/remove-all-from-cart"/>" form="productForm-${product.key.id}">
+                    <i class="glyphicon glyphicon-trash"></i> Remove all products
+                </button>
+            </form>
         </div>
     </div>
 </section> <!--/#cart_items-->

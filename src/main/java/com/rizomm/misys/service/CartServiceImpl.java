@@ -40,6 +40,11 @@ public class CartServiceImpl implements CartService {
         return cart;
     }
 
+    /**
+     * This method retrieve the cart of the current user to fetch products from database and fetch them with quantities
+     *
+     * @return An HashMap with products as keys and quantities as values.
+     */
     @Override
     public HashMap<Product, Integer> getProducts() {
         HashMap<Product, Integer> products = new HashMap<>();
@@ -49,4 +54,18 @@ public class CartServiceImpl implements CartService {
         }
         return products;
     }
+
+    @Override
+    public void removeProduct(int id) {
+        Product product = productRepository.findOne(id);
+        if(null != product)
+            this.cart.removeProduct(product);
+    }
+
+    @Override
+    public void removeAllProducts() {
+        this.cart.removeAllProducts();
+    }
+
+
 }

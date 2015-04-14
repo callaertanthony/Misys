@@ -77,4 +77,13 @@ public class Cart implements Serializable{
             this.products.remove(product.getId());
         }
     }
+
+    /**
+     * Method to remove all products from cart.
+     */
+    public void removeAllProducts(){
+        this.products.clear();
+    }
+
+
 }

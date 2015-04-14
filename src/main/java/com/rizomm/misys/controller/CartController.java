@@ -46,4 +46,22 @@ public class CartController {
         modelAndView.addObject("products", products);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/remove-from-cart", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String removeFromCart(@RequestBody CartProductForm cartProductForm){
+        LOGGER.debug("Getting ajax request for removing product from cart {} = ", cartProductForm);
+        cartService.removeProduct(cartProductForm.getProductId());
+        LOGGER.debug("End to removing product from cart");
+        return "redirect:/shop/cart";
+    }
+
+    @RequestMapping(value = "/remove-all-from-cart", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String removeAllFromCart(@RequestBody CartProductForm cartProductForm){
+        LOGGER.debug("Getting ajax request for removing all products from cart {} = ", cartProductForm);
+        cartService.removeAllProducts();
+        LOGGER.debug("End to removing all products from cart");
+        return "redirect:/shop/cart";
+    }
 }

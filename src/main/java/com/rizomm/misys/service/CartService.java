@@ -15,4 +15,8 @@ public interface CartService {
     Cart addProductByForm(CartProductForm cartProductForm);
 
     HashMap<Product, Integer> getProducts();
+
+    void removeProduct(int id);
+
+    void removeAllProducts();
 }
