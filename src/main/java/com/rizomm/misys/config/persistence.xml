@@ -7,6 +7,12 @@
     <property name="connection.url">jdbc:mysql://localhost:3306/misys</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
       <mapping class="com.rizomm.misys.model.User"/>
+      <mapping class="com.rizomm.misys.model.Stock"/>
+      <mapping class="com.rizomm.misys.model.Product"/>
+      <mapping class="com.rizomm.misys.model.Brand"/>
+      <mapping class="com.rizomm.misys.model.Review"/>
+      <mapping class="com.rizomm.misys.model.SelectionLine"/>
+      <mapping class="com.rizomm.misys.model.Selection"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
