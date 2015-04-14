@@ -1,6 +1,6 @@
 package com.rizomm.misys.repository;
 
-import com.rizomm.misys.model.security.User;
+import com.rizomm.misys.model.account.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

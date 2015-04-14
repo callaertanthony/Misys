@@ -1,7 +1,7 @@
-package com.rizomm.misys.model;
+package com.rizomm.misys.model.security;
 
-import com.rizomm.misys.model.security.Role;
-import com.rizomm.misys.model.security.User;
+import com.rizomm.misys.model.account.Role;
+import com.rizomm.misys.model.account.User;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 public class CurrentUser extends org.springframework.security.core.userdetails.User {

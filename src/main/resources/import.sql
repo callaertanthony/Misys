@@ -18,6 +18,12 @@ VALUES
    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu vestibulum ipsum. Quisque bibendum ut lorem eu dictum. Nullam sit amet tempor enim, sed lobortis sapien.',
    'Batwoman', '99', 'B00JG8GBDS', '2', '5', '2');
 
+<<<<<<< Updated upstream:src/main/resources/import.sql
 /* password : demo */
 INSERT INTO user (email, password_hash, role)
 VALUES ('demo@localhost', '$2a$10$ebyC4Z5WtCXXc.HGDc1Yoe6CLFzcntFmfse6/pTj7CeDY5I05w16C', 'ADMIN');
+=======
+#password : demo
+INSERT INTO user (email, password_hash, role)
+VALUES ('demo@localhost', '$2a$10$ebyC4Z5WtCXXc.HGDc1Yoe6CLFzcntFmfse6/pTj7CeDY5I05w16C', 'ADMIN');
+>>>>>>> Stashed changes:src/main/resources/data.sql

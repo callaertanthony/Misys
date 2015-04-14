@@ -1,7 +1,7 @@
 package com.rizomm.misys.service.currentuser;
 
-import com.rizomm.misys.model.CurrentUser;
-import com.rizomm.misys.model.security.User;
+import com.rizomm.misys.model.account.User;
+import com.rizomm.misys.model.security.CurrentUser;
 import com.rizomm.misys.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +21,12 @@ public class CurrentUserDetailsService implements UserDetailsService {
         this.userService = userService;
     }
 
-
     @Override
     public CurrentUser loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userService.getUserByEmail(email).get();
+        LOGGER.debug("Authenticating user with email={}", email.replaceFirst("@.*", "@***"));
+        User user = userService.getUserByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(String.format("User with email=%s was not found", email)));
         return new CurrentUser(user);
     }
+
 }

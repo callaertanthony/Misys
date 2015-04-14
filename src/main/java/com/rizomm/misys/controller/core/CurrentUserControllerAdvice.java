@@ -1,6 +1,6 @@
-package com.rizomm.misys.controller;
+package com.rizomm.misys.controller.core;
 
-import com.rizomm.misys.model.CurrentUser;
+import com.rizomm.misys.model.security.CurrentUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -13,7 +13,7 @@ public class CurrentUserControllerAdvice {
     private static final Logger LOGGER = LoggerFactory.getLogger(CurrentUserControllerAdvice.class);
 
     @ModelAttribute("currentUser")
-    public CurrentUser getCurrentUser(Authentication authentication) {
+    public static CurrentUser getCurrentUser(Authentication authentication) {
         return (authentication == null) ? null : (CurrentUser) authentication.getPrincipal();
     }
 

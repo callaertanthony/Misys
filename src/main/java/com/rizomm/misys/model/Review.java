@@ -1,6 +1,7 @@
 package com.rizomm.misys.model;
 
-import com.rizomm.misys.model.security.User;
+
+import com.rizomm.misys.model.account.User;
 
 import javax.persistence.*;
 

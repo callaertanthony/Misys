@@ -1,11 +1,15 @@
-package com.rizomm.misys.model.form;
+package com.rizomm.misys.model.security.form;
 
-import com.rizomm.misys.model.security.Role;
+import com.rizomm.misys.model.account.Gender;
+import com.rizomm.misys.model.account.Role;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
-public class UserCreateForm {
+/**
+ * Created by anthonycallaert on 19/03/15.
+ */
+public class UserCrudCreateForm {
 
     @NotEmpty
     private String email = "";
@@ -16,8 +20,17 @@ public class UserCreateForm {
     @NotEmpty
     private String passwordRepeated = "";
 
+    @NotEmpty
+    private String firstName = "";
+
+    @NotEmpty
+    private String lastName = "";
+
     @NotNull
-    private Role role = Role.USER;
+    private Gender gender = Gender.MAN;
+
+    @NotNull
+    private Role role = Role.MEMBER;
 
     public String getEmail() {
         return email;
@@ -43,6 +56,30 @@ public class UserCreateForm {
         this.passwordRepeated = passwordRepeated;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -57,8 +94,10 @@ public class UserCreateForm {
                 "email='" + email.replaceFirst("@.+", "@***") + '\'' +
                 ", password=***" + '\'' +
                 ", passwordRepeated=***" + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
                 ", role=" + role +
                 '}';
     }
-
 }

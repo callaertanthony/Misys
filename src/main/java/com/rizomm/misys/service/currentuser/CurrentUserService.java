@@ -1,6 +1,7 @@
 package com.rizomm.misys.service.currentuser;
 
-import com.rizomm.misys.model.CurrentUser;
+
+import com.rizomm.misys.model.security.CurrentUser;
 
 public interface CurrentUserService {
 
