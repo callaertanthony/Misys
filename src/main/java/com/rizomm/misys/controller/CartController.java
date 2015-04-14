@@ -40,7 +40,7 @@ public class CartController {
     }
 
     @RequestMapping(value="/shop/cart", method = RequestMethod.GET)
-    public ModelAndView getCartPage() {
+    public ModelAndView getCartPage(){
         ModelAndView modelAndView = new ModelAndView("shop/cart");
         HashMap<Product, Integer> products = cartService.getProducts();
         modelAndView.addObject("products", products);
