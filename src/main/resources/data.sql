@@ -42,21 +42,19 @@ VALUES
   (NULL,
   'P4', 'P4', 'Electro-Deluxe-Hopeful.jpg', '99', 'B00JG8GBDB', '1', '8','5');
 
- /*
+
 INSERT INTO `misys`.`product` (`id`, `description`, `name`, `picture`, `price`, `reference`, `brand_id`, `category_id`, `stock_id`)
 VALUES
   (NULL,
   'DAFT PUNK « Random Access Memories »
-Un album ambitieux, plein de tubes en puissance qui joue sur un large éventaille d''émotions. Les instruments live remplacent les machines et les guests prestigieux se fondent parfaitement dans ce projet.',
+   Un album ambitieux, plein de tubes en puissance qui joue sur un large éventaille d''émotions. Les instruments live remplacent les machines et les guests prestigieux se fondent parfaitement dans ce projet.',
    'Daft Punk - Random Access memories',
-   'Daft_Punk-Random_Access_Memories[CD].jpg',
-   '9,99',
+   'cd/Daft_Punk-Random_Access_Memories.jpg',
+   '9.99',
    'B00JG8GBDC',
    '5',
    '13',
    '6');
-*/
 
 INSERT INTO `misys`.`review` (`id`, `note`, `review`, `product_id`, `user_id`)
 VALUES (NULL, '6', 'Review 1', '1', '1'), (NULL, '5', 'Review 2', '1', '1');
-

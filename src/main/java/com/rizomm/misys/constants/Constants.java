@@ -6,6 +6,6 @@ package com.rizomm.misys.constants;
 public final class Constants {
 
     public static class Product{
-        public static final String imagePath = "/assets/images/product-details/";
+        public static final String imagePath = "assets/images/product-details/";
     }
 }
