@@ -22,6 +22,7 @@
     <link href="<spring:url value="/assets/css/animate.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/main.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/responsive.css"/>" rel="stylesheet">
+    <link href="<spring:url value="/assets/css/table-div.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath}/assets/js/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/respond.min.js"></script>
@@ -34,56 +35,69 @@
 <section id="cart_items">
     <div class="container">
         <div class="table-responsive cart_info">
+            <div class="rTable table table-condensed"> <!-- TODO Don't try to be uniforme in the % repartition, description should have more % than others-->
+                <div class="rTableHeading cart_menu">
 
-            <table class="table table-condensed">
-                <thead>
-                <tr class="cart_menu">
-                    <td class="image">Item</td>
-                    <td class="description"></td>
-                    <td class="price">Price</td>
-                    <td class="quantity">Quantity</td>
-                    <td class="total">Total</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </thead>
-                <tbody>
+                    <div class="rTableHead7 image">
+                        Item
+                    </div>
+                    <div class="rTableHead7 description">
+
+                    </div>
+                    <div class="rTableHead7 price">
+                        Price
+                    </div>
+                    <div class="rTableHead7 quantity">
+                        Quantity
+                    </div>
+                    <div class="rTableHead7 total">
+                        Total
+                    </div>
+                    <div class="rTableHead7 total">
+                        Remove
+                    </div>
+                    <div class="rTableHead7 total">
+                        Update
+                    </div>
+
+                </div>
+                <div class="rTableBody">
                 <c:choose>
                     <c:when test="${not empty products}">
                         <c:forEach items="${products}" var="product">
-                            <tr>
+                            <div class="rTableRow">
                                 <form id="productForm-${product.key.id}" name="productForm-${product.key.id}" class="productForm">
                                     <input name="productId" type="hidden" value="${product.key.id}"/>
-                                    <td class="cart_product">
+                                    <div class="rTableCell7 cart_product">
                                         <a href=""><img src="<spring:url value="${product.key.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
-                                    </td>
-                                    <td class="cart_description">
+                                    </div>
+                                    <div class="rTableCell7 cart_description">
                                         <h4><a href="<spring:url value="/product/detail/${product.key.id}"/>}">${product.key.name}</a></h4>
                                         <p>Réf produit: ${product.key.reference}</p>
-                                    </td>
-                                    <td class="cart_price">
+                                    </div>
+                                    <div class="rTableCell7 cart_price">
                                         <p>${product.key.price}</p>
-                                    </td>
-                                    <td class="cart_quantity">
+                                    </div>
+                                    <div class="rTableCell7 cart_quantity">
                                         <input name="quantity" type="number" value="${product.value}" max="${product.key.stock.quantity}" min="1" form="productForm-${product.key.id}"/>
-                                    </td>
-                                    <td class="cart_total">
+                                    </div>
+                                    <div class="rTableCell7 cart_total">
                                         <p class="cart_total_price">$?</p>
-                                    </td>
-                                    <td class="cart_delete">
+                                    </div>
+                                    <div class="rTableCell7 cart_delete">
                                         <button type="button" class="btn btn-default remove-from-cart"
                                                 formaction="<spring:url value="/remove-from-cart"/>" form="productForm-${product.key.id}">
                                             <i class="glyphicon glyphicon-remove"></i>
                                         </button>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="rTableCell7 ">
                                         <button type="button" class="btn btn-default update-cart"
                                                 formaction="<spring:url value="/update-product"/>" form="productForm-${product.key.id}">
                                             <i class="glyphicon glyphicon-shopping-cart"></i> Update
                                         </button>
-                                    </td>
+                                    </div>
                                 </form>
-                            </tr>
+                            </div>
                         </c:forEach>
                     </c:when>
                     <c:otherwise>
@@ -92,8 +106,9 @@
                         </td>
                     </c:otherwise>
                 </c:choose>
-                </tbody>
-            </table>
+                </div>
+            </div>
+
             <form id="productForm-remove-all" name="productForm-remove-all" class="productForm">
                 <button type="button" class="btn btn-default remove-all-from-cart"
                         formaction="<spring:url value="/remove-all-from-cart"/>" form="productForm-remove-all">

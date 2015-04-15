@@ -1,0 +1,53 @@
+.rTable {
+    display: block;
+    width: 100%;
+}
+.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
+    clear: both;
+}
+.rTableHeadding {
+    height: 40px;
+}
+
+.rTableHead, .rTableFoot {
+    background-color: #DDD;
+    font-weight: bold;
+}
+.rTableCell3, .rTableHead3 {
+    float: left;
+    overflow: hidden;
+    padding: 3px 1.8%;
+    width: 28%;
+}
+.rTableCell7, .rTableHead7 {
+    float: left;
+    overflow: hidden;
+    padding: 3px 1.8%;
+    width: 14%;
+}
+
+.cart_description {
+    padding-left: 5%;
+}
+
+.rTableHeading {
+    height: 33px;
+}
+
+.rTableCell7 span {
+    text-align: center;
+}
+
+.rTableCell7 {
+    width: 14.2%;
+    text-align: center;
+}
+
+.rTable:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
