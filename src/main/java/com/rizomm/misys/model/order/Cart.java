@@ -85,5 +85,14 @@ public class Cart implements Serializable{
         this.products.clear();
     }
 
-
+    /**
+     *
+     * @param product a product to check if is in cart
+     * @return true if product is in the cart, false else
+     */
+    public boolean containsProduct(Product product){
+        if(this.products.containsKey(product.getId()))
+            return true;
+        return false;
+    }
 }

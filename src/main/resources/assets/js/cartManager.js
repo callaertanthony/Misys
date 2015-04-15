@@ -88,13 +88,9 @@ $(document).ready(function(){
 
         var formId = $(this).attr("form");
         var form = $("#"+formId);
-        var productId = form.find('input[name="productId"]').val();
-        var quantity = form.find('input[name="quantity"]').val();
-        var json = {"productId" : productId, "quantity" : quantity};
 
         $.ajax({
             url: $(this).attr("formaction"),
-            data: JSON.stringify(json),
             type: "POST",
             contentType: 'application/json',
             success: function(){

@@ -19,4 +19,6 @@ public interface CartService {
     void removeProduct(int id);
 
     void removeAllProducts();
+
+    Cart addProductWithQuantityByForm(CartProductForm cartProductForm);
 }

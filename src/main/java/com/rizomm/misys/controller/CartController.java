@@ -33,7 +33,7 @@ public class CartController {
     @RequestMapping(value = "/add-to-cart", method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public String addToCart(@RequestBody CartProductForm cartProductForm){
-        LOGGER.debug("Getting ajax request for adding product to cart {} = ", cartProductForm);
+        LOGGER.debug("Getting ajax request for adding product to cart = {}", cartProductForm);
         cartService.addProductByForm(cartProductForm);
         LOGGER.debug("End to adding product to cart");
         return "redirect:/product/detail/" + cartProductForm.getProductId();
@@ -50,18 +50,27 @@ public class CartController {
     @RequestMapping(value = "/remove-from-cart", method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public String removeFromCart(@RequestBody CartProductForm cartProductForm){
-        LOGGER.debug("Getting ajax request for removing product from cart {} = ", cartProductForm);
+        LOGGER.debug("Getting ajax request for removing product from cart = {}", cartProductForm);
         cartService.removeProduct(cartProductForm.getProductId());
         LOGGER.debug("End to removing product from cart");
         return "redirect:/shop/cart";
     }
 
     @RequestMapping(value = "/remove-all-from-cart", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String removeAllFromCart(@RequestBody CartProductForm cartProductForm){
-        LOGGER.debug("Getting ajax request for removing all products from cart {} = ", cartProductForm);
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public String removeAllFromCart(){
+        LOGGER.debug("Getting ajax request for removing all products from cart.");
         cartService.removeAllProducts();
         LOGGER.debug("End to removing all products from cart");
+        return "redirect:/shop/cart";
+    }
+
+    @RequestMapping(value = "/update-product", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String handleUpdateProduct(@RequestBody CartProductForm cartProductForm){
+        LOGGER.debug("Getting ajax request for updating product from cart = {}", cartProductForm);
+        cartService.addProductWithQuantityByForm(cartProductForm);
+        LOGGER.debug("End to updating product in cart");
         return "redirect:/shop/cart";
     }
 }

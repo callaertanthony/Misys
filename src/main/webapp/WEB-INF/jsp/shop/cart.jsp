@@ -34,6 +34,7 @@
 <section id="cart_items">
     <div class="container">
         <div class="table-responsive cart_info">
+
             <table class="table table-condensed">
                 <thead>
                 <tr class="cart_menu">
@@ -64,9 +65,7 @@
                                         <p>${product.key.price}</p>
                                     </td>
                                     <td class="cart_quantity">
-                                        <input name="quantity" type="number" value="${product.value}" max="${product.key.stock}" min="1" form="productForm-${product.key.id}"/>
-                                        <input type="hidden" id="inputId" value="${product.key.id}"/>
-
+                                        <input name="quantity" type="number" value="${product.value}" max="${product.key.stock.quantity}" min="1" form="productForm-${product.key.id}"/>
                                     </td>
                                     <td class="cart_total">
                                         <p class="cart_total_price">$?</p>
@@ -78,8 +77,8 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-default add-to-cart"
-                                                formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.key.id}">
+                                        <button type="button" class="btn btn-default update-cart"
+                                                formaction="<spring:url value="/update-product"/>" form="productForm-${product.key.id}">
                                             <i class="glyphicon glyphicon-shopping-cart"></i> Update
                                         </button>
                                     </td>
@@ -95,10 +94,9 @@
                 </c:choose>
                 </tbody>
             </table>
-            <form id="productForm-${product.key.id}" name="productForm-${product.key.id}" class="productForm">
-                <input name="productId" type="hidden" value="${product.key.id}"/>
+            <form id="productForm-remove-all" name="productForm-remove-all" class="productForm">
                 <button type="button" class="btn btn-default remove-all-from-cart"
-                        formaction="<spring:url value="/remove-all-from-cart"/>" form="productForm-${product.key.id}">
+                        formaction="<spring:url value="/remove-all-from-cart"/>" form="productForm-remove-all">
                     <i class="glyphicon glyphicon-trash"></i> Remove all products
                 </button>
             </form>

@@ -28,6 +28,13 @@ public class CartServiceImpl implements CartService {
         this.productRepository = productRepository;
     }
 
+    /**
+     * Method to add a product with quantity to the session cart.
+     * The product quantity is a sum, not an override.
+     *
+     * @param cartProductForm
+     * @return Cart in session
+     */
     @Override
     public Cart addProductByForm(CartProductForm cartProductForm) {
         LOGGER.debug("Adding product to cart : productId = {}, quantity = {}.",
@@ -38,6 +45,28 @@ public class CartServiceImpl implements CartService {
             this.cart.addProductWithQuantity(product, cartProductForm.getQuantity());
         }
         return cart;
+    }
+
+    /**
+     * Method to add a product by quantity to the cart session.
+     * The product quantity is an override.
+     *
+     * @param cartProductForm
+     * @return Cart in session
+     */
+    @Override
+    public Cart addProductWithQuantityByForm(CartProductForm cartProductForm) {
+        LOGGER.debug("Adding product to cart : productId = {}, quantity = {}.",
+                cartProductForm.getProductId(), cartProductForm.getQuantity());
+        Product product = productRepository.findOne(cartProductForm.getProductId());
+        LOGGER.debug("Product found : {}", product);
+        if(product != null){
+            if(this.cart.containsProduct(product)){
+                this.cart.removeProduct(product);
+            }
+            this.cart.addProductWithQuantity(product, cartProductForm.getQuantity());
+        }
+        return this.cart;
     }
 
     /**
@@ -55,6 +84,10 @@ public class CartServiceImpl implements CartService {
         return products;
     }
 
+    /**
+     * Method to remove all products in session cart
+     * @param id
+     */
     @Override
     public void removeProduct(int id) {
         Product product = productRepository.findOne(id);
