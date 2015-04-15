@@ -18,6 +18,16 @@
                             <img src="${pageContext.request.contextPath}/assets/images/home/logo.png"
                                                   alt=""/></a>
                     </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-flag"></span>  <spring:message code="navbar.language"/>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="?lang=fr">FR</a></li>
+                            <li><a href="?lang=en">UK</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-sm-7">
                     <div class="shop-menu pull-right">
@@ -45,7 +55,7 @@
                         <div class="input-group">
                             <div class="col-sm-8">
                                 <input type="text" name="searchInput" id="searchInput" class="form-control pull-right"
-                                       placeholder="Rechercher" style="border: 0px;">
+                                       placeholder="<spring:message code="navbar.search"/>" style="border: 0px;">
                             </div>
                             <div class="col-sm-4">
 
