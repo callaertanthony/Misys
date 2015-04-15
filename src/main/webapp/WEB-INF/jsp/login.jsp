@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4"></div>
-                <div class="col-sm-4 col-sm-offset-1">
+                <div class="col-sm-4">
                     <div class="login-form"><!--login form-->
                         <h2>Login to your account</h2>
                         <form:form method="post" modelAttribute="error" class="form-horizontal" role="form" action="">

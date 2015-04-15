@@ -38,6 +38,7 @@
                             </sec:authorize>
                             <sec:authorize access="!isAuthenticated()">
                                 <li><a href="<spring:url value="/login"/>"><i class="glyphicon glyphicon-log-in"></i> Se connecter</a></li>
+                                <li><a href="<spring:url value="/account/create"/>"><i class="glyphicon glyphicon-pencil"></i> S'enregistrer</a></li>
                             </sec:authorize>
                         </ul>
                     </div>
