@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
@@ -48,29 +49,37 @@ public class CartController {
     }
 
     @RequestMapping(value = "/remove-from-cart", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String removeFromCart(@RequestBody CartProductForm cartProductForm){
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ModelAndView removeFromCart(@RequestBody CartProductForm cartProductForm){
         LOGGER.debug("Getting ajax request for removing product from cart = {}", cartProductForm);
         cartService.removeProduct(cartProductForm.getProductId());
         LOGGER.debug("End to removing product from cart");
-        return "redirect:/shop/cart";
+        ModelAndView mvn = new ModelAndView("shop/cartContent");
+        HashMap<Product, Integer> products = cartService.getProducts();
+        mvn.addObject("products", products);
+        return mvn;
     }
 
-    @RequestMapping(value = "/remove-all-from-cart", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public String removeAllFromCart(){
+    @RequestMapping(value = "/remove-all-from-cart", method = RequestMethod.POST)
+    public ModelAndView removeAllFromCart(){
         LOGGER.debug("Getting ajax request for removing all products from cart.");
         cartService.removeAllProducts();
         LOGGER.debug("End to removing all products from cart");
-        return "redirect:/shop/cart";
+        ModelAndView mvn = new ModelAndView("shop/cartContent");
+        HashMap<Product, Integer> products = cartService.getProducts();
+        mvn.addObject("products", products);
+        return mvn;
     }
 
     @RequestMapping(value = "/update-product", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String handleUpdateProduct(@RequestBody CartProductForm cartProductForm){
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ModelAndView handleUpdateProduct(@RequestBody CartProductForm cartProductForm){
         LOGGER.debug("Getting ajax request for updating product from cart = {}", cartProductForm);
         cartService.addProductWithQuantityByForm(cartProductForm);
         LOGGER.debug("End to updating product in cart");
-        return "redirect:/shop/cart";
+        ModelAndView mvn = new ModelAndView("shop/cartContent");
+        HashMap<Product, Integer> products = cartService.getProducts();
+        mvn.addObject("products", products);
+        return mvn;
     }
 }

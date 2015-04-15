@@ -45,10 +45,9 @@ $(document).ready(function(){
 
     $('.remove-from-cart').click(function(){
 
-        var formId = $(this).attr("form");
-        var form = $("#"+formId);
-        var productId = form.find('input[name="productId"]').val();
-        var quantity = form.find('input[name="quantity"]').val();
+        var id = $(this).attr("form");
+        var productId = $('input[name="productId-' + id + '"]').val();
+        var quantity = $('input[name="quantity-' + id + '"]').val();
         var json = {"productId" : productId, "quantity" : quantity};
 
         $.ajax({
@@ -56,9 +55,62 @@ $(document).ready(function(){
             data: JSON.stringify(json),
             type: "POST",
             contentType: 'application/json',
-            success: function(){
-                alert('Product removed from cart with success');
-                location.reload();
+            success: function(response){
+                if(response != $('#table-cart')){
+                    console.log(response);
+                    $(document).trigger("add-alerts", {
+                        message: "Product removed from cart with success.",
+                        priority: "success"
+                    });
+                    $('#table-cart').html(response);
+                } else {
+                    $(document).trigger("add-alerts", {
+                        message: "Can't remove product from cart.",
+                        priority: "error"
+                    });
+                }
+            },
+            error: function(){
+                $(document).trigger("add-alerts", {
+                    message: "Can't access cart please retry.",
+                    priority: "warning"
+                });
+            }
+        })
+    })
+
+    $('.update-cart').click(function(){
+
+        var id = $(this).attr("form");
+        var productId = $('input[name="productId-' + id + '"]').val();
+        var quantity = $('input[name="quantity-' + id + '"]').val();
+        var json = {"productId" : productId, "quantity" : quantity};
+
+        $.ajax({
+            url: $(this).attr("formaction"),
+            data: JSON.stringify(json),
+            type: "POST",
+            contentType: 'application/json',
+            success: function(response){
+                if(response != $('#table-cart')){
+                    console.log(response);
+                    $(document).trigger("add-alerts", {
+                        message: "Product updated in cart with success.",
+                        priority: "success"
+                    });
+                    $('#table-cart').html(response);
+                } else {
+                    $(document).trigger("add-alerts", {
+                        message: "Can't update product in cart.",
+                        priority: "error"
+                    });
+                }
+            },
+            error: function(){
+                $(document).trigger("add-alerts", {
+                    message: "Can't access cart please retry.",
+                    priority: "warning"
+                });
             }
         })
     })
@@ -93,9 +145,26 @@ $(document).ready(function(){
             url: $(this).attr("formaction"),
             type: "POST",
             contentType: 'application/json',
-            success: function(){
-                alert('Products removed from cart with success');
-                location.reload();
+            success: function(response){
+                if(response != $('#table-cart')){
+                    console.log(response);
+                    $(document).trigger("add-alerts", {
+                        message: "All products removed from cart with success.",
+                        priority: "success"
+                    });
+                    $('#table-cart').html(response);
+                } else {
+                    $(document).trigger("add-alerts", {
+                        message: "Can't remove products from cart.",
+                        priority: "error"
+                    });
+                }
+            },
+            error: function(){
+                $(document).trigger("add-alerts", {
+                    message: "Can't access cart please retry.",
+                    priority: "warning"
+                });
             }
         })
     })
