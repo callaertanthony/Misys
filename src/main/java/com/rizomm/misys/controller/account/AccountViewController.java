@@ -33,6 +33,7 @@ public class AccountViewController {
     }
 
     @RequestMapping("/view")
+    @PreAuthorize("isAuthenticated()")
     public ModelAndView getUserPage(HttpServletRequest httpServletRequest){
         ModelAndView modelAndView = new ModelAndView("user/detail");
         return modelAndView;
