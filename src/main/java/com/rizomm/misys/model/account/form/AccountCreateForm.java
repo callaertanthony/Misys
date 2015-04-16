@@ -1,8 +1,12 @@
 package com.rizomm.misys.model.account.form;
 
 import com.rizomm.misys.model.account.Gender;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,6 +17,7 @@ public class AccountCreateForm {
     private String email = "";
 
     @NotEmpty
+    @Length(min = 6, message = "Lengthhhhh !!")
     private String password = "";
 
     @NotEmpty
@@ -25,6 +30,7 @@ public class AccountCreateForm {
     private String lastName = "";
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Gender gender = Gender.MAN;
 
     public String getEmail() {

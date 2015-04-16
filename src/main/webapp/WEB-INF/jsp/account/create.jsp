@@ -41,6 +41,7 @@
         <div class="signup-form"><!--sign up form-->
           <h2>New User Signup!</h2>
           <form:form name="form" action="" method="post" modelAttribute="form">
+            <form:errors/>
             <form:input type="email" name="email" value="${form.email}" id="email" required="true" path="email" class="form-control" placeholder="E-mail"/>
             <form:input type="password" name="password" id="password" required="true" path="password" class="form-control" placeholder="Password"/>
             <form:input type="password" name="passwordRepeated" id="passwordRepeated" required="true" path="passwordRepeated" class="form-control" placeholder="Repeat password"/>

@@ -4,9 +4,6 @@ INSERT INTO stock (id, quantity) VALUES (3, 10);
 INSERT INTO stock (id, quantity) VALUES (4, 10);
 INSERT INTO stock (id, quantity) VALUES (5, 0);
 
-INSERT INTO `misys`.`user` (`id`, `age`, `email`, `first_name`, `last_name`, `nickname`)
-VALUES ('1', '12', 't@t.fr', 'Charles', 'Hot', 'Charlotte'), ('2', '99', 'z@z.com', 'Mat', 'Ou', 'Matou');
-
 INSERT INTO `misys`.`brand` (`id`, `name`) VALUES (NULL, 'Sony'), (NULL, 'Universal');
 
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('1','Rock','Rock','2');

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 /**
@@ -31,19 +32,31 @@ public class AccountCreateFormValidator implements Validator {
     public void validate(Object o, Errors errors) {
         LOGGER.debug("Validating {}", o);
         AccountCreateForm form = (AccountCreateForm) o;
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "field.required", "Field required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "field.required", "Field required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwordRepeated", "field.required", "Field required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "champ requis", "Field required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "field.required", "Field required");
+        //TODO validate enum
         validatePasswords(errors, form);
         validateEmail(errors, form);
     }
 
     private void validatePasswords(Errors errors, AccountCreateForm form){
+        if(form.getPassword().length() < 6){
+            errors.reject("password", "account.password.length");
+        }
         if(!form.getPassword().equals(form.getPasswordRepeated())){
-            errors.reject("password.no_match", "Password don't match");
+            errors.reject("passwordRepeated", "Password don't match");
         }
     }
 
     private void validateEmail(Errors errors, AccountCreateForm form){
         if(userService.getUserByEmail(form.getEmail()).isPresent()){
-            errors.reject("email.exists", "User with this email already exists");
+            errors.reject("email", "account.email.exists");
+        }
+        if(!form.getEmail().contains("@") || !form.getEmail().contains(".")){
+            errors.reject("email", "account.email.notValid");
         }
     }
 }
