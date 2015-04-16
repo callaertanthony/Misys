@@ -1,5 +1,7 @@
 package com.rizomm.misys;
 
+import com.rizomm.misys.service.user.UserService;
+import com.rizomm.misys.service.user.UserServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -15,7 +17,6 @@ import org.springframework.http.HttpStatus;
  * Created by anthonycallaert on 06/03/15.
  */
 @SpringBootApplication
-@EnableJpaRepositories
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
