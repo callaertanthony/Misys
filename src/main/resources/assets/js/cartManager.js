@@ -43,6 +43,10 @@ $(document).ready(function(){
         })
     })
 
+    initTrigger();
+})
+
+function initTrigger() {
     $('.remove-from-cart').click(function(){
 
         var id = $(this).attr("form");
@@ -57,12 +61,12 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(response){
                 if(response != $('#table-cart')){
-                    console.log(response);
                     $(document).trigger("add-alerts", {
                         message: "Product removed from cart with success.",
                         priority: "success"
                     });
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $(document).trigger("add-alerts", {
                         message: "Can't remove product from cart.",
@@ -93,12 +97,12 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(response){
                 if(response != $('#table-cart')){
-                    console.log(response);
                     $(document).trigger("add-alerts", {
                         message: "Product updated in cart with success.",
                         priority: "success"
                     });
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $(document).trigger("add-alerts", {
                         message: "Can't update product in cart.",
@@ -126,12 +130,12 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(response){
                 if(response != $('#table-cart')){
-                    console.log(response);
                     $(document).trigger("add-alerts", {
                         message: "All products removed from cart with success.",
                         priority: "success"
                     });
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $(document).trigger("add-alerts", {
                         message: "Can't remove products from cart.",
@@ -161,12 +165,12 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(response){
                 if(response != $('#table-wishlist')){
-                    console.log(response);
                     $(document).trigger("add-alerts", {
                         message: "Product removed from wishlist with success.",
                         priority: "success"
                     });
                     $('#table-wishlist').html(response);
+                    initTrigger();
                 } else {
                     $(document).trigger("add-alerts", {
                         message: "Can't remove product from wishlist.",
@@ -194,12 +198,12 @@ $(document).ready(function(){
             contentType: 'application/json',
             success: function(response){
                 if(response != $('#table-wishlist')){
-                    console.log(response);
                     $(document).trigger("add-alerts", {
                         message: "All products removed from wishlist with success.",
                         priority: "success"
                     });
                     $('#table-wishlist').html(response);
+                    initTrigger();
                 } else {
                     $(document).trigger("add-alerts", {
                         message: "Can't remove products from wishlist.",
@@ -215,4 +219,4 @@ $(document).ready(function(){
             }
         })
     })
-})
+}
