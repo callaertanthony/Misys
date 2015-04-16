@@ -20,7 +20,7 @@ $(document).ready(function(){
                 $("#popup-success").modal("show");
                 $("p#popup-message").text("Product added to cart successfully!");
                 setTimeout(function(){
-                    $("#product-added-success").modal("hide");
+                    $("#popup-success").modal("hide");
                 }, 3000);
             }
         })

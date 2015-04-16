@@ -82,7 +82,7 @@
                                         <input name="quantity-${product.key.id}" type="number" value="${product.value}" max="${product.key.stock.quantity}" min="1" form="productForm-${product.key.id}"/>
                                     </td>
                                     <td class="cart_total">
-                                        <p class="cart_total_price">$?</p>
+                                        <p class="cart_total_price">${product.key.price * product.value} $</p>
                                     </td>
                                     <td class="cart_delete">
                                         <button type="button" class="btn btn-default remove-from-cart"
