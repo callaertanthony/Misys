@@ -71,11 +71,6 @@ public class AccountModifyForm {
 
 
     public AccountModifyForm() {
-        this.email = "";
-        this.password = "";
-        this.passwordRepeated = "";
-        this.firstName = "";
-        this.lastName = "";
     }
 
 

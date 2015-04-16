@@ -15,10 +15,10 @@ public class UserCrudCreateForm {
     private String email = "";
 
     @NotEmpty
-    private String password = "";
+    private String password;
 
     @NotEmpty
-    private String passwordRepeated = "";
+    private String passwordRepeated;
 
     @NotEmpty
     private String firstName = "";
@@ -92,8 +92,6 @@ public class UserCrudCreateForm {
     public String toString() {
         return "UserCreateForm{" +
                 "email='" + email.replaceFirst("@.+", "@***") + '\'' +
-                ", password=***" + '\'' +
-                ", passwordRepeated=***" + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
