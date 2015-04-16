@@ -56,25 +56,21 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public Set<Product> getAllProducts() { ///TODO REMOVE FOR RELEASE
-        Set<Product> products = new HashSet<>(productRepository.findAll());
-        return products;
+        return new HashSet<>(productRepository.findAll());
     }
 
     @Override
     public Set<Product> getAllByNameContaining(String name) {
-        Set<Product> products = new HashSet<>(productRepository.findByNameContaining(name));
-        return products;
+        return new HashSet<>(productRepository.findByNameContaining(name));
     }
 
     @Override
     public Set<Product> getAllByReferenceContaining(String reference) {
-        Set<Product> products = new HashSet<>(productRepository.findByReferenceContaining(reference));
-        return products;
+        return new HashSet<>(productRepository.findByReferenceContaining(reference));
     }
 
     @Override
     public Set<Product> getAllByDescriptionContaining(String description) {
-        Set<Product> products = new HashSet<>(productRepository.findByDescriptionContaining(description));
-        return products;
+        return new HashSet<>(productRepository.findByDescriptionContaining(description));
     }
 }

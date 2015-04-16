@@ -32,6 +32,7 @@ public class WebMvcConfig extends WebMvcAutoConfiguration.WebMvcAutoConfiguratio
     }
 
     @Bean
+    @Override
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.US);

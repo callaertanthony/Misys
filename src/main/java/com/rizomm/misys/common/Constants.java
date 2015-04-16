@@ -5,11 +5,24 @@ package com.rizomm.misys.common;
  */
 public final class Constants {
 
+    private Constants(){
+        //nothing to do
+    }
+
     public static class Product{
-        public static final String imagePath = "/assets/images/product-details/";
+
+        private Product() {
+        }
+
+        public static final String IMAGE_PATH = "/assets/images/product-details/";
     }
 
     public static class Cart{
+
+        private Cart() {
+
+        }
+
         public static final String COOKIE_NAME = "cart";
 
         /* cookie duration is set to seven days*/

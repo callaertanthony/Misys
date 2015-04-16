@@ -25,12 +25,15 @@ public class Stock {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Stock stock = (Stock) o;
 
-        if (id != stock.id) return false;
+        if (id != stock.id)
+            return false;
 
         return true;
     }

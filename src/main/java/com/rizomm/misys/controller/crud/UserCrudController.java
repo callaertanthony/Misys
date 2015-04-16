@@ -14,7 +14,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.NoSuchElementException;
 
@@ -49,7 +48,7 @@ public class UserCrudController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public ModelAndView getUserCreatePage(HttpServletRequest httpServletRequest) {
+    public ModelAndView getUserCreatePage() {
         LOGGER.debug("Getting user create form");
         ModelAndView modelAndView = new ModelAndView("crud/user/create");
 
@@ -59,7 +58,7 @@ public class UserCrudController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ModelAndView handleUserCreateForm(@Valid @ModelAttribute("form") UserCrudCreateForm form, BindingResult bindingResult, HttpServletRequest httpServletRequest) {
+    public ModelAndView handleUserCreateForm(@Valid @ModelAttribute("form") UserCrudCreateForm form, BindingResult bindingResult) {
         LOGGER.debug("Processing user create form={}, bindingResult={}", form, bindingResult);
         ModelAndView modelAndView = new ModelAndView("crud/user/create");
         if (bindingResult.hasErrors()) {
@@ -81,7 +80,7 @@ public class UserCrudController {
     }
 
     @RequestMapping("/list")
-    public ModelAndView getUsersPage(HttpServletRequest httpServletRequest) {
+    public ModelAndView getUsersPage() {
         LOGGER.debug("Getting users page");
         ModelAndView modelAndView = new ModelAndView("crud/user/list");
         modelAndView.addObject("users", userService.getAllUsers());

@@ -1,9 +1,10 @@
 package com.rizomm.misys.controller;
 
-import com.rizomm.misys.model.*;
+import com.rizomm.misys.model.Brand;
+import com.rizomm.misys.model.Category;
+import com.rizomm.misys.model.Product;
 import com.rizomm.misys.service.product.CategoryService;
 import com.rizomm.misys.service.product.ProductService;
-import com.rizomm.misys.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
-
-import java.util.List;
 
 /**
  * Created by Guillaume on 3/10/2015.
@@ -28,8 +27,7 @@ public class ProductController implements ErrorController {
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
-    @Autowired
-    private UserService userService;
+
     /**
      * This method will retrieve the product & category from the database and call the detail JSP page.
      * If the product or category can't be found, the 404 page will be shown to the user.

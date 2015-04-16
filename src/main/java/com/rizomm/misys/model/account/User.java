@@ -1,9 +1,6 @@
 package com.rizomm.misys.model.account;
 
-import com.rizomm.misys.model.Review;
-
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * Created by anthonycallaert on 19/03/15.

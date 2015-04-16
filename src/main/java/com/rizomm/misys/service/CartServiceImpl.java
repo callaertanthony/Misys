@@ -1,7 +1,7 @@
 package com.rizomm.misys.service;
 
-import com.rizomm.misys.model.order.Cart;
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.order.Cart;
 import com.rizomm.misys.model.order.form.CartProductForm;
 import com.rizomm.misys.repository.ProductRepository;
 import org.slf4j.Logger;

@@ -11,9 +11,9 @@ public class AccountModifyForm {
     @NotEmpty
     private String email = "";
 
-    private String password = "";
+    private String password;
 
-    private String passwordRepeated = "";
+    private String passwordRepeated;
 
     private String firstName = "";
 
@@ -90,8 +90,6 @@ public class AccountModifyForm {
     public String toString() {
         return "AccountModifyForm{" +
                 "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", passwordRepeated='" + passwordRepeated + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +

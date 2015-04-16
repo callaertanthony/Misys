@@ -2,6 +2,8 @@ package com.rizomm.misys.controller;
 
 import com.rizomm.misys.model.Product;
 import com.rizomm.misys.service.product.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,8 @@ import java.util.Collection;
 @Controller
 @RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.HEAD})
 public class HomeController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     private ProductService productService;
@@ -36,7 +40,7 @@ public class HomeController {
                 return new ModelAndView("404");
             return new ModelAndView("home", "products", listProducts);
         } catch (IllegalArgumentException e) {
-            System.out.println();
+            LOGGER.debug("Exception : {}", e);
             return new ModelAndView("404");
         }
 

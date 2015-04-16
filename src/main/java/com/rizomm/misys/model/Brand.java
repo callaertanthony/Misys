@@ -12,6 +12,11 @@ import javax.persistence.Id;
 public class Brand {
     private int id;
 
+    @Basic
+    public String getName() {
+        return name;
+    }
+
     @GeneratedValue
     @Id
     public int getId() {
@@ -23,11 +28,6 @@ public class Brand {
     }
 
     private String name;
-
-    @Basic
-    public String getName() {
-        return name;
-    }
 
     public void setName(String name) {
         this.name = name;

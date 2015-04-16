@@ -6,7 +6,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -17,11 +16,11 @@ public class AccountCreateForm {
     private String email = "";
 
     @NotEmpty
-    @Length(min = 6, message = "Lengthhhhh !!")
-    private String password = "";
+    @Length(min = 6)
+    private String password;
 
     @NotEmpty
-    private String passwordRepeated = "";
+    private String passwordRepeated;
 
     @NotEmpty
     private String firstName = "";
@@ -85,8 +84,6 @@ public class AccountCreateForm {
     public String toString() {
         return "CreateAccountForm{" +
                 "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", passwordRepeated='" + passwordRepeated + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
