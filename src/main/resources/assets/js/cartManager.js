@@ -17,7 +17,7 @@ $(document).ready(function(){
             type: "POST",
             contentType: 'application/json',
             success: function(){
-                alert('Product added to cart with success');
+                $("#product-added-success").modal("show");
             }
         })
     })
@@ -37,7 +37,7 @@ $(document).ready(function(){
             type: "POST",
             contentType: 'application/json',
             success: function(){
-                alert('Product added to wishlist with success');
+                $("#product-added-success").modal("show");
                 heart.removeClass("glyphicon-heart-empty").addClass("glyphicon-heart");
             }
         })
