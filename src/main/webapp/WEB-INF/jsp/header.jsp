@@ -72,7 +72,6 @@
                                        placeholder="<spring:message code="navbar.search"/>" style="border: 0px;">
                             </div>
                             <div class="col-sm-4">
-
                                 <button type="submit" id="searchBtn" class="btn btn-default">
                                 <span class="glyphicon glyphicon-search"></span>
                                 </button>
@@ -84,3 +83,6 @@
         </div>
     </div>
 </header><!--/header-->
+<!-- INCLUDE POPUPS -->
+<jsp:include page="product/popup-success.jsp" />
+<jsp:include page="product/popup-failed.jsp" />

@@ -109,4 +109,5 @@
 <script src="<spring:url value="/assets/js/bootstrap.min.js"/>"></script>
 <script src="<spring:url value="/assets/js/jquery.prettyPhoto.js"/>"></script>
 <script src="<spring:url value="/assets/js/main.js"/>"></script>
+<script src="<spring:url value="/assets/js/jquery.bsAlerts.js"/>" ></script>
 <script src="<spring:url value="/assets/js/cartManager.js"/>" ></script>

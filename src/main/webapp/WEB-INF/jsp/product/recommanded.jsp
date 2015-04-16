@@ -23,29 +23,42 @@
                 </c:if>
 
                 <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <a href="<spring:url value="/product/detail/${productElement.id}"/>">
-                                    <img src="<spring:url value="${productElement.getPicturelink()}"/>" alt="${productElement.name} picture"/>
-                                </a>
+                    <form id="productForm-${productElement.id}" name="productForm-${productElement.id}" class="productForm">
+                        <input name="productId" type="hidden" value="${productElement.id}"/>
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <a href="<spring:url value="/product/detail/${productElement.id}"/>">
+                                        <img src="<spring:url value="${productElement.getPicturelink()}"/>" alt="${productElement.name} picture"/>
+                                    </a>
 
-                                <h2>${productElement.price}€</h2>
+                                    <h2>${productElement.price}€</h2>
 
-                                <p>${productElement.name}</p>
-                                <div>
-                                    <label>Quantity:</label>
-                                    <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
+                                    <p>${productElement.name}</p>
+                                    <div>
+                                        <label>Quantity:</label>
+                                        <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
+                                    </div>
                                 </div>
                             </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <button type="button" class="btn btn-default add-to-wishlist"
+                                                formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${productElement.id}">
+                                            <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default add-to-cart"
+                                                formaction="<spring:url value="/add-to-cart"/>" form="productForm-${productElement.id}">
+                                            <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="choose">
-                            <ul class="nav nav-pills nav-justified">
-                                <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
-                            </ul>
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
                 <c:set var="count" value="${count+1}"/>
