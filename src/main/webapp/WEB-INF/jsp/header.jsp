@@ -60,5 +60,5 @@
     </div>
 </header><!--/header-->
 <!-- INCLUDE POPUPS -->
-<jsp:include page="product/popup-add-success.jsp" />
-<jsp:include page="product/popup-add-failed.jsp" />
+<jsp:include page="product/popup-success.jsp" />
+<jsp:include page="product/popup-failed.jsp" />
