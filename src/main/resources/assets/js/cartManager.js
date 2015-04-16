@@ -115,27 +115,6 @@ $(document).ready(function(){
         })
     })
 
-    $('.remove-from-wishlist').click(function(){
-
-        var formId = $(this).attr("form");
-        var form = $("#"+formId);
-        var productId = form.find('input[name="productId"]').val();
-        var json = {"productId" : productId};
-
-        var heart = $(this).find('.glyphicon-heart-empty');
-
-        $.ajax({
-            url: $(this).attr("formaction"),
-            data: JSON.stringify(json),
-            type: "POST",
-            contentType: 'application/json',
-            success: function(){
-                alert('Product removed from wishlist with success');
-                location.reload();
-            }
-        })
-    })
-
     $('.remove-all-from-cart').click(function(){
 
         var formId = $(this).attr("form");
@@ -169,11 +148,10 @@ $(document).ready(function(){
         })
     })
 
-    $('.remove-all-from-wishlist').click(function(){
+    $('.remove-from-wishlist').click(function(){
 
-        var formId = $(this).attr("form");
-        var form = $("#"+formId);
-        var productId = form.find('input[name="productId"]').val();
+        var id = $(this).attr("form");
+        var productId = $('input[name="productId-' + id + '"]').val();
         var json = {"productId" : productId};
 
         $.ajax({
@@ -181,9 +159,59 @@ $(document).ready(function(){
             data: JSON.stringify(json),
             type: "POST",
             contentType: 'application/json',
-            success: function(){
-                alert('Products removed from wishlist with success');
-                location.reload();
+            success: function(response){
+                if(response != $('#table-wishlist')){
+                    console.log(response);
+                    $(document).trigger("add-alerts", {
+                        message: "Product removed from wishlist with success.",
+                        priority: "success"
+                    });
+                    $('#table-wishlist').html(response);
+                } else {
+                    $(document).trigger("add-alerts", {
+                        message: "Can't remove product from wishlist.",
+                        priority: "error"
+                    });
+                }
+            },
+            error: function(){
+                $(document).trigger("add-alerts", {
+                    message: "Can't access wishlist please retry.",
+                    priority: "warning"
+                });
+            }
+        })
+    })
+
+    $('.remove-all-from-wishlist').click(function(){
+
+        var formId = $(this).attr("form");
+        var form = $("#"+formId);
+
+        $.ajax({
+            url: $(this).attr("formaction"),
+            type: "POST",
+            contentType: 'application/json',
+            success: function(response){
+                if(response != $('#table-wishlist')){
+                    console.log(response);
+                    $(document).trigger("add-alerts", {
+                        message: "All products removed from wishlist with success.",
+                        priority: "success"
+                    });
+                    $('#table-wishlist').html(response);
+                } else {
+                    $(document).trigger("add-alerts", {
+                        message: "Can't remove products from wishlist.",
+                        priority: "error"
+                    });
+                }
+            },
+            error: function(){
+                $(document).trigger("add-alerts", {
+                    message: "Can't access wishlist please retry.",
+                    priority: "warning"
+                });
             }
         })
     })

@@ -942,7 +942,7 @@ h2.title {
 	margin-right:5px;
 }
 
-.remove-all-from-cart {
+.remove-all-from-cart, .remove-all-from-wishlist {
     float: right;
     background:#FE980F;
     color: #ffffff;

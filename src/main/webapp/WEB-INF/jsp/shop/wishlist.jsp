@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Cart - Misys</title>
+    <title>Wishlist - Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
@@ -36,7 +36,8 @@
 
 <section id="cart_items">
     <div class="container">
-        <div class="table-responsive cart_info">
+        <div data-alerts="alerts" data-fade="10000"></div>
+        <div id="table-wishlist" class="table-responsive cart_info">
             <table class="table table-condensed">
                 <thead>
                 <tr class="cart_menu">
@@ -51,25 +52,25 @@
                     <c:when test="${not empty products}">
                         <c:forEach items="${products}" var="product">
                             <tr>
-                                <td class="cart_product">
-                                    <a href=""><img src="<spring:url value="${product.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
-                                </td>
-                                <td class="cart_description">
-                                    <h4><a href="<spring:url value="/product/detail/${product.id}"/>}">${product.name}</a></h4>
-                                    <p>Réf produit: ${product.reference}</p>
-                                </td>
-                                <td class="cart_price">
-                                    <p>${product.price}</p>
-                                </td>
-                                <td class="cart_delete">
-                                    <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
-                                        <input name="productId" type="hidden" value="${product.id}"/>
+                                <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
+                                    <input name="productId-${product.id}" type="hidden" value="${product.id}"/>
+                                    <td class="cart_product">
+                                        <a href=""><img src="<spring:url value="${product.getPicturelink()}"/>" alt="" class="cart_product_img"></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="<spring:url value="/product/detail/${product.id}"/>}">${product.name}</a></h4>
+                                        <p>Réf produit: ${product.reference}</p>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>${product.price}</p>
+                                    </td>
+                                    <td class="cart_delete">
                                         <button type="button" class="btn btn-default remove-from-wishlist"
-                                                formaction="<spring:url value="/remove-from-wishlist"/>" form="productForm-${product.id}">
+                                                formaction="<spring:url value="/remove-from-wishlist"/>" form="${product.id}">
                                             <i class="glyphicon glyphicon-remove"></i>
                                         </button>
-                                    </form>
-                                </td>
+                                    </td>
+                                </form>
                             </tr>
                         </c:forEach>
                     </c:when>
@@ -81,10 +82,9 @@
                 </c:choose>
                 </tbody>
             </table>
-            <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
-                <input name="productId" type="hidden" value="${product.id}"/>
-                <button type="button" class="btn btn-default remove-all-from-cart"
-                        formaction="<spring:url value="/remove-all-from-wishlist"/>" form="productForm-${product.id}">
+            <form id="productForm-remove-all" name="productForm-remove-all" class="productForm">
+                <button type="button" class="btn btn-default remove-all-from-wishlist"
+                        formaction="<spring:url value="/remove-all-from-wishlist"/>" form="productForm-remove-all">
                     <i class="glyphicon glyphicon-trash"></i> Remove all products
                 </button>
             </form>
