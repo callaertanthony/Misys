@@ -192,7 +192,7 @@ VALUES
   (NULL,
    'Les maîtres nantais des platines signent l’album le plus kaléidoscopique de 2012. Électro, soul, pop, blues, rock, rap, tout passe entre les doigts de fée de 20 Syl, Greem, Atom et Pfel, anciens champions du monde de DJ par équipe.',
    'C2C - Tetra',
-   'vinyle/C2C_Tetra.jpg',
+   'vinyle/C2C_Tetra[Vinyle].jpg',
    '19.47',
    'B00JG8GBGC',
    '11',
