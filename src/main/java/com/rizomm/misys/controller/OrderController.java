@@ -68,14 +68,17 @@ public class OrderController {
         orderService.setAddressByForm(form);
         RegisteredOrder registeredOrder = orderService.save();
 
-        return "redirect:/order/view" + registeredOrder.getId();
+        return "redirect:/order/view/" + registeredOrder.getId();
     }
 
     @PreAuthorize("isAuthenticated()")
     @RequestMapping("/view/{id}")
-    public ModelAndView getOrderView(@PathVariable Long id){
+    public ModelAndView getOrderView(@PathVariable long id){
+        System.out.println("IN getOrderView()     !!!!!!");
+        int idInt = (int) id;
+        Integer idInteger = new Integer(idInt);
         LOGGER.debug("Getting view for order = {}", id);
-        return new ModelAndView("/order/address/view", "order", orderService.getRegisteredOrderById(id)
+        return new ModelAndView("/shop/order/view", "order", orderService.getRegisteredOrderById(idInteger)
                 .orElseThrow(() -> new NoSuchElementException(String.format("Order=%s not found", id)))
         );
     }

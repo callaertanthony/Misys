@@ -69,8 +69,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Optional<RegisteredOrder> getRegisteredOrderById(long id) {
-        return Optional.ofNullable(orderRepository.findOne((int) id));
+    public Optional<RegisteredOrder> getRegisteredOrderById(Integer id) {
+
+        return Optional.ofNullable(orderRepository.findOne(id));
     }
 
 }

@@ -18,5 +18,5 @@ public interface OrderService {
 
     RegisteredOrder save();
 
-    Optional<RegisteredOrder> getRegisteredOrderById(long id);
+    Optional<RegisteredOrder> getRegisteredOrderById(Integer id);
 }
