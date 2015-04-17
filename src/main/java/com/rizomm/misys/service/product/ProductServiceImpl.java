@@ -2,6 +2,8 @@ package com.rizomm.misys.service.product;
 
 import com.rizomm.misys.model.Brand;
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.Stock;
+import com.rizomm.misys.model.product.form.ProductCreateForm;
 import com.rizomm.misys.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +20,11 @@ public class ProductServiceImpl implements ProductService {
 
     //Link the service with the accurate repository
     private final ProductRepository productRepository;
+    private final StockService stockService;
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository, StockService stockService) {
         this.productRepository = productRepository;
+        this.stockService = stockService;
     }
 
     /**
@@ -72,5 +76,22 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Set<Product> getAllByDescriptionContaining(String description) {
         return new HashSet<>(productRepository.findByDescriptionContaining(description));
+    }
+
+    @Override
+    public Product createProduct(ProductCreateForm form) {
+        Product product = new Product();
+        product.setName(form.getName());
+        product.setReference(form.getReference());
+        product.setDescription(form.getDescription());
+        product.setPrice(form.getPrice());
+        product.setPicture(form.getPicture());
+        product.setBrand(form.getBrand());
+        product.setCategory(form.getCategory());
+        Stock stock = new Stock();
+        stock.setQuantity(0);
+        product.setStock(stockService.createStock(stock));
+
+        return productRepository.save(product);
     }
 }

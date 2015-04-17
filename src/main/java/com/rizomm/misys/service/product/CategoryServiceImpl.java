@@ -5,6 +5,7 @@ import com.rizomm.misys.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -30,4 +31,17 @@ public class CategoryServiceImpl implements CategoryService{
     public Optional<Category> getOneById(int id) {
         return Optional.ofNullable(categoryRepository.findOne(id));
     }
+
+    /**
+     * Purpose:
+     * This method will retrieve all the categories
+     *
+     * @return A list with all the categories
+     */
+    @Override
+    public List<Category> getAll() {
+        return categoryRepository.findAll();
+    }
+
+
 }

@@ -2,6 +2,7 @@ package com.rizomm.misys.service.product;
 
 import com.rizomm.misys.model.Brand;
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.product.form.ProductCreateForm;
 
 import java.util.Optional;
 import java.util.Set;
@@ -24,4 +25,6 @@ public interface ProductService {
     Set<Product> getAllByReferenceContaining(String reference);
 
     Set<Product> getAllByDescriptionContaining(String description);
+
+    Product createProduct(ProductCreateForm form);
 }

@@ -1,59 +1,42 @@
-package com.rizomm.misys.model;
+package com.rizomm.misys.model.product.form;
 
 import com.rizomm.misys.common.Constants;
+import com.rizomm.misys.model.Brand;
+import com.rizomm.misys.model.Category;
+import com.rizomm.misys.model.Review;
+import com.rizomm.misys.model.Stock;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
- * Created by anthonycallaert on 12/03/15.
+ * Created by Guillaume on 17/04/2015.
  */
-@Entity
-public class Product {
-    @GeneratedValue
-    @Id
-    private int id;
+public class ProductCreateForm {
 
-    @OneToOne(optional = true)
-    private Stock stock;
-    @Basic
     private float price;
-    @Basic
-    @Column(nullable = false)
+
+    @NotEmpty
     private String name;
-    @ManyToOne(optional = false)
+
+    @NotNull
     private Brand brand;
-    @Basic
-    @Column(nullable = false, length = 1000)
+
+    @NotEmpty
     private String description;
-    @Basic
-    @Column(unique = true, nullable = false)
+
+    @NotEmpty
+    @Length(min = 6)
     private String reference;
-    @Basic
-    @Column(nullable = false)
+
+    @NotEmpty
     private String picture;
 
-    @OneToMany(targetEntity = Review.class, mappedBy = "product")
-    List<Review> reviews;
-
-    @ManyToOne(optional = false)
+    @NotNull
     private Category category;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Stock getStock() {
-        return stock;
-    }
-
-    public void setStock(Stock stock) {
-        this.stock = stock;
-    }
 
     public float getPrice() {
         return price;
@@ -107,23 +90,24 @@ public class Product {
         this.picture = picture;
     }
 
-    public boolean haveStock() {
-        return this.getStock().getQuantity() > 0;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
     public Category getCategory() {
         return category;
     }
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductCreateForm{" +
+                "  price=" + price +
+                ", name='" + name + '\'' +
+                ", brand=" + brand +
+                ", description='" + description + '\'' +
+                ", reference='" + reference + '\'' +
+                ", picture='" + picture + '\'' +
+                ", category=" + category +
+                '}';
     }
 }

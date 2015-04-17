@@ -1,9 +1,6 @@
 package com.rizomm.misys.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Guillaume on 3/12/2015.
@@ -12,7 +9,6 @@ import javax.persistence.Id;
 public class Brand {
     private int id;
 
-    @Basic
     public String getName() {
         return name;
     }
@@ -27,6 +23,8 @@ public class Brand {
         this.id = id;
     }
 
+    @Basic
+    @Column(unique = true, nullable = false)
     private String name;
 
     public void setName(String name) {
