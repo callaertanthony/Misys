@@ -14,37 +14,11 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#cd">
+                    <a data-parent="#accordian" href="<spring:url value="/menu/cd"/>">
                         <span class="badge pull-right"><i class="glyphicon glyphicon-music"></i></span>
-                        CD & Vinyle
+                        CD
                     </a>
                 </h4>
-            </div>
-            <div id="cd" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="">Alternatif</a></li>
-                        <li><a href="">Bande originale</a></li>
-                        <li><a href="">Blues</a></li>
-                        <li><a href="">Chanson française</a></li>
-                        <li><a href="">Compilations</a></li>
-                        <li><a href="">Country</a></li>
-                        <li><a href="">Electro</a></li>
-                        <li><a href="">Chanson pour enfant</a></li>
-                        <li><a href="">Folk</a></li>
-                        <li><a href="">Hard rock - Metal</a></li>
-                        <li><a href="">Jazz</a></li>
-                        <li><a href="">Musique Classique</a></li>
-                        <li><a href="">Musique du monde</a></li>
-                        <li><a href="">Pop</a></li>
-                        <li><a href="">Rap & Hip-Hop</a></li>
-                        <li><a href="">Reggae, Ragga & Ska</a></li>
-                        <li><a href="">Rock</a></li>
-                        <li><a href="">R&B, Soul & Funk</a></li>
-                        <li><a href="">Humour et livre audio</a></li>
-                        <li><a href="">Divers</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
@@ -52,60 +26,38 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#dvd">
+                    <a data-parent="#accordian" href="<spring:url value="/menu/dvd"/>">
                         <span class="badge pull-right"><i class="glyphicon glyphicon-facetime-video"></i></span>
-                        Blu-Ray & DVD
+                        DVD
                     </a>
                 </h4>
-            </div>
-            <div id="dvd" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="<spring:url value="/menu/cd"/>">Action, Policier et Thriller</a></li>
-                        <li><a href="">Jeunesse et famille</a></li>
-                        <li><a href="">Série TV</a></li>
-                        <li><a href="">Films musicaux et concerts</a></li>
-                        <li><a href="">Drame et émotion</a></li>
-                        <li><a href="">Comédie</a></li>
-                        <li><a href="">Fantastique, Horreur et Science-fiction</a></li>
-                        <li><a href="">Cinéma Asiatique</a></li>
-                        <li><a href="">Documentaires et Divers</a></li>
-                        <li><a href="">Grands classiques</a></li>
-                        <li><a href="">Animation japonaise</a></li>
-                        <li><a href="">Spectacles et Humour</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
+        <!-- Blu-Ray -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordian" href="#vod">
-                        <span class="badge pull-right"><i class="glyphicon glyphicon-download"></i></span>
-                        VOD
+                    <a data-parent="#accordian" href="<spring:url value="/menu/bluray"/>">
+                        <span class="badge pull-right"><i class="glyphicon glyphicon-facetime-video"></i></span>
+                        Blu-Ray
                     </a>
                 </h4>
             </div>
-            <div id="vod" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="">Action, Policier et Thriller</a></li>
-                        <li><a href="">Jeunesse et famille</a></li>
-                        <li><a href="">Série TV</a></li>
-                        <li><a href="">Films musicaux et concerts</a></li>
-                        <li><a href="">Drame et émotion</a></li>
-                        <li><a href="">Comédie</a></li>
-                        <li><a href="">Fantastique, Horreur et Science-fiction</a></li>
-                        <li><a href="">Cinéma Asiatique</a></li>
-                        <li><a href="">Documentaires et Divers</a></li>
-                        <li><a href="">Grands classiques</a></li>
-                        <li><a href="">Animation japonaise</a></li>
-                        <li><a href="">Spectacles et Humour</a></li>
-                    </ul>
-                </div>
+        </div>
+
+        <!-- Vinlye -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-parent="#accordian" href="<spring:url value="/menu/vinyle"/>">
+                        <span class="badge pull-right"><i class="glyphicon glyphicon-facetime-video"></i></span>
+                        Vinyle
+                    </a>
+                </h4>
             </div>
         </div>
+
     </div><!--/category-products-->
 
     <div class="price-range"><!--price-range-->

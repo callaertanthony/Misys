@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * Created by Guillaume on 17/04/2015.
@@ -26,7 +27,7 @@ public class MenuController {
         try{
             List<Product> products = new ArrayList<>(productService.getAllByCategory(cat));
             ModelAndView mNv = new ModelAndView("category/detail");
-            mNv.addObject("product", products);
+            mNv.addObject("products", products);
             if (null == products)
                 return new ModelAndView("404");
             return mNv;
