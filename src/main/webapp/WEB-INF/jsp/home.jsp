@@ -32,7 +32,6 @@
     <![endif]-->
 </head><!--/head-->
 <body>
-
 <!-- INCLUDE HEADER -->
 <jsp:include page="header.jsp" />
 
@@ -55,7 +54,7 @@
              ------------------------------------------------>
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Les produits du moment</h2>
+                    <h2 class="title text-center"><spring:message code="home.title"/></h2>
                     <c:forEach items="${products}" var="product">
                         <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
                             <input name="productId" type="hidden" value="${product.id}"/>
@@ -71,7 +70,7 @@
                                             <p>${product.name}</p>
                                             <div>
 
-                                                <label>Quantity:</label>
+                                                <label><spring:message code="wishlist.quantity"/>:</label>
                                                 <input name="quantity" type="number" value="1" max="${product.stock.quantity}" min="1" form="productForm-${product.id}"/>
                                             </div>
                                         </div>
@@ -87,7 +86,7 @@
                                             <li>
                                                 <button type="button" class="btn btn-default add-to-cart"
                                                         formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
-                                                    <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                                    <i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/>
                                                 </button>
                                             </li>
                                         </ul>

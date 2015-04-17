@@ -140,7 +140,7 @@
                     <div class="category-tab shop-details-tab"><!--category-tab-->
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
-                                <li><a href="#details" data-toggle="tab">Details</a></li>
+                                <li><a href="#details" data-toggle="tab"> <spring:message code="detail.details"/></a></li>
                                 <li class="active"><a href="#reviews"
                                                       data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                             </ul>

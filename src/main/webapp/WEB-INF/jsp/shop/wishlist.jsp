@@ -46,7 +46,7 @@
                 <tr class="cart_menu">
                     <td class="image">Item</td>
                     <td class="description"></td>
-                    <td class="price">Price</td>
+                    <td class="price"><spring:message code="menu.price"/></td>
                     <td></td>
                 </tr>
                 </thead>
@@ -93,7 +93,7 @@
             </form>
         </div>
     </div>
-    <a class="btn btn-default check_out" href="">Add to cart</a>
+    <a class="btn btn-default check_out" href=""><spring:message code="wishlist.addtoCart"/></a>
 </section> <!--/#cart_items-->
 
 

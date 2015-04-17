@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>Quick Shop</h2>
+                        <h2><spring:message code="footer.quickShop"/></h2>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="<spring:url value="/shop/cart"/>">Cart</a></li>
                             <li><a href="<spring:url value="/wishlist"/>">Wishlist</a></li>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>Policies</h2>
+                        <h2><spring:message code="footer.policies"/></h2>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="<spring:url value="/terms"/>">Terms of Use</a></li>
                         </ul>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>About Misys</h2>
+                        <h2><spring:message code="footer.aboutMysis"/></h2>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="<spring:url value="/company"/>">Company Information</a></li>
                         </ul>

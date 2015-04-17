@@ -22,9 +22,9 @@
                         <div class="item active">
                             <div class="col-sm-6">
                                 <h1><span>M</span>isys</h1>
-                                <h2>Get latest vinyl</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h2><spring:message code="slider.title1"/></h2>
+                                <p><spring:message code="slider.section1"/> </p>
+                                <button type="button" class="btn btn-default get"><spring:message code="slider.button1"/></button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="slider img-responsive" alt="" />
@@ -33,9 +33,9 @@
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>M</span>isys</h1>
-                                <h2>Discover "Lorem ipsum" band</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h2><spring:message code="slider.title2"/></h2>
+                                <p><spring:message code="slider.section2"/> </p>
+                                <button type="button" class="btn btn-default get"><spring:message code="slider.button2"/></button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<spring:url value="${products[1].getPicturelink()}"/>" class="slider img-responsive" alt="" />
@@ -45,9 +45,9 @@
                         <div class="item">
                             <div class="col-sm-6">
                                 <h1><span>M</span>isys</h1>
-                                <h2>Discover VOD</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h2><spring:message code="slider.title3"/></h2>
+                                <p><spring:message code="slider.section3"/> </p>
+                                <button type="button" class="btn btn-default get"><spring:message code="slider.button3"/></button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="slider img-responsive" alt="" />

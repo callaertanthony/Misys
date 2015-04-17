@@ -35,9 +35,9 @@
             <a href="/"><img src="<spring:url value="/assets/images/home/logo.png"/>" alt="" /></a>
         </div>
         <div class="content-404">
-            <h1><b>OPPS!</b> An unexpected error occured.</h1>
-            <p>Uh... So it looks like something is broken up here. :/</p>
-            <h2><a href="<spring:url value="/"/>">Bring me back Home</a></h2>
+            <h1><b>OPPS!</b><spring:message code="error.errorOccured"/> An unexpected error occured.</h1>
+            <p><spring:message code="error.somethingBroken"/>Uh... So it looks like something is broken up here. :/</p>
+            <h2><a href="<spring:url value="/"/>"><spring:message code="error.bringMeBack"/>Bring me back Home</a></h2>
         </div>
     </div>
     <script src="<spring:url value="/assets/js/jquery.js"/>"></script>

@@ -10,6 +10,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +20,7 @@
     <meta name="_csrf" content="${_csrf.token}"/>
     <!-- default header name is X-CSRF-TOKEN -->
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
-    <title>Cart - Misys</title>
+    <title><spring:message code="navbar.cart"/> - Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
@@ -58,8 +60,8 @@
                 <tr class="cart_menu">
                     <td class="image">Item</td>
                     <td class="description"></td>
-                    <td class="price">Price</td>
-                    <td class="quantity">Quantity</td>
+                    <td class="price"><spring:message code="menu.price"/></td>
+                    <td class="quantity"><spring:message code="wishlist.quantity"/></td>
                     <td class="total">Total</td>
                     <td></td>
                     <td></td>
@@ -129,8 +131,8 @@
 <section id="do_action">
     <div class="container">
         <div class="heading">
-            <h3>What would you like to do next?</h3>
-            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+            <h3><spring:message code="cart.whatwouldyou"/></h3>
+            <p><spring:message code="cart.chooseIfYou"/></p>
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -138,16 +140,20 @@
                     <ul class="user_option">
                         <li>
                             <input type="checkbox">
-                            <label>Use Coupon Code</label>
+                            <label><spring:message code="carte.useCouponCode"/></label>
                         </li>
                         <li>
                             <input type="checkbox">
-                            <label>Use Gift Voucher</label>
+                            <label><spring:message code="carte.useGiftVoucher"/></label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label><spring:message code="carte.estimateShipping"/></label>
                         </li>
                     </ul>
                     <ul class="user_info">
                         <li class="single_field">
-                            <label>Country:</label>
+                            <label><spring:message code="carte.country"/> : </label>
                             <select>
                                 <option>France</option>
                                 <option>UK</option>
@@ -155,29 +161,29 @@
 
                         </li>
                         <li class="single_field zip-field">
-                            <label>Adress:</label>
+                            <label>Address:</label>
                             <input type="text">
                         </li>
                         <li class="single_field zip-field">
-                            <label>Zip Code:</label>
+                            <label><spring:message code="cart.zipCode"/> : </label>
                             <input type="text">
                         </li>
                     </ul>
-                    <a class="btn btn-default update" href="">Get Quotes</a>
-                    <a class="btn btn-default check_out" href="">Continue</a>
+                    <a class="btn btn-default update" href=""><spring:message code="cart.getQuotes"/></a>
+                    <a class="btn btn-default check_out" href=""><spring:message code="cart.Continue"/></a>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="total_area">
                     <ul>
-                        <li>Cart Sub Total <span><fmt:formatNumber type="number" value="${total}"
+                        <li><spring:message code="cart.cartSubTotal"/> <span><fmt:formatNumber type="number" value="${total}"
                                                                    minFractionDigits="2" maxFractionDigits="2"/> €</span></li>
-                        <li>Shipping Cost <span>Free</span></li>
+                        <li><spring:message code="cart.shippingCost"/> <span><spring:message code="cart.free"/></span></li>
                         <li>Total <span><fmt:formatNumber type="number" value="${total}"
                                                           minFractionDigits="2" maxFractionDigits="2"/> €</span></li>
                     </ul>
-                    <a class="btn btn-default update" href="">Update</a>
-                    <a class="btn btn-default check_out" href="">Check Out</a>
+                    <a class="btn btn-default update" href=""><spring:message code="cart.update"/></a>
+                    <a class="btn btn-default check_out" href=""><spring:message code="cart.checkOut"/></a>
                 </div>
             </div>
         </div>

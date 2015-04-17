@@ -6,8 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="left-sidebar">
-    <h2>Catégories</h2>
+    <h2><spring:message code="menu.category"/></h2>
     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
         <!-- CD -->
         <div class="panel panel-default">
@@ -108,7 +109,7 @@
     </div><!--/category-products-->
 
     <div class="price-range"><!--price-range-->
-        <h2>Prix</h2>
+        <h2><spring:message code="menu.price"/></h2>
         <div class="well">
             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
             <b>$ 0</b> <b class="pull-right">$ 600</b>

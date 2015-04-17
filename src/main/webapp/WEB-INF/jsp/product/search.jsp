@@ -52,7 +52,7 @@
              ------------------------------------------------>
             <div class="col-sm-9 padding-right" id="resultContainer">
                 <div id="noResult" style="display: none;">
-                    <h3>Aucun résultat trouvé avec ces critères de recherche.</h3>
+                    <h3><spring:message code="search.noResult"/>Aucun résultat trouvé avec ces critères de recherche.</h3>
                 </div>
                 <c:forEach items="${products}" var="product">
                     <div class="col-sm-3 product-result">
@@ -70,15 +70,15 @@
                                     <h2>${product.price}€</h2>
 
                                     <p>${product.name}</p>
-                                    <label for="product-quantity${product.id}">Quantity:</label>
+                                    <label for="product-quantity${product.id}"><spring:message code="wishlist.quantity"/> : </label>
                                     <input id="product-quantity${product.id}" type="text" value="3"
                                            class="form-control"/>
                                     <button type="button" class="btn btn-default add-to-cart"><a
                                             href="<spring:url value="cart/add/${product.id}"/>"><i
-                                            class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a></button>
+                                            class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></a></button>
                                     <button type="button" class="btn btn-default add-to-wishlist"><a
                                             href="<spring:url value="wishlist/add/${product.id}"/>"><i
-                                            class="glyphicon glyphicon-haert-empty"></i>Add to wishlist</a></button>
+                                            class="glyphicon glyphicon-haert-empty"></i><spring:message code="detail.addWishlist"/></a></button>
                                 </div>
 
                             </div>
