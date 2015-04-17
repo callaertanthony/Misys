@@ -1,9 +1,6 @@
 package com.rizomm.misys.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by anthonycallaert on 10/03/15.
@@ -13,8 +10,8 @@ public class Stock {
     private int id;
     private long quantity;
 
+    @GeneratedValue
     @Id
-    @Column
     public int getId() {
         return id;
     }

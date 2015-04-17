@@ -53,6 +53,7 @@ $(document).ready(function(){
     initTrigger();
 })
 
+
 function initTrigger() {
     $('.remove-from-cart').click(function(){
 
