@@ -77,7 +77,7 @@
                             <input name="productId" type="hidden" value="${product.id}"/>
                             <div class="col-sm-5">
                                 <div class="view-product">
-                                   <img src="<spring:url value="/${product.getPicturelink()}"/>" alt="${product.name}" />
+                                   <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name}" />
                                 </div>
                             </div>
                             <div class="col-sm-7">
