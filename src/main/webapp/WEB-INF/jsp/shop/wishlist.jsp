@@ -38,8 +38,8 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
+                <li><a href="#"><spring:message code="wishlist.home"/></a></li>
+                <li class="active"><spring:message code="wishlist.shopingCart"/></li>
             </ol>
         </div>
         <div class="table-responsive cart_info">
@@ -48,8 +48,8 @@
                 <tr class="cart_menu">
                     <td class="image">Item</td>
                     <td class="description"></td>
-                    <td class="price">Price</td>
-                    <td class="quantity">Quantity</td>
+                    <td class="price"><spring:message code="menu.price"/></td>
+                    <td class="quantity"><spring:message code="wishlist.quantity"/></td>
                     <td class="total">Total</td>
                     <td></td>
                 </tr>
@@ -62,7 +62,7 @@
                         </td>
                         <td class="cart_description">
                             <h4><a href="<spring:url value="/product/detail/${product.id}"/>}">${product.name}</a></h4>
-                            <p>Réf produit: ${product.reference}</p>
+                            <p><spring:message code="wishlist.productRef"/> ${product.reference}</p>
                         </td>
                         <td class="cart_price">
                             <p>${product.price}</p>
@@ -86,7 +86,7 @@
             </table>
         </div>
     </div>
-    <a class="btn btn-default check_out" href="">Add to cart</a>
+    <a class="btn btn-default check_out" href=""><spring:message code="wishlist.addtoCart"/></a>
 </section> <!--/#cart_items-->
 
 

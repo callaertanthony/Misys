@@ -9,14 +9,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="left-sidebar">
     <div class="brands_products"><!--brands_products-->
         <h2>Studio</h2>
 
         <div class="brands-name">
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="#" data-id-brand=""> <span class="pull-right">(${fn:length(products)})</span>Tous les
-                    studios</a></li>
+                <li><a href="#" data-id-brand=""> <span class="pull-right">(${fn:length(products)})
+                </span><spring:message code="dynamicMenu.allStudio"/>Tous le studios</a></li>
                 <c:forEach items="${brands}" var="brand">
                     <c:set var="count" value="0"/>
                     <c:forEach items="${products}" var="product">
@@ -33,7 +34,7 @@
     <!--/brands_products-->
 
     <div class="price-range"><!--price-range-->
-        <h2>Prix</h2>
+        <h2><spring:message code="dynamicMenu.price"/></h2>
 
         <div class="well">
             <c:set var="prixMax" value="0"/>

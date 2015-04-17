@@ -44,13 +44,13 @@
             <h1 class="panel-title">General</h1>
           </div>
           <div class="panel-body">
-            <h3>First name</h3>
+            <h3><spring:message code="view.firstName"/></h3>
             <p>${userConnected.firstName}</p>
-            <h3>Last name</h3>
+            <h3><spring:message code="view.lastName"/></h3>
             <p>${userConnected.lastName}</p>
-            <h3>E-mail</h3>
+            <h3><spring:message code="footer.mailAdress"/></h3>
             <p>${userConnected.email}</p>
-            <h3>Gender</h3>
+            <h3><spring:message code="view.gender"/></h3>
             <p>${userConnected.gender}</p>
           </div>
         </div>
@@ -58,7 +58,7 @@
       <div class="col-lg-4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Address</h3>
+            <h3 class="panel-title"><spring:message code="view.adress"/></h3>
           </div>
           <div class="panel-body">
 
@@ -68,7 +68,7 @@
       <div class="col-lg-4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Payment</h3>
+            <h3 class="panel-title"><spring:message code="view.payement"/></h3>
           </div>
           <div class="panel-body">
 

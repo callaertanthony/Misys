@@ -94,27 +94,27 @@
                                 </c:choose>
                                 <span>
                                     <span>${product.price}€</span>
-                                    <label>Quantity:</label>
+                                    <label><spring:message code="wishlist.quantity"/>:</label>
                                     <input id="inputQuantity" type="number" value="1" max="${product.stock.quantity}" min="0"/>
                                     <input type="hidden" id="inputId" value="${product.id}"/>
                                     <button type="button" class="btn btn-default add-to-cart-btn">
                                         <i class="glyphicon glyphicon-credit-card"></i>
-                                        Add to cart
+                                        <spring:message code="wishlist.addtoCart"/>
                                     </button>
                                     <button type="button" class="btn btn-default add-to-wishlist-btn">
                                         <i class="glyphicon glyphicon-heart-empty"></i>
-                                        Add to wishlist
+                                        <spring:message code="detail.addWishlist"/>
                                     </button>
                                 </span>
                                 <c:choose>
                                     <c:when test="${product.haveStock()}">
-                                        <p><b>Availability:</b> In Stock</p>
+                                        <p><b> <spring:message code="detail.availability"/>:</b>  <spring:message code="detail.inStock"/></p>
                                     </c:when>
                                     <c:otherwise>
-                                        <p><b>Availability:</b> Out of stock</p>
+                                        <p><b> <spring:message code="detail.availability"/>:</b>  <spring:message code="detail.outOgStock"/></p>
                                     </c:otherwise>
                                 </c:choose>
-                                <p><b>Brand:</b> ${product.getBrand().getName()}</p>
+                                <p><b> <spring:message code="detail.brand"/>:</b> ${product.getBrand().getName()}</p>
                                 <a href=""><img src="<spring:url value="/assets/images/product-details/share.png"/>"
                                         class="share img-responsive" alt=""/></a>
                             </div><!--/product-information-->
@@ -124,7 +124,7 @@
                     <div class="category-tab shop-details-tab"><!--category-tab-->
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
-                                <li><a href="#details" data-toggle="tab">Details</a></li>
+                                <li><a href="#details" data-toggle="tab"> <spring:message code="detail.details"/></a></li>
                                 <li class="active"><a href="#reviews"
                                                       data-toggle="tab">Reviews: ${fn:length(product.reviews)}</a></li>
                             </ul>

@@ -34,15 +34,15 @@
 
                                 <p>${productElement.name}</p>
                                 <div>
-                                    <label>Quantity:</label>
+                                    <label><spring:message code="wishlist.quantity"/>:</label>
                                     <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
                                 </div>
                             </div>
                         </div>
                         <div class="choose">
                             <ul class="nav nav-pills nav-justified">
-                                <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist</button></li>
-                                <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button></li>
+                                <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/></button></li>
+                                <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></button></li>
                             </ul>
                         </div>
                     </div>
