@@ -52,17 +52,26 @@
                     <c:when test="${categories.size()<='10'}">
                         <ol class="breadcrumb_detail breadcrumb">
                             <c:forEach items="${categories}" var="category">
-                                <li><a href="<spring:url value="/category/${category.getCategoryLink()}"/>"> ${category.getCategory()} </a> </li>
+                                <%--<li><a href="<spring:url value="/category/${category.getCategoryLink()}"/>"> ${category.getCategory()} </a> </li>--%>
+                                <li><a href="<spring:url value="/"/>"> ${category.getCategory()} </a> </li>
                             </c:forEach>
                         </ol>
                     </c:when>
                     <c:otherwise>
                         <ol class="breadcrumb_detail breadcrumb">
+                            <%--
                             <li><a href="<spring:url value="/category/${categories.get(0).getCategoryLink()}"/> ${pageContext.request.contextPath}"> ${categories.get(0).getCategory()}</a></li>
                             <li> (...) </li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-3).getCategoryLink()}"/>"></a></li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-2).getCategoryLink()}"/>"></a></li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-1).getCategoryLink()}"/>"></a></li>
+                            --%>
+                            <li><a href="<spring:url value="/"/> ${pageContext.request.contextPath}"> ${categories.get(0).getCategory()}</a></li>
+                            <li> (...) </li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+
                         </ol>
                     </c:otherwise>
                 </c:choose>

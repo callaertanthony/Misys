@@ -61,7 +61,7 @@
             <div id="dvd" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul>
-                        <li><a href="">Action, Policier et Thriller</a></li>
+                        <li><a href="<spring:url value="/menu/cd"/>">Action, Policier et Thriller</a></li>
                         <li><a href="">Jeunesse et famille</a></li>
                         <li><a href="">Série TV</a></li>
                         <li><a href="">Films musicaux et concerts</a></li>

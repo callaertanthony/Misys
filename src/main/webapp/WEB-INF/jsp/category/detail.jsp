@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
-  Date: 3/12/2015
-  Time: 9:24 AM
+  Date: 17/04/2015
+  Time: 12:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -33,20 +33,17 @@
 </head><!--/head-->
 <body>
 <!-- INCLUDE HEADER -->
-<jsp:include page="header.jsp" />
+<jsp:include page="../header.jsp" />
 
 <section>
     <div class="container">
         <div class="row">
-            <!-- INCLUDE SLIDER -->
-            <jsp:include page="slider.jsp" />
-
             <!------------------------------------------------
                 LEFT PANEL
              ------------------------------------------------>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
-                <jsp:include page="menu.jsp" />
+                <jsp:include page="../menu.jsp" />
             </div>
 
             <!------------------------------------------------
@@ -102,7 +99,7 @@
 </section>
 
 <!-- INCLUDE FOOTER -->
-<jsp:include page="footer.jsp" />
+<jsp:include page="../footer.jsp" />
 
 </body>
 </html>
