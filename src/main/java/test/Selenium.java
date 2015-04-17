@@ -21,12 +21,6 @@ public class Selenium  {
         System.out.println("Accès à l'adresse");
         driver.get("http://localhost:8080/product/detail/24");
 
-        System.out.println("Recherche de l'input");
-        WebElement inputBox = driver.findElement(By.id("inputQuantity"));
-
-        System.out.println("Entrée de '2' dedans");
-        inputBox.sendKeys("2");
-
         System.out.println("Ajout au panier");
         driver.findElement(By.className("add-to-cart")).click();
 

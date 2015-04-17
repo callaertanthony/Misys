@@ -100,7 +100,7 @@
                                     <span>
                                         <span>${product.price}€</span>
                                         <label>Quantity:</label>
-                                        <input name="quantity" type="number" id="inputQuantity" value="1" max="${product.stock.quantity}" min="1" form="productForm-${product.id}"/>
+                                        <input name="quantity" type="number" value="1" max="${product.stock.quantity}" min="1" form="productForm-${product.id}"/>
                                         <input type="hidden" id="inputId" value="${product.id}"/>
 
                                         <div class="choose">
