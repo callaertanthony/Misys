@@ -24,7 +24,7 @@ public class Product {
     @ManyToOne(optional = false)
     private Brand brand;
     @Basic
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String description;
     @Basic
     @Column(unique = true, nullable = false)
