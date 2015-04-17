@@ -42,33 +42,41 @@
           <h2><spring:message code="create.newUserSignUp"/></h2>
           <form:form name="form" action="" method="post" modelAttribute="form">
             <form:errors/>
-              
-              <%--  <form:input type="email" name="email" value="${form.email}" id="email" required="true" path="email" class="form-control" placeholder="<spring:message code="login.email"/>"/>
-            <form:input type="password" name="password" id="password" required="true" path="password" class="form-control" placeholder="<spring:message code="login.password"/>"/>
-            <form:input type="password" name="passwordRepeated" id="passwordRepeated" required="true" path="passwordRepeated" class="form-control" placeholder="<spring:message code="create.repeatpw"/>"/>
-            <form:input type="text" name="firstName" id="firstName" required="true" path="firstName" class="form-control" placeholder="<spring:message code="view.firstName"/>"/>
-            <form:input type="text" name="lastName" id="lastName" required="true" path="lastName" class="form-control" placeholder="<spring:message code="view.lasttName"/>"/>
-            <form:select name="gender" id="gender" required="true" path="gender"  class="form-control" placeholder="<spring:message code="view.gender"/>">/ --%>
 
-              <form:input type="email" name="email" value="${form.email}" id="email" required="true" path="email" class="form-control" placeholder="E-mail"/>
-              <form:input type="password" name="password" id="password" required="true" path="password" class="form-control" placeholder="Password"/>
-              <form:input type="password" name="passwordRepeated" id="passwordRepeated" required="true" path="passwordRepeated" class="form-control" placeholder="Repeat password"/>
-              <form:input type="text" name="firstName" id="firstName" required="true" path="firstName" class="form-control" placeholder="First name"/>
-              <form:input type="text" name="lastName" id="lastName" required="true" path="lastName" class="form-control" placeholder="Last Name"/>
-              <form:select name="gender" id="gender" required="true" path="gender"  class="form-control" placeholder="Gender">
+              <spring:message code="create.email" var="email"/>
+              <spring:message code="create.password" var="password"/>
+              <spring:message code="create.repeatpw" var="repeat"/>
+              <spring:message code="view.firstName" var="firstname"/>
+              <spring:message code="view.lastName" var="lastname"/>
+              <spring:message code="view.gender" var="gender"/>
 
-              <form:option value="MAN"/>
-              <form:option value="WOMAN"/>
-            </form:select>
-            <button type="submit" class="btn btn-default"><spring:message code="login.button"/></button>
-          </form:form>
-        </div><!--/sign up form-->
-      </div>
-      <div class="col-sm-4"></div>
-    </div>
-  </div>
-</section>
-<!-- INCLUDE FOOTER -->
-<jsp:include page="../footer.jsp" />
-</body>
-</html>
+             <form:input type="email" name="email" value="${form.email}" id="email" required="true" path="email" class="form-control" placeholder="${email}"/>
+            <form:input type="password" name="password" id="password" required="true" path="password" class="form-control" placeholder="${password}"/>
+            <form:input type="password" name="passwordRepeated" id="passwordRepeated" required="true" path="passwordRepeated" class="form-control" placeholder="${repeat}"/>
+            <form:input type="text" name="firstName" id="firstName" required="true" path="firstName" class="form-control" placeholder="${firstname}"/>
+            <form:input type="text" name="lastName" id="lastName" required="true" path="lastName" class="form-control" placeholder="${lastname}"/>
+            <form:select name="gender" id="gender" required="true" path="gender"  class="form-control" placeholder="${gender}">/
+              <%--
+                          <form:input type="email" name="email" value="${form.email}" id="email" required="true" path="email" class="form-control" placeholder="E-mail"/>
+                          <form:input type="password" name="password" id="password" required="true" path="password" class="form-control" placeholder="Password"/>
+                          <form:input type="password" name="passwordRepeated" id="passwordRepeated" required="true" path="passwordRepeated" class="form-control" placeholder="Repeat password"/>
+                          <form:input type="text" name="firstName" id="firstName" required="true" path="firstName" class="form-control" placeholder="First name"/>
+                          <form:input type="text" name="lastName" id="lastName" required="true" path="lastName" class="form-control" placeholder="Last Name"/>
+                          <form:select name="gender" id="gender" required="true" path="gender"  class="form-control" placeholder="Gender">--%>
+                            <spring:message code="create.man" var="man"/>
+                            <spring:message code="create.woman" var="woman"/>
+                          <form:option value="${man}"/>
+                          <form:option value="${woman}"/>
+                        </form:select>
+                        <button type="submit" class="btn btn-default"><spring:message code="login.button"/></button>
+                      </form:form>
+                    </div><!--/sign up form-->
+                  </div>
+                  <div class="col-sm-4"></div>
+                </div>
+              </div>
+            </section>
+            <!-- INCLUDE FOOTER -->
+            <jsp:include page="../footer.jsp" />
+            </body>
+            </html>
