@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="left-sidebar">
-    <h2>Catégories</h2>
+    <h2><spring:message code="menu.category"/></h2>
     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
         <!-- CD -->
         <div class="panel panel-default">

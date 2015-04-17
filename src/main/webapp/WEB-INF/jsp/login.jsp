@@ -39,16 +39,16 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <div class="login-form"><!--login form-->
-                        <h2>Login to your account</h2>
+                        <h2><spring:message code="login.title"/></h2>
                         <form:form method="post" modelAttribute="error" class="form-horizontal" role="form" action="">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                            <input type="email" name="email" id="email" required autofocus class="form-control" placeholder="Email Address" />
-                            <input type="password" name="password" id="password" required class="form-control" placeholder="Password"/>
+                            <input type="email" name="email" id="email" required autofocus class="form-control" placeholder=<spring:message code="login.email"/> />
+                            <input type="password" name="password" id="password" required class="form-control" placeholder=<spring:message code="login.password"/>/>
                                 <span>
                                     <input type="checkbox" name="remember-me" id="remember-me" class="checkbox"/>
-                                    Keep me signed in
+                                    <spring:message code="login.keepSigned"/>
                                 </span>
-                            <button type="submit" class="btn btn-default">Login</button>
+                            <button type="submit" class="btn btn-default"><spring:message code="login.button"/></button>
                         </form:form>
                     </div><!--/login form-->
                 </div>
