@@ -92,10 +92,6 @@
 </section> <!--/#cart_items-->
 <section id="do_action">
     <div class="container">
-        <div class="heading">
-            <h3><spring:message code="cart.whatwouldyou"/></h3>
-            <p><spring:message code="cart.chooseIfYou"/></p>
-        </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="total_area">

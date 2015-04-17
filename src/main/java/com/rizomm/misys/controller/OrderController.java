@@ -95,6 +95,6 @@ public class OrderController {
         if(order.getCreator().getId() != user.getId()){
             return new ModelAndView("redirect:/");
         }
-        return new ModelAndView("/order/address/view", "order", order);
+        return new ModelAndView("/shop/order/view", "order", order);
     }
 }
