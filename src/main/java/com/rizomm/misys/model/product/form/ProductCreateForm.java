@@ -7,9 +7,13 @@ import com.rizomm.misys.model.Review;
 import com.rizomm.misys.model.Stock;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 /**
@@ -37,6 +41,31 @@ public class ProductCreateForm {
 
     @NotNull
     private Category category;
+
+    private MultipartFile file;
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        /*
+        System.out.println("File name: " + this.getPicture());
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(this.getPicture())));
+                stream.write(bytes);
+                stream.close();
+            } catch (Exception e) {
+                System.out.println("You failed to upload " + this.getPicture() + " => " + e.getMessage());
+            }
+        } else {
+            System.out.println( "You failed to upload " + this.getPicture() + " because the file was empty.");
+        }*/
+        this.file = file;
+    }
 
     public float getPrice() {
         return price;

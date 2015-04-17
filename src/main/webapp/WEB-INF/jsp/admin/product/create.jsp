@@ -65,6 +65,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="file" class="col-sm-2 control-label">Picture</label>
+                        <div class="col-sm-10">
+                        <form:input type="file" id="file" path="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="category" class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-10">
                         <form:select name="category" id="category" required="true" path="category"  class="form-control" placeholder="Category">
@@ -87,7 +93,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Create product</button>
-                        s</div>
+                        </div>
                     </div>
                 </form:form>
             </div>

@@ -43,12 +43,23 @@ public class ProductCreateFormValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "picture", "field.required", "Field required");
 
         validatePrice(errors, form);
+        validateFile(errors, form);
+
         //validateBrand(errors, form);
         //validateCategory(errors, form);
     }
     private void validatePrice(Errors errors, ProductCreateForm form) {
-        if(form.getPrice() <= 0){
+            if (form.getPrice() <= 0) {
+                errors.reject("price", "price.min");
+        }
+    }
+    private void validateFile(Errors errors, ProductCreateForm form) {
+        if(null == form.getFile()) {
             errors.reject("price", "price.min");
+        } else {
+            if (form.getFile().getSize() == 0) {
+                errors.rejectValue("file", "file.selectFile", "Please select a file!");
+            }
         }
     }
 
