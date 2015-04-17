@@ -28,7 +28,7 @@
                     <div class="single-widget">
                         <h2>Service</h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="<spring:url value="/contact"/>">Contact Us</a></li>
+                            <li><a href="<spring:url value="/contact"/>"><spring:message code="footer.contactUs"/> </a></li>
                             <li><a href="<spring:url value="/faq"/>">FAQ’s</a></li>
                         </ul>
                     </div>
@@ -37,9 +37,9 @@
                     <div class="single-widget">
                         <h2><spring:message code="footer.quickShop"/></h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="<spring:url value="/shop/cart"/>">Cart</a></li>
-                            <li><a href="<spring:url value="/wishlist"/>">Wishlist</a></li>
-                            <li><a href="<spring:url value="/product/search?searchInput="/>">Search</a></li>
+                            <li><a href="<spring:url value="/shop/cart"/>"><spring:message code="navbar.cart"/></a></li>
+                            <li><a href="<spring:url value="/wishlist"/>"><spring:message code="navbar.wishlist"/></a></li>
+                            <li><a href="<spring:url value="/product/search?searchInput="/>"><spring:message code="navbar.search"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="single-widget">
                         <h2><spring:message code="footer.policies"/></h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="<spring:url value="/terms"/>">Terms of Use</a></li>
+                            <li><a href="<spring:url value="/terms"/>"><spring:message code="footer.termOfUse"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="single-widget">
                         <h2><spring:message code="footer.aboutMysis"/></h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="<spring:url value="/company"/>">Company Information</a></li>
+                            <li><a href="<spring:url value="/company"/>"><spring:message code="footer.companyInformations"/></a></li>
                         </ul>
                     </div>
                 </div>

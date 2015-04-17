@@ -112,7 +112,7 @@
                     </c:when>
                     <c:otherwise>
                         <td>
-                            <p>No product added to your cart yet.</p>
+                            <p><spring:message code="cart.noPoductAdd"/></p>
                         </td>
                     </c:otherwise>
                 </c:choose>
@@ -121,7 +121,7 @@
             <form id="productForm-remove-all" name="productForm-remove-all" class="productForm">
                 <button type="button" class="btn btn-default remove-all-from-cart"
                         formaction="<spring:url value="/remove-all-from-cart"/>" form="productForm-remove-all">
-                    <i class="glyphicon glyphicon-trash"></i> Remove all products
+                    <i class="glyphicon glyphicon-trash"></i> <spring:message code="cart.removeAll"/>
                 </button>
             </form>
         </div>
@@ -161,7 +161,7 @@
 
                         </li>
                         <li class="single_field zip-field">
-                            <label>Address:</label>
+                            <label><spring:message code="view.adress"/>:</label>
                             <input type="text">
                         </li>
                         <li class="single_field zip-field">
