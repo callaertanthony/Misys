@@ -2,14 +2,14 @@ INSERT INTO stock (id, quantity) VALUES (1, 10);
 INSERT INTO stock (id, quantity) VALUES (2, 250);
 INSERT INTO stock (id, quantity) VALUES (3, 104);
 INSERT INTO stock (id, quantity) VALUES (4, 102);
-INSERT INTO stock (id, quantity) VALUES (5, 1000);
+INSERT INTO stock (id, quantity) VALUES (5, 0);
 
 /*------------------------------Add brand-------------------------------------------*/
 INSERT INTO `misys`.`brand` (`id`, `name`) VALUES ('1', 'Columbia'), ('2', 'Universal'),('3', 'Geffen'),('4', 'Vertigo'),('5', 'Studiocanal'),('6', 'M6 Video'),('7', 'Universal Picture'),('8', 'Warner Bros'),('9', 'Warner Music'),('10', 'Mosaert'),('11', 'On And On Record'),('12', 'HBO');
 
 /*---------------------------------------------------------------------------------------------CD--------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------- DaftPunk-------------------------------------------*/
-INSERT INTO stock (id, quantity) VALUES (6, 100000);
+INSERT INTO stock (id, quantity) VALUES (6, 4);
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('13','Dance','Dance','14'); /*Daft Punk*/
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('14','Electro','Electro','0'); /*Daft Punk*/
 INSERT INTO `misys`.`product` (`id`, `description`, `name`, `picture`, `price`, `reference`, `brand_id`, `category_id`, `stock_id`)
@@ -26,7 +26,7 @@ VALUES
    '6');
 
 /*------------------------------Metalica-------------------------------------------*/
-INSERT INTO stock (id, quantity) VALUES (7, 5000);
+INSERT INTO stock (id, quantity) VALUES (7, 0);
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('15','Rock','Rock','16'); /*Daft Punk*/
 INSERT INTO `misys`.`category` (`id`, `category`,`category_link`,`id_parent`) VALUES ('16','Hard','Hard','0'); /*Daft Punk*/
 INSERT INTO `misys`.`product` (`id`, `description`, `name`, `picture`, `price`, `reference`, `brand_id`, `category_id`, `stock_id`)

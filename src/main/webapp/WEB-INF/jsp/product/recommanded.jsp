@@ -35,16 +35,20 @@
                                     <h2>${productElement.price}€</h2>
 
                                     <p>${productElement.name}</p>
+                                    <c:if test="${productElement.haveStock()}">
                                     <div>
                                         <label>Quantity:</label>
                                         <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
                                     </div>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-stacked">
                                     <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/></button></li>
-                                    <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></button></li>
+                                    <c:if test="${productElement.haveStock()}">
+                                        <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></button></li>
+                                    </c:if>
                                 </ul>
                             </div>
                         </div>

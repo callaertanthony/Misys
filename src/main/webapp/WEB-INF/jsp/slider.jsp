@@ -27,7 +27,7 @@
                                 <button type="button" class="btn btn-default get"><spring:message code="slider.button1"/></button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<spring:url value="${products[0].getPicturelink()}"/>" class="slider img-responsive" alt="" />
+                                <img src="<spring:url value="${products[2].getPicturelink()}"/>" class="slider img-responsive" alt="" />
                             </div>
                         </div>
                         <div class="item">

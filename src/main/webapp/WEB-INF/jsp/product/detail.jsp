@@ -52,17 +52,26 @@
                     <c:when test="${categories.size()<='10'}">
                         <ol class="breadcrumb_detail breadcrumb">
                             <c:forEach items="${categories}" var="category">
-                                <li><a href="<spring:url value="/category/${category.getCategoryLink()}"/>"> ${category.getCategory()} </a> </li>
+                                <%--<li><a href="<spring:url value="/category/${category.getCategoryLink()}"/>"> ${category.getCategory()} </a> </li>--%>
+                                <li><a href="<spring:url value="/"/>"> ${category.getCategory()} </a> </li>
                             </c:forEach>
                         </ol>
                     </c:when>
                     <c:otherwise>
                         <ol class="breadcrumb_detail breadcrumb">
+                            <%--
                             <li><a href="<spring:url value="/category/${categories.get(0).getCategoryLink()}"/> ${pageContext.request.contextPath}"> ${categories.get(0).getCategory()}</a></li>
                             <li> (...) </li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-3).getCategoryLink()}"/>"></a></li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-2).getCategoryLink()}"/>"></a></li>
                             <li><a href="<spring:url value="/category/${categories.get(categories.size()-1).getCategoryLink()}"/>"></a></li>
+                            --%>
+                            <li><a href="<spring:url value="/"/> ${pageContext.request.contextPath}"> ${categories.get(0).getCategory()}</a></li>
+                            <li> (...) </li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+                            <li><a href="<spring:url value="/"/>"></a></li>
+
                         </ol>
                     </c:otherwise>
                 </c:choose>
@@ -99,9 +108,11 @@
                                     </c:choose>
                                     <span>
                                         <span>${product.price}€</span>
+                                        <c:if test="${product.haveStock()}">
                                         <label>Quantity:</label>
                                         <input name="quantity" type="number" value="1" max="${product.stock.quantity}" min="1" form="productForm-${product.id}"/>
-                                        <input type="hidden" id="inputId" value="${product.id}"/>
+                                        </c:if>
+                                            <input type="hidden" id="inputId" value="${product.id}"/>
 
                                         <div class="choose">
 
@@ -112,12 +123,14 @@
                                                         <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
                                                     </button>
                                                 </li>
-                                                <li>
-                                                    <button type="button" class="btn btn-default add-to-cart"
-                                                            formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
-                                                        <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
-                                                    </button>
-                                                </li>
+                                                <c:if test="${product.haveStock()}">
+                                                    <li>
+                                                        <button type="button" class="btn btn-default add-to-cart"
+                                                                formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
+                                                            <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                                        </button>
+                                                    </li>
+                                                </c:if>
                                             </ul>
                                         </div>
                                     </span>

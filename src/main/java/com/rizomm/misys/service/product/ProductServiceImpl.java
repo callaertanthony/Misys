@@ -69,6 +69,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Set<Product> getAllByCategory(String category) {
+        return new HashSet<>(productRepository.findByPictureContaining(category));
+    }
+
+    @Override
     public Set<Product> getAllByReferenceContaining(String reference) {
         return new HashSet<>(productRepository.findByReferenceContaining(reference));
     }
