@@ -107,18 +107,6 @@
         </div>
     </div><!--/category-products-->
 
-    <div class="brands_products"><!--brands_products-->
-        <h2>Studio</h2>
-        <div class="brands-name">
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href=""> <span class="pull-right">(50)</span>Sony</a></li>
-                <li><a href=""> <span class="pull-right">(56)</span>Universal Pictures</a></li>
-                <li><a href=""> <span class="pull-right">(27)</span>Walt Disney</a></li>
-                <li><a href=""> <span class="pull-right">(27)</span>Warner Bros</a></li>
-            </ul>
-        </div>
-    </div><!--/brands_products-->
-
     <div class="price-range"><!--price-range-->
         <h2>Prix</h2>
         <div class="well">
