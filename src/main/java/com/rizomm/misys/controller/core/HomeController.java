@@ -1,4 +1,4 @@
-package com.rizomm.misys.controller;
+package com.rizomm.misys.controller.core;
 
 import com.rizomm.misys.model.Product;
 import com.rizomm.misys.service.product.ProductService;

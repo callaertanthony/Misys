@@ -1,11 +1,7 @@
 package com.rizomm.misys.model.product.form;
 
-import com.rizomm.misys.service.product.BrandService;
-import com.rizomm.misys.service.product.CategoryService;
-import com.rizomm.misys.service.product.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

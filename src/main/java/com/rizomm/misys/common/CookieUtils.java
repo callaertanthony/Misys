@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
  * Created by anthonycallaert on 13/04/15.
  */
 public class CookieUtils {
+    private CookieUtils() {
+
+    }
 
     public static Cookie getCookieByName(HttpServletRequest httpRequest, String cookieName) {
         Cookie[] cookies = httpRequest.getCookies();

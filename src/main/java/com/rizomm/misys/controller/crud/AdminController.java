@@ -1,6 +1,5 @@
 package com.rizomm.misys.controller.crud;
 
-import com.rizomm.misys.model.Category;
 import com.rizomm.misys.model.product.form.ProductCreateForm;
 import com.rizomm.misys.model.product.form.ProductCreateFormValidator;
 import com.rizomm.misys.service.product.BrandService;
