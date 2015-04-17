@@ -12,11 +12,13 @@ public class CurrentUserControllerAdvice {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CurrentUserControllerAdvice.class);
 
+    private CurrentUserControllerAdvice() {
+    }
+
     @ModelAttribute("currentUser")
     public static CurrentUser getCurrentUser(Authentication authentication) {
         LOGGER.debug("Getting Current User.");
         return (authentication == null) ? null : (CurrentUser) authentication.getPrincipal();
     }
-
 
 }

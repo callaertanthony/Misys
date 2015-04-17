@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Map;
 
 /**
  * Created by anthonycallaert on 12/04/15.
@@ -75,8 +74,8 @@ public class CartServiceImpl implements CartService {
      * @return An HashMap with products as keys and quantities as values.
      */
     @Override
-    public HashMap<Product, Integer> getProducts() {
-        HashMap<Product, Integer> products = new HashMap<>();
+    public Map<Product, Integer> getProducts() {
+        Map<Product, Integer> products = new HashMap<>();
 
         for(Integer productId : this.cart.getProducts().keySet()){
             products.put(productRepository.findOne(productId), this.cart.getProducts().get(productId));

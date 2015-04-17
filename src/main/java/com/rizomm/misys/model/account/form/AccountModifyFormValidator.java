@@ -21,6 +21,5 @@ public class AccountModifyFormValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         LOGGER.debug("Validating {}", o);
-        AccountModifyForm form = (AccountModifyForm) o;
     }
 }

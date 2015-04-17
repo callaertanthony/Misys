@@ -79,7 +79,7 @@
                     </c:when>
                     <c:otherwise>
                         <td>
-                            <p>No product added to your wishlist yet.</p>
+                            <p><spring:message code="cart.noPoductAdd"/></p>
                         </td>
                     </c:otherwise>
                 </c:choose>
@@ -88,7 +88,7 @@
             <form id="productForm-remove-all" name="productForm-remove-all" class="productForm">
                 <button type="button" class="btn btn-default remove-all-from-wishlist"
                         formaction="<spring:url value="/remove-all-from-wishlist"/>" form="productForm-remove-all">
-                    <i class="glyphicon glyphicon-trash"></i> Remove all products
+                    <i class="glyphicon glyphicon-trash"></i> <spring:message code="cart.removeAll"/>
                 </button>
             </form>
         </div>

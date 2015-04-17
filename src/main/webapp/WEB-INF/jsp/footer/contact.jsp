@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Contact Us | Misys</title>
+    <title><spring:message code="footer.contactUs"/> | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
@@ -37,7 +37,7 @@
 <jsp:include page="../header.jsp" />
 
 <div class="container">
-    <p>Pour toute question relative à l'utilisation de Misys, ou pour tout problème, n'hésitez-pas à faire appel à nous <a href="mailto:contact@misys.fr">à cette adresse</a>.</p>
+    <p><spring:message code="contact.callUs"/><a href="mailto:contact@misys.fr"> <spring:message code="contact.here"/></a>.</p>
 </div>
 
 <!-- INCLUDE FOOTER -->

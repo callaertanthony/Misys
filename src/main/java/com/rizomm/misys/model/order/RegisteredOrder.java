@@ -2,7 +2,6 @@ package com.rizomm.misys.model.order;
 
 import com.rizomm.misys.model.Product;
 import com.rizomm.misys.model.account.User;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.util.Map;

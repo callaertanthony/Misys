@@ -9,6 +9,10 @@ import javax.persistence.*;
 public class Brand {
     private int id;
 
+    @Basic
+    @Column(unique = true, nullable = false)
+    private String name;
+
     public String getName() {
         return name;
     }
@@ -22,10 +26,6 @@ public class Brand {
     public void setId(int id) {
         this.id = id;
     }
-
-    @Basic
-    @Column(unique = true, nullable = false)
-    private String name;
 
     public void setName(String name) {
         this.name = name;

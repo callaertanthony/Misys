@@ -21,6 +21,5 @@ public class CartProductFormValidator implements Validator{
     @Override
     public void validate(Object target, Errors errors) {
         LOGGER.debug("Validating product added to cart = {}", target);
-        CartProductForm cartProductForm = (CartProductForm) target;
     }
 }

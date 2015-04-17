@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Company Information | Misys</title>
+    <title><spring:message code="footer.companyInformations"/> | Misys</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<spring:url value="/assets/css/prettyPhoto.css"/>" rel="stylesheet">
@@ -37,15 +37,15 @@
 <jsp:include page="../header.jsp" />
 
 <div class="container">
-    <h2>A propos de Misys</h2>
+    <h2><spring:message code="footer.aboutMysis"/></h2>
 
-    <p><h3>Notre but</h3></p>
-    <p>Diffuser de la musique !</p>
-    <p><h3>Notre force</h3></p>
-    <p>Toujours plus proches de vous !</p><br>
-    <p>Misys est née de la volonté de proposer facilement  de la musique pour tous, et se veut comme un pilier de la distribution en ligne de musique sous mutliples formats. </p><br>
+    <p><h3><spring:message code="company.but"/></h3></p>
+    <p><spring:message code="company.broadcast"/></p>
+    <p><h3><spring:message code="company.ourStrengt"/></h3></p>
+    <p><spring:message code="company.alwaysArnoud"/></p><br>
+    <p><spring:message code="company.presentationMisys"/> </p><br>
 
-    <h2>N'hésitez-plus, prenez Misys !</h2>
+    <h2><spring:message code="company.come"/></h2>
 
 
 </div>

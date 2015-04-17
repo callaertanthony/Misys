@@ -41,36 +41,36 @@
 <div class="container">
 
     <div>
-        <h1> FAQ - Foire Aux Questions </h1>
+        <h1> <spring:message code="faq.faq"/></h1>
 
-        <p>Vous trouverez ci-dessous les réponses aux questions les plus fréquemment posées par thèmes :</p>
+        <p><spring:message code="faq.response"/></p>
 
         <hr>
 
 
-        <h2>Articles et Commandes</h2>
-        Comment trouver un produit sur le site ?<br>
-        <i>Il suffit de cliquer sur le champ de recherche avec une loupe, en haut du site, ou <a href="<spring:url value="/product/search?searchInput="/>">ici</a>.</i><br><br>
-        Comment puis-je modifier ma commande ou l'annuler ?<br>
-        <i>Directement dans le <a href="<spring:url value="/shop/cart"/>">panier</a>!</i><br><br>
+        <h2><spring:message code="faq.articleNorder"/></h2>
+        <spring:message code="faq.howFindProduct"/><br>
+        <i><spring:message code="faq.clickSearch"/><a href="<spring:url value="/product/search?searchInput="/>"> <spring:message code="faq.here"/></a>.</i><br><br>
+        <spring:message code="faq.howCancelOrder"/><br>
+        <i>Directement dans le <a href="<spring:url value="/shop/cart"/>"><spring:message code="navbar.cart"/></a>!</i><br><br>
 
         <h2>MP3</h2>
-        Comment faire pour télécharger des MP3 ?<br>
-        <i>Dans vos produits achetés, cliquez sur télécharger.</i><br><br>
+        <spring:message code="faq.howDownloadMP3"/><br>
+        <i><spring:message code="faq.clickDownload"/></i><br><br>
 
-        <h2>Paiement</h2>
-        Quelssont les moyens de paiements possibles ?<br>
-        <i>Par carte bleue ou compte Paypal.</i><br><br>
-        Comment puis-je ajouter, modifier ou supprimer un mode de paiement&nbsp;?<br>
-        <i>Dans votre <a href="<spring:url value="/account"/>">compte</a>, dans la partie "Vos options de paiement".</i><br><br>
+        <h2><spring:message code="faq.payement"/></h2>
+        <spring:message code="faq.payementAvailable"/><br>
+        <i><spring:message code="faq.blueCardNPaypal"/></i><br><br>
+        <spring:message code="faq.howModifyPayement"/><br>
+        <i><spring:message code="faq.in"/><a href="<spring:url value="/account"/>"> <spring:message code="navbar.account"/></a>, <spring:message code="faq.inPayementSettings"/>".</i><br><br>
 
-        <h2>Votre compte</h2>
-        Comment créer mon compte ?<br>
-        <i>Cliquez sur "Se connecter" en haut de page, ou <a href="<spring:url value="/login"/>">ici</a>.</i><br><br>
-        Comment faire pour terminer ma session sur le site ?<br>
-        <i>En haut de page, cliquez sur le bouton "Déconnexion".</i><br><br>
-        Comment changer mon nom, mon adresse e-mail ou mon mot de passe&nbsp;?<br>
-        <i>Directement dans votre <a href="<spring:url value="/account"/>">compte</a>.</i><br><br>
+        <h2><spring:message code="faq.ourAccount"/></h2>
+        <spring:message code="faq.howCreateAccount"/><br>
+        <i><spring:message code="faq.clickOnlogin"/><a href="<spring:url value="/login"/>"> <spring:message code="faq.here"/></a>.</i><br><br>
+        <spring:message code="faq.endSession"/><br>
+        <i><spring:message code="faq.clickLogout"/></i><br><br>
+        <spring:message code="faq.howChangeaccount"/><br>
+        <i><spring:message code="faq.directely"/><a href="<spring:url value="/account"/>"> <spring:message code="navbar.account"/></a>.</i><br><br>
     </div>
 </div>
 

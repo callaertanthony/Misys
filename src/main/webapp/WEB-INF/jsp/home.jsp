@@ -80,7 +80,7 @@
                                             <li>
                                                 <button type="button" class="btn btn-default add-to-wishlist"
                                                         formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}">
-                                                    <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
+                                                    <i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/>
                                                 </button>
                                             </li>
                                             <li>

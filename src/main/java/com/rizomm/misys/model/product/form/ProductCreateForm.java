@@ -3,14 +3,10 @@ package com.rizomm.misys.model.product.form;
 import com.rizomm.misys.common.Constants;
 import com.rizomm.misys.model.Brand;
 import com.rizomm.misys.model.Category;
-import com.rizomm.misys.model.Review;
-import com.rizomm.misys.model.Stock;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * Created by Guillaume on 17/04/2015.

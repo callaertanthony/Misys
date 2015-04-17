@@ -10,22 +10,20 @@ public final class Constants {
     }
 
     public static class Product{
+        public static final String IMAGE_PATH = "/assets/images/product-details/";
 
         private Product() {
         }
-
-        public static final String IMAGE_PATH = "/assets/images/product-details/";
     }
 
     public static class Cart{
-
-        private Cart() {
-
-        }
-
         public static final String COOKIE_NAME = "cart";
 
         /* cookie duration is set to seven days*/
         public static final int COOKIE_DURATION = 60*60*24*7;
+
+        private Cart() {
+
+        }
     }
 }

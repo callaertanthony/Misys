@@ -70,15 +70,14 @@ public class AccountModifyForm {
     }
 
 
-    public AccountModifyForm() {
-    }
-
-
     public AccountModifyForm(String email, String firstName, String lastName, Gender gender) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
+    }
+
+    public AccountModifyForm() {
     }
 
     @Override
