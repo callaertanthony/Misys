@@ -44,4 +44,27 @@ public class WishlistController {
         modelAndView.addObject("products", products);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/remove-from-wishlist", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+     public ModelAndView removeFromWishList(@RequestBody WishlistProductForm wishlistProductForm){
+        LOGGER.debug("Getting ajax request for removing product from wishlist {} = ", wishlistProductForm);
+        wishlistService.removeProduct(wishlistProductForm.getProductId());
+        LOGGER.debug("End to removing product from wishlist");
+        ModelAndView mvn = new ModelAndView("shop/wishlistContent");
+        Collection<Product> products = wishlistService.getProducts();
+        mvn.addObject("products", products);
+        return mvn;
+    }
+
+    @RequestMapping(value = "/remove-all-from-wishlist", method = RequestMethod.POST)
+    public ModelAndView removeAllFromWishList(){
+        LOGGER.debug("Getting ajax request for removing all products from wishlist.");
+        wishlistService.removeAllProducts();
+        LOGGER.debug("End to removing all products from cart");
+        ModelAndView mvn = new ModelAndView("shop/wishlistContent");
+        Collection<Product> products = wishlistService.getProducts();
+        mvn.addObject("products", products);
+        return mvn;
+    }
 }

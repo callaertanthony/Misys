@@ -36,4 +36,11 @@ public class WishList {
     public void removeProduct(Product product){
         this.products.remove(product.getId());
     }
+
+    /**
+     * Method to remove all products from wishlist.
+     */
+    public void removeAllProducts(){
+        this.products.clear();
+    }
 }

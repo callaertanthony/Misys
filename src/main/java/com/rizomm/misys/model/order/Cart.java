@@ -78,4 +78,22 @@ public class Cart implements Serializable{
             this.products.remove(product.getId());
         }
     }
+
+    /**
+     * Method to remove all products from cart.
+     */
+    public void removeAllProducts(){
+        this.products.clear();
+    }
+
+    /**
+     *
+     * @param product a product to check if is in cart
+     * @return true if product is in the cart, false else
+     */
+    public boolean containsProduct(Product product){
+        if(this.products.containsKey(product.getId()))
+            return true;
+        return false;
+    }
 }

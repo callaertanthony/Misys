@@ -28,10 +28,11 @@
     <link href="<spring:url value="/assets/css/responsive.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="<spring:url value="/assets/js/html5shiv.js"/>"></script>
-    <script src="<spring:url value="/assets/js/respond.min.js"/>" ></script>
+    <script src="<spring:url value="/assets/js/respond.min.js"/>"></script>
     <![endif]-->
 </head><!--/head-->
 <body>
+
 <!-- INCLUDE HEADER -->
 <jsp:include page="header.jsp" />
 
@@ -56,16 +57,16 @@
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Les produits du moment</h2>
                     <c:forEach items="${products}" var="product">
-                    <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
-                        <input name="productId" type="hidden" value="${product.id}"/>
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <a href="<spring:url value="/product/detail/${product.id}"/>">
-                                            <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
-                                        </a>
-                                        <h2>${product.price}€</h2>
+                        <form id="productForm-${product.id}" name="productForm-${product.id}" class="productForm">
+                            <input name="productId" type="hidden" value="${product.id}"/>
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a href="<spring:url value="/product/detail/${product.id}"/>">
+                                                <img src="<spring:url value="${product.getPicturelink()}"/>" alt="${product.name} picture"/>
+                                            </a>
+                                            <h2>${product.price}€</h2>
 
                                             <p>${product.name}</p>
                                             <div>
@@ -80,7 +81,7 @@
                                             <li>
                                                 <button type="button" class="btn btn-default add-to-wishlist"
                                                         formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}">
-                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
                                                 </button>
                                             </li>
                                             <li>
@@ -129,11 +130,19 @@
                                                 </div>
                                             </div>
                                             <div class="choose">
-                                                <ul class="nav nav-pills nav-justified">
-                                                    <li><button type="button" class="btn btn-default add-to-wishlist"
-                                                            formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}"><i class="glyphicon glyphicon-heart-empty"></i></button></li>
-                                                    <li><button type="button" class="btn btn-default add-to-cart"
-                                                            formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}"><i class="glyphicon glyphicon-shopping-cart"></i></button></li>
+                                                <ul class="nav nav-pills nav-stacked">
+                                                    <li>
+                                                        <button type="button" class="btn btn-default add-to-wishlist"
+                                                                formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}">
+                                                            <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="btn btn-default add-to-cart"
+                                                                formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
+                                                            <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                                        </button>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>

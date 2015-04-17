@@ -34,15 +34,15 @@
                 <div class="col-sm-7">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="<spring:url value="/account"/>"><i class="glyphicon glyphicon-user"></i> <spring:message code="navbar.account"/></a></li>
                             <li><a href="<spring:url value="/wishlist"/>"><i class="glyphicon glyphicon-heart-empty"></i> <spring:message code="navbar.wishlist"/></a></li>
                             <li><a href="<spring:url value="/shop/cart"/>"><i class="glyphicon glyphicon-shopping-cart"></i> <spring:message code="navbar.cart"/></a></li>
                             <sec:authorize access="isAuthenticated()">
-                                <li><a href="<spring:url value="/account/view"/>"><i class="glyphicon glyphicon-user"></i> Compte</a></li>
+                                <li><a href="<spring:url value="/account/view"/>"><i class="glyphicon glyphicon-user"></i> <spring:message code="navbar.account"/></a></li>
                                 <li>
+                                    <spring:url value='/logout' var="logoutUrl"/>
                                     <form:form action="${logoutUrl}" method="post" class="form-inline left">
                                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  class="form-control"/>
-                                        <button type="submit" class="submitLink">Se déconnecter</button>
+                                        <button type="submit" class="submitLink"><spring:message code="navbar.logout"/></button>
                                     </form:form>
                                 </li>
                             </sec:authorize>
@@ -72,7 +72,6 @@
                                        placeholder="<spring:message code="navbar.search"/>" style="border: 0px;">
                             </div>
                             <div class="col-sm-4">
-
                                 <button type="submit" id="searchBtn" class="btn btn-default">
                                 <span class="glyphicon glyphicon-search"></span>
                                 </button>
@@ -84,3 +83,6 @@
         </div>
     </div>
 </header><!--/header-->
+<!-- INCLUDE POPUPS -->
+<jsp:include page="product/popup-success.jsp" />
+<jsp:include page="product/popup-failed.jsp" />

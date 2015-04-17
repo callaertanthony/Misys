@@ -47,5 +47,15 @@ public class WishlistServiceImpl implements WishlistService {
         return products;
     }
 
+    @Override
+    public void removeProduct(int id) {
+        Product product = productRepository.findOne(id);
+        if(null != product)
+            this.wishList.removeProduct(product);
+    }
 
+    @Override
+    public void removeAllProducts() {
+        this.wishList.removeAllProducts();
+    }
 }

@@ -26,7 +26,7 @@ public class HomeController {
     private ProductService productService;
 
 
-    @RequestMapping(method= RequestMethod.GET)
+    @RequestMapping
     public ModelAndView showProductDetail() {
         try {
             Collection<Product> listProducts = new ArrayList<>();

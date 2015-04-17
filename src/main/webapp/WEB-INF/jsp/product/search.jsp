@@ -14,6 +14,9 @@
 <html>
 <head>
     <title>Search | Misys</title>
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="<spring:url value="/assets/css/font-awesome.min.css"/>" rel="stylesheet">
