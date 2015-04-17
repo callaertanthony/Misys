@@ -1,6 +1,9 @@
 package com.rizomm.misys.model.account;
 
+import com.rizomm.misys.model.order.RegisteredOrder;
+
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by anthonycallaert on 19/03/15.
@@ -32,6 +35,9 @@ public class User {
 
     @Column(nullable = true, updatable = true)
     private String lastName;
+
+    @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL)
+    private Set<RegisteredOrder> orders;
 
     public Long getId() {
         return id;
@@ -83,6 +89,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<RegisteredOrder> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<RegisteredOrder> orders) {
+        this.orders = orders;
     }
 
     @Override

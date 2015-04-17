@@ -1,6 +1,7 @@
 package com.rizomm.misys.service;
 
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.account.User;
 import com.rizomm.misys.model.order.RegisteredOrder;
 import com.rizomm.misys.model.order.SessionOrder;
 import com.rizomm.misys.model.order.form.AddressForm;
@@ -16,7 +17,7 @@ public interface OrderService {
 
     SessionOrder setAddressByForm(AddressForm addressForm);
 
-    RegisteredOrder save();
+    RegisteredOrder save(User user);
 
     Optional<RegisteredOrder> getRegisteredOrderById(Integer id);
 }

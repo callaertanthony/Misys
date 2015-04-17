@@ -1,6 +1,7 @@
 package com.rizomm.misys.service;
 
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.account.User;
 import com.rizomm.misys.model.order.RegisteredOrder;
 import com.rizomm.misys.model.order.SessionOrder;
 import com.rizomm.misys.model.order.form.AddressForm;
@@ -50,8 +51,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public RegisteredOrder save() {
+    public RegisteredOrder save(User user) {
         RegisteredOrder registeredOrder = new RegisteredOrder();
+        registeredOrder.setCreator(user);
         registeredOrder.setProductsQuantity(this.sessionOrder.getProductsQuantity());
         registeredOrder.setCity(this.sessionOrder.getCity());
         registeredOrder.setCountry(this.sessionOrder.getCountry());

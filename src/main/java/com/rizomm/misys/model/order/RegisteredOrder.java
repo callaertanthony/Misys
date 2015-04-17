@@ -1,6 +1,7 @@
 package com.rizomm.misys.model.order;
 
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.account.User;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -40,6 +41,9 @@ public class RegisteredOrder {
 
     @Column(nullable = false, updatable = false)
     private float price = 0;
+
+    @ManyToOne
+    private User creator;
 
     public Integer getId() {
         return id;
@@ -111,5 +115,13 @@ public class RegisteredOrder {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 }
