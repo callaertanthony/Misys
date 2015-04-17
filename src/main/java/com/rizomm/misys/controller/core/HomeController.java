@@ -46,6 +46,27 @@ public class HomeController {
 
     }
 
+    @RequestMapping("/contact")
+    public ModelAndView contact()
+    {
+        return new ModelAndView("footer/contact");
+    }
+    @RequestMapping("/faq")
+    public ModelAndView faq()
+    {
+        return new ModelAndView("footer/faq");
+    }
+    @RequestMapping("/terms")
+    public ModelAndView terms()
+    {
+        return new ModelAndView("footer/terms");
+    }
+    @RequestMapping("/company")
+    public ModelAndView company()
+    {
+        return new ModelAndView("footer/company");
+    }
+
     /**
      * This method is called by the Application object when an HTTP "NOT FOUND" error is detected.
      * It can happens when user ask for an unknown page, so we just redirect him to the 404 error JSP
