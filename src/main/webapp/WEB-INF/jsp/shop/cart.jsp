@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <head>
     <meta charset="utf-8">
@@ -82,7 +83,8 @@
                                         <input name="quantity-${product.key.id}" type="number" value="${product.value}" max="${product.key.stock.quantity}" min="1" form="productForm-${product.key.id}"/>
                                     </td>
                                     <td class="cart_total">
-                                        <p class="cart_total_price">${product.key.price * product.value} $</p>
+                                        <p class="cart_total_price"><fmt:formatNumber type="number" value="${product.key.price * product.value}"
+                                                                                      minFractionDigits="2" maxFractionDigits="2"/> $</p>
                                     </td>
                                     <td class="cart_delete">
                                         <button type="button" class="btn btn-default remove-from-cart"

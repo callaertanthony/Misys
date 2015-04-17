@@ -74,13 +74,13 @@ function initTrigger() {
                         $("#popup-success").modal("hide");
                     }, 3000);
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $("#popup-fail").modal("show");
                     $("p#popup-message").text("An error occured while removing the product from cart.");
                     setTimeout(function(){
                         $("#popup-fail").modal("hide");
                     }, 3000);
-                    $('#table-cart').html(response);
                 }
             },
             error: function(){
@@ -114,13 +114,13 @@ function initTrigger() {
                         $("#popup-success").modal("hide");
                     }, 3000);
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $("#popup-fail").modal("show");
                     $("p#popup-message").text("Product update failed.");
                     setTimeout(function(){
                         $("#popup-fail").modal("hide");
                     }, 3000);
-                    $('#table-cart').html(response);
                 }
             },
             error: function(){
@@ -150,13 +150,13 @@ function initTrigger() {
                         $("#popup-success").modal("hide");
                     }, 3000);
                     $('#table-cart').html(response);
+                    initTrigger();
                 } else {
                     $("#popup-success").modal("show");
                     $("p#popup-message").text("Can't remove products from cart.");
                     setTimeout(function(){
                         $("#popup-success").modal("hide");
                     }, 3000);
-                    $('#table-wishlist').html(response);
                 }
             },
             error: function(){
@@ -188,13 +188,13 @@ function initTrigger() {
                         $("#popup-fail").modal("hide");
                     }, 3000);
                     $('#table-wishlist').html(response);
+                    initTrigger();
                 } else {
                     $("#popup-fail").modal("show");
                     $("p#popup-message").text("Can't remove products from wishlist.");
                     setTimeout(function(){
                         $("#popup-fail").modal("hide");
                     }, 3000);
-                    $('#table-wishlist').html(response);
                 }
             },
             error: function(){
@@ -224,13 +224,13 @@ function initTrigger() {
                         $("#popup-fail").modal("hide");
                     }, 3000);
                     $('#table-wishlist').html(response);
+                    initTrigger();
                 } else {
                     $("#popup-fail").modal("show");
                     $("p#popup-message").text("Can't remove products from wishlist.");
                     setTimeout(function(){
                         $("#popup-fail").modal("hide");
                     }, 3000);
-                    $('#table-wishlist').html(response);
                 }
             },
             error: function(){

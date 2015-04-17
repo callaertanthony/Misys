@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <table class="table table-condensed">
   <thead>
   <tr class="cart_menu">
@@ -33,7 +34,8 @@
               <input name="quantity-${product.key.id}" type="number" value="${product.value}" max="${product.key.stock.quantity}" min="1" form="productForm-${product.key.id}"/>
             </td>
             <td class="cart_total">
-              <p class="cart_total_price">$?</p>
+              <p class="cart_total_price"><fmt:formatNumber type="number" value="${product.key.price * product.value}"
+                                                            minFractionDigits="2" maxFractionDigits="2"/> $</p>
             </td>
             <td class="cart_delete">
               <button type="button" class="btn btn-default remove-from-cart"
