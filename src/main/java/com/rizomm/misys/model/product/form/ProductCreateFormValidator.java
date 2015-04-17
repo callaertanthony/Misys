@@ -39,7 +39,6 @@ public class ProductCreateFormValidator implements Validator {
         ProductCreateForm form = (ProductCreateForm) o;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "field.required", "Field required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "field.required", "Field required");
-        ValidationUtils.rejectIfEmpty(errors, "price", "field.required", "Field required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "reference", "field.required", "Field required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "picture", "field.required", "Field required");
 

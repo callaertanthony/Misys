@@ -32,25 +32,63 @@
     <section>
         <div class="container">
             <div class="row">
-                <form:form name="form" action="" method="post" modelAttribute="form">
+                <form:form name="form" action="" method="post" modelAttribute="form" class="form-horizontal">
                     <form:errors/>
-                    <form:input type="text" name="name" value="${form.name}" id="name" required="true" path="name" class="form-control" placeholder="Name"/>
-                    <form:input type="text" reference="reference" value="${form.reference}" id="reference" required="true" path="reference" class="form-control" placeholder="Reference"/>
-                    <form:input type="number" price="price" value="${form.price}" id="price" required="true" path="price" class="form-control" placeholder="Price"/>
-                    <form:input type="text" description="description" value="${form.description}" id="description" required="true" path="description" class="form-control" placeholder="Description"/>
-                    <form:input type="text" picture="picture" value="${form.picture}" id="picture" required="true" path="picture" class="form-control" placeholder="Picture"/>
-                    <form:select name="category" id="category" required="true" path="category"  class="form-control" placeholder="Category">
-                        <c:forEach items="${categories}" var="category">
-                            <form:option value="${category.getId()}">${category.getCategory()}</form:option>
-                        </c:forEach>
-                    </form:select>
-                    <form:select name="brand" id="brand" required="true" path="brand"  class="form-control" placeholder="Brand">
-                        <c:forEach items="${brands}" var="brand">
-                            <form:option value="${brand.getId()}">${brand.getName()}</form:option>
-                        </c:forEach>
-                    </form:select>
-
-                    <button type="submit" class="btn btn-default">Create product</button>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                        <form:input type="text" name="name" value="${form.name}" id="name" required="true" path="name" class="form-control" placeholder="Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reference" class="col-sm-2 control-label">Reference</label>
+                        <div class="col-sm-10">
+                        <form:input type="text" reference="reference" value="${form.reference}" id="reference" required="true" path="reference" class="form-control" placeholder="Reference"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="col-sm-2 control-label">Price</label>
+                        <div class="col-sm-10">
+                        <form:input type="number" price="price" value="${form.price}" id="price" required="true" path="price" class="form-control" placeholder="Price" step="0.01" min="0"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                        <form:input type="text" description="description" value="${form.description}" id="description" required="true" path="description" class="form-control" placeholder="Description"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="picture" class="col-sm-2 control-label">Picture</label>
+                        <div class="col-sm-10">
+                        <form:input type="text" picture="picture" value="${form.picture}" id="picture" required="true" path="picture" class="form-control" placeholder="Picture"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="col-sm-2 control-label">Category</label>
+                        <div class="col-sm-10">
+                        <form:select name="category" id="category" required="true" path="category"  class="form-control" placeholder="Category">
+                            <c:forEach items="${categories}" var="category">
+                                <form:option value="${category.getId()}">${category.getCategory()}</form:option>
+                            </c:forEach>
+                        </form:select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="brand" class="col-sm-2 control-label">Brand</label>
+                        <div class="col-sm-10">
+                        <form:select name="brand" id="brand" required="true" path="brand"  class="form-control" placeholder="Brand">
+                            <c:forEach items="${brands}" var="brand">
+                                <form:option value="${brand.getId()}">${brand.getName()}</form:option>
+                            </c:forEach>
+                        </form:select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Create product</button>
+                        s</div>
+                    </div>
                 </form:form>
             </div>
         </div>

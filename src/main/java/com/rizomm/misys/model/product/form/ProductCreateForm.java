@@ -101,7 +101,7 @@ public class ProductCreateForm {
     @Override
     public String toString() {
         return "ProductCreateForm{" +
-                ", price=" + price +
+                "  price=" + price +
                 ", name='" + name + '\'' +
                 ", brand=" + brand +
                 ", description='" + description + '\'' +
