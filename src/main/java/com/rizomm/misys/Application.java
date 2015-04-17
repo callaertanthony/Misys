@@ -8,14 +8,12 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.context.embedded.ErrorPage;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 
 /**
  * Created by anthonycallaert on 06/03/15.
  */
 @SpringBootApplication
-@EnableJpaRepositories
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

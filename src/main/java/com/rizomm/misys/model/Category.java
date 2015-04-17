@@ -11,6 +11,9 @@ import javax.persistence.Id;
 public class Category {
 
     private String category;
+    private String categoryLink;
+    private int id;
+    private int idParent;
 
     @Basic
     public String getCategory() {
@@ -21,8 +24,6 @@ public class Category {
         this.category = category;
     }
 
-    private String categoryLink;
-
     @Basic
     public String getCategoryLink() {
         return categoryLink;
@@ -32,8 +33,6 @@ public class Category {
         this.categoryLink = categoryLink;
     }
 
-    private int id;
-
     @Id
     public int getId() {
         return id;
@@ -42,8 +41,6 @@ public class Category {
     public void setId(int id) {
         this.id = id;
     }
-
-    private int idParent;
 
     @Basic
     public int getIdParent() {

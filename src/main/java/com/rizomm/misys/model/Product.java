@@ -24,7 +24,7 @@ public class Product {
     @ManyToOne(optional = false)
     private Brand brand;
     @Basic
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String description;
     @Basic
     @Column(unique = true, nullable = false)
@@ -32,6 +32,12 @@ public class Product {
     @Basic
     @Column(nullable = false)
     private String picture;
+
+    @OneToMany(targetEntity = Review.class, mappedBy = "product")
+    List<Review> reviews;
+
+    @ManyToOne(optional = false)
+    private Category category;
 
     public int getId() {
         return id;
@@ -90,7 +96,7 @@ public class Product {
     }
 
     public String getPicturelink() {
-        return Constants.Product.imagePath + picture;
+        return Constants.Product.IMAGE_PATH + picture;
     }
 
     public String getPicture() {
@@ -105,9 +111,6 @@ public class Product {
         return this.getStock().getQuantity() > 0;
     }
 
-    @OneToMany(targetEntity = Review.class, mappedBy = "product")
-    List<Review> reviews;
-
     public List<Review> getReviews() {
         return reviews;
     }
@@ -115,10 +118,6 @@ public class Product {
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
-
-
-    @ManyToOne(optional = false)
-    private Category category;
 
     public Category getCategory() {
         return category;

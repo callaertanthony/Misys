@@ -10,16 +10,14 @@
 	</parent>
 	<artifactId>misys</artifactId>
 	<packaging>war</packaging>
-	<name>Spring Boot Web JSP Sample</name>
-	<description>Spring Boot Web JSP Sample</description>
-	<url>http://projects.spring.io/spring-boot/</url>
+	<name>Misys application</name>
+	<description>Buy your music</description>
 	<organization>
-		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
+		<name>Rizomm</name>
 	</organization>
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
 	</properties>
 	<dependencies>
@@ -51,6 +49,10 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
@@ -59,6 +61,10 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
     </dependencies>
 	<build>
 		<plugins>
@@ -71,6 +77,14 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<useSystemClassLoader>false</useSystemClassLoader>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

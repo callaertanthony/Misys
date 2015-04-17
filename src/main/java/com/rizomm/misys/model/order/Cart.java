@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by anthonycallaert on 12/04/15.
@@ -14,14 +15,14 @@ import java.util.HashMap;
 @Component
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart implements Serializable{
-    private HashMap<Integer, Integer> products = new HashMap<Integer, Integer>();
+    private Map<Integer, Integer> products = new HashMap<Integer, Integer>();
     private float price;
 
-    public HashMap<Integer, Integer> getProducts() {
+    public Map<Integer, Integer> getProducts() {
         return products;
     }
 
-    public void setProducts(HashMap<Integer, Integer> products) {
+    public void setProducts(Map<Integer, Integer> products) {
         this.products = products;
     }
 
@@ -76,5 +77,23 @@ public class Cart implements Serializable{
         if(this.products.containsKey(product.getId())){
             this.products.remove(product.getId());
         }
+    }
+
+    /**
+     * Method to remove all products from cart.
+     */
+    public void removeAllProducts(){
+        this.products.clear();
+    }
+
+    /**
+     *
+     * @param product a product to check if is in cart
+     * @return true if product is in the cart, false else
+     */
+    public boolean containsProduct(Product product){
+        if(this.products.containsKey(product.getId()))
+            return true;
+        return false;
     }
 }

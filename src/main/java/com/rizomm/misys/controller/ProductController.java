@@ -1,20 +1,20 @@
 package com.rizomm.misys.controller;
 
-import com.rizomm.misys.model.*;
-import com.rizomm.misys.repository.*;
+import com.rizomm.misys.model.Brand;
+import com.rizomm.misys.model.Category;
+import com.rizomm.misys.model.Product;
+import com.rizomm.misys.service.product.CategoryService;
+import com.rizomm.misys.service.product.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by Guillaume on 3/10/2015.
@@ -24,15 +24,10 @@ import java.util.List;
 public class ProductController implements ErrorController {
 
     @Autowired
-    private ProductRepository _productRepository;
+    private ProductService productService;
     @Autowired
-    private CategoryRepository _categoryRepository;
-    @Autowired
-    private UserRepository _userRepository;
-    @Autowired
-    private SelectionRepository _selectionRepository;
-    @Autowired
-    private SelectionLineRepository _selectionLineRepository;
+    private CategoryService categoryService;
+
     /**
      * This method will retrieve the product & category from the database and call the detail JSP page.
      * If the product or category can't be found, the 404 page will be shown to the user.
@@ -45,8 +40,9 @@ public class ProductController implements ErrorController {
     public ModelAndView detailProduct(@PathVariable int id) {
         try{
             List<Category> listCategories = new ArrayList<>();              //should contain the name of categories
-            Product product = _productRepository.findOne(id);
-            List<Product> products = _productRepository.findFirst10ByBrand(product.getBrand());
+            Product product = productService.getOneById(id)
+                .orElseThrow(() -> new NoSuchElementException(String.format("Product=%s not found", id)));
+            Set<Product> products = productService.getFirst10ByBrand(product.getBrand());
             if (products.contains(product))
             {
                 products.remove(product);
@@ -65,9 +61,12 @@ public class ProductController implements ErrorController {
                 if(category.getIdParent() == 0) //
                     run = false;
                 else
-                    category = _categoryRepository.findOne(category.getIdParent()); //take parent data
+                    category = categoryService.getOneById(category.getIdParent()) //take parent data
+                        .orElseThrow(() -> new NoSuchElementException(String.format("Category=%s not found", id)));
             }
             Collections.reverse(listCategories);
+
+
 
             ModelAndView mNv = new ModelAndView("product/detail");
             mNv.addObject("product", product);
@@ -81,70 +80,66 @@ public class ProductController implements ErrorController {
         }
     }
 
-    @RequestMapping(value = "/addtowishlist", method = RequestMethod.POST)
-    public void addToWishlist(HttpServletRequest req) {
-        try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
-            int quantity = Integer.parseInt(req.getParameter("quantity"));
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView searchResult(@RequestParam(required = false) final String searchInput) {
+        ModelAndView mNv = new ModelAndView("product/search");
 
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
-            System.out.println("Quantity : " + quantity);
+        String[] keysSplit = searchInput.split(" ");
 
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
+        List<Product> products = new ArrayList<>(productService.getAllByNameContaining(keysSplit[0]));
 
-            SelectionLine selectionLine = new SelectionLine();
-            selectionLine.setProduct(product);
-            selectionLine.setQuantity(quantity);
-            List<SelectionLine> list = new LinkedList<>();
-
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
-
-            list.add(selectionLine);
-            user.wishList().setSelectionLines(list);
-
-            _selectionRepository.save(user.wishList());
-            _selectionLineRepository.save(selectionLine);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        //recherche par terme dans le nom
+        for (String key : keysSplit) {
+            Set<Product> productsByName = productService.getAllByNameContaining(key);
+            Iterator<Product> prod = products.iterator();
+            while (prod.hasNext()) {
+                Product p = prod.next();
+                if (!productsByName.contains(p)) {
+                    prod.remove();
+                }
+            }
         }
-    }
 
-    @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
-    public void addToCart(HttpServletRequest req) {
-        try {
-            int id_user = Integer.parseInt(req.getParameter("id_user"));
-            int id_product = Integer.parseInt(req.getParameter("id_product"));
-            int quantity = Integer.parseInt(req.getParameter("quantity"));
-
-            System.out.println("User : " + id_user);
-            System.out.println("Product : " + id_product);
-            System.out.println("Quantity : " + quantity);
-
-            User user = _userRepository.findOne(id_user);
-            Product product = _productRepository.findOne(id_product);
-
-            SelectionLine selectionLine = new SelectionLine();
-            selectionLine.setProduct(product);
-            selectionLine.setQuantity(quantity);
-            List<SelectionLine> list = new LinkedList<>();
-
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
-
-            list.add(selectionLine);
-            user.cart().setSelectionLines(list);
-
-            _selectionRepository.save(user.cart());
-            _selectionLineRepository.save(selectionLine);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        // recherche par ref
+        Set<Product> productByRef = productService.getAllByReferenceContaining(searchInput);
+        for (Product prod : productByRef) {
+            if (!products.contains(prod)) {
+                products.add(prod);
+            }
         }
+
+        //recherche par la description
+        Set<Product> productsByDesc = productService.getAllByDescriptionContaining(keysSplit[0]);
+        for (String key : keysSplit) {
+            Set<Product> productsByD = productService.getAllByDescriptionContaining(key);
+            Iterator<Product> prod = productsByDesc.iterator();
+            while (prod.hasNext()) {
+                Product p = prod.next();
+                if (!productsByD.contains(p)) {
+                    prod.remove();
+                }
+            }
+        }
+        for (Product prod : productsByDesc) {
+            if (!products.contains(prod)) {
+                products.add(prod);
+            }
+        }
+
+        List<Brand> brands = new ArrayList<>();
+        for (Product p : products) {
+            if (!brands.contains(p.getBrand())) {
+                brands.add(p.getBrand());
+            }
+        }
+        mNv.addObject("products", products);
+        mNv.addObject("stringTest", searchInput);
+        mNv.addObject("brands", brands);
+
+        if (products.size() == 1) {
+            return new ModelAndView("product/detail", "product", products.get(0));
+        }
+        return mNv;
     }
 
     @Override

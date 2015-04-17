@@ -1,5 +1,4 @@
-﻿
-/*************************
+﻿﻿/*************************
 *******Typography******
 **************************/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
@@ -881,6 +880,7 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
+  height: 60px;
   color: #696763;
 }
 
@@ -917,19 +917,14 @@ h2.title {
   width: 100%;
 }
 
-.product-overlay .add-to-cart {
-  background:#fff;
-  border: 0 none;
-  border-radius: 0;
-  color: #FE980F;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  margin-bottom: 25px;
+.add-to-cart, .add-to-wishlist {
+    width: 100%;
+    border: 0;
 }
 
-.product-overlay .add-to-cart:hover {
-  background:#fff;
-  color: #FE980F;
+ .add-to-cart:hover, .add-to-wishlist:hover {
+     background: #FE980F;
+     color: #FFFFFF;
 }
 
 
@@ -940,25 +935,6 @@ h2.title {
   color: #fff;
 }
 
-
-
-.add-to-cart {
-  background:#F5F5ED;
-  border: 0 none;
-  border-radius: 0;
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  margin-bottom: 25px;
-}
-
-.add-to-cart:hover {
-  background: #FE980F;
-  border: 0 none;
-  border-radius: 0;
-  color: #FFFFFF;
-}
-
 .add-to{
   margin-bottom: 10px;
 }
@@ -967,9 +943,10 @@ h2.title {
 	margin-right:5px;
 }
 
-.add-to-cart:hover {
-    background: #FE980F;
-    color: #FFFFFF;
+.remove-all-from-cart, .remove-all-from-wishlist {
+    float: right;
+    background:#FE980F;
+    color: #ffffff;
 }
 
 .choose {
@@ -1429,13 +1406,6 @@ h2.title {
 /*************************
 *******login page CSS******
 **************************/
-
-#form {
-  display: block;
-  margin-bottom: 185px;
-  margin-top: 185px;
-  overflow: hidden;
-}
 
 .login-form {
 

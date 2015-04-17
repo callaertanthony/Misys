@@ -1,7 +1,7 @@
 package com.rizomm.misys.service;
 
-import com.rizomm.misys.model.order.Cart;
 import com.rizomm.misys.model.Product;
+import com.rizomm.misys.model.order.Cart;
 import com.rizomm.misys.model.order.form.CartProductForm;
 import com.rizomm.misys.repository.ProductRepository;
 import org.slf4j.Logger;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -27,6 +28,13 @@ public class CartServiceImpl implements CartService {
         this.productRepository = productRepository;
     }
 
+    /**
+     * Method to add a product with quantity to the session cart.
+     * The product quantity is a sum, not an override.
+     *
+     * @param cartProductForm
+     * @return Cart in session
+     */
     @Override
     public Cart addProductByForm(CartProductForm cartProductForm) {
         LOGGER.debug("Adding product to cart : productId = {}, quantity = {}.",
@@ -39,15 +47,58 @@ public class CartServiceImpl implements CartService {
         return cart;
     }
 
+    /**
+     * Method to add a product by quantity to the cart session.
+     * The product quantity is an override.
+     *
+     * @param cartProductForm
+     * @return Cart in session
+     */
     @Override
-    public Collection<Product> getProducts() {
-        Collection<Product> products = new HashSet<Product>();
-        Product product;
+    public Cart addProductWithQuantityByForm(CartProductForm cartProductForm) {
+        LOGGER.debug("Adding product to cart : productId = {}, quantity = {}.",
+                cartProductForm.getProductId(), cartProductForm.getQuantity());
+        Product product = productRepository.findOne(cartProductForm.getProductId());
+        LOGGER.debug("Product found : {}", product);
+        if(product != null){
+            if(this.cart.containsProduct(product)){
+                this.cart.removeProduct(product);
+            }
+            this.cart.addProductWithQuantity(product, cartProductForm.getQuantity());
+        }
+        return this.cart;
+    }
+
+    /**
+     * This method retrieve the cart of the current user to fetch products from database and fetch them with quantities
+     *
+     * @return An HashMap with products as keys and quantities as values.
+     */
+    @Override
+    public HashMap<Product, Integer> getProducts() {
+        HashMap<Product, Integer> products = new HashMap<>();
+
         for(Integer productId : this.cart.getProducts().keySet()){
-            //TODO change for a method to have a collection of products with a collection of id
-            product = productRepository.findOne(productId);
-            products.add(product);
+            products.put(productRepository.findOne(productId), this.cart.getProducts().get(productId));
         }
         return products;
     }
+
+    /**
+     * Method to remove all products in session cart
+     * @param id
+     */
+    @Override
+    public void removeProduct(int id) {
+        Product product = productRepository.findOne(id);
+        if(null != product)
+            this.cart.removeProduct(product);
+    }
+
+    @Override
+    public void removeAllProducts() {
+        this.cart.removeAllProducts();
+    }
+
+
 }
