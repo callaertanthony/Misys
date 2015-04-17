@@ -139,7 +139,7 @@
                 <div class="total_area">
                     <ul>
                         <li><spring:message code="cart.cartSubTotal"/> <span><fmt:formatNumber type="number" value="${total}"
-                                                                   minFractionDigits="2" maxFractionDigits="2"/> €</span></li>
+                                                                                               minFractionDigits="2" maxFractionDigits="2"/> €</span></li>
                         <li><spring:message code="cart.shippingCost"/> <span><spring:message code="cart.free"/></span></li>
                         <li>Total <span><fmt:formatNumber type="number" value="${total}"
                                                           minFractionDigits="2" maxFractionDigits="2"/> €</span></li>
