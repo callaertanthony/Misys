@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by anthonycallaert on 12/04/15.
@@ -46,7 +47,7 @@ public class CartController {
     @RequestMapping(value="/shop/cart", method = RequestMethod.GET)
     public ModelAndView getCartPage(){
         ModelAndView modelAndView = new ModelAndView("shop/cart");
-        HashMap<Product, Integer> products = cartService.getProducts();
+        Map<Product, Integer> products = cartService.getProducts();
         modelAndView.addObject("products", products);
         return modelAndView;
     }
@@ -58,7 +59,7 @@ public class CartController {
         cartService.removeProduct(cartProductForm.getProductId());
         LOGGER.debug("End to removing product from cart");
         ModelAndView mvn = new ModelAndView("shop/cartContent");
-        HashMap<Product, Integer> products = cartService.getProducts();
+        Map<Product, Integer> products = cartService.getProducts();
         mvn.addObject("products", products);
         return mvn;
     }
@@ -69,7 +70,7 @@ public class CartController {
         cartService.removeAllProducts();
         LOGGER.debug("End to removing all products from cart");
         ModelAndView mvn = new ModelAndView("shop/cartContent");
-        HashMap<Product, Integer> products = cartService.getProducts();
+        Map<Product, Integer> products = cartService.getProducts();
         mvn.addObject("products", products);
         return mvn;
     }
@@ -81,7 +82,7 @@ public class CartController {
         cartService.addProductWithQuantityByForm(cartProductForm);
         LOGGER.debug("End to updating product in cart");
         ModelAndView mvn = new ModelAndView("shop/cartContent");
-        HashMap<Product, Integer> products = cartService.getProducts();
+        Map<Product, Integer> products = cartService.getProducts();
         mvn.addObject("products", products);
         return mvn;
     }

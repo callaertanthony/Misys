@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CookieUtils {
 
-    public CookieUtils() {
-    }
-
     public static Cookie getCookieByName(HttpServletRequest httpRequest, String cookieName) {
         Cookie[] cookies = httpRequest.getCookies();
         if (cookies != null) {

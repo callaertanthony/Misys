@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 /**
@@ -54,8 +55,8 @@ public class OrderController {
     public ModelAndView getOrderPage(){
         LOGGER.debug("Getting order address page.");
         ModelAndView mvn = new ModelAndView("shop/order/address");
-        HashMap<Product, Integer> products = cartService.getProducts();
-        if(products.size() == 0){
+        Map<Product, Integer> products = cartService.getProducts();
+        if(products.isEmpty()){
             return new ModelAndView("redirect:/");
         }
         orderService.setProducts(products);
@@ -83,10 +84,9 @@ public class OrderController {
     @PreAuthorize("isAuthenticated()")
     @RequestMapping("/view/{id}")
     public ModelAndView getOrderView(@PathVariable long id, HttpServletRequest httpServletRequest){
-        System.out.println("IN getOrderView()     !!!!!!");
+        LOGGER.debug("Getting view for order = {}", id);
         int idInt = (int) id;
         Integer idInteger = new Integer(idInt);
-        LOGGER.debug("Getting view for order = {}", id);
         Authentication auth = (Authentication) httpServletRequest.getUserPrincipal();
         CurrentUser currentUser = CurrentUserControllerAdvice.getCurrentUser(auth);
         User user = currentUser.getUser();

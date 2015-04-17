@@ -31,7 +31,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public SessionOrder setProducts(HashMap<Product, Integer> products) {
+    public SessionOrder setProducts(Map<Product, Integer> products) {
         LOGGER.debug("Setting products in session.");
         this.sessionOrder.setProductsQuantity(products);
         return this.sessionOrder;
