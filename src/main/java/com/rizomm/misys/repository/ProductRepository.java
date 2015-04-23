@@ -1,6 +1,7 @@
 package com.rizomm.misys.repository;
 
 import com.rizomm.misys.model.Brand;
+import com.rizomm.misys.model.Category;
 import com.rizomm.misys.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -18,4 +19,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     Set<Product> findByReferenceContaining(String reference);
 
     Set<Product> findByDescriptionContaining(String description);
+
+    Set<Product> findByPictureContaining(String category);
 }
