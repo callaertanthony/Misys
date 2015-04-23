@@ -120,14 +120,14 @@
                                                 <li>
                                                     <button type="button" class="btn btn-default add-to-wishlist"
                                                             formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${product.id}">
-                                                        <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
+                                                        <i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/>
                                                     </button>
                                                 </li>
                                                 <c:if test="${product.haveStock()}">
                                                     <li>
                                                         <button type="button" class="btn btn-default add-to-cart"
                                                                 formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
-                                                            <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
+                                                            <i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/>
                                                         </button>
                                                     </li>
                                                 </c:if>
@@ -136,10 +136,10 @@
                                     </span>
                                     <c:choose>
                                         <c:when test="${product.haveStock()}">
-                                            <p><b>Availability:</b> In Stock</p>
+                                            <p><b><spring:message code="detail.availability"/> : </b> <spring:message code="detail.inStock"/></p>
                                         </c:when>
                                         <c:otherwise>
-                                            <p><b>Availability:</b> Out of stock</p>
+                                            <p><b><spring:message code="detail.availability"/> : </b> <spring:message code="detail.outOgStock"/></p>
                                         </c:otherwise>
                                     </c:choose>
                                     <p><b>Brand:</b> ${product.getBrand().getName()}</p>
