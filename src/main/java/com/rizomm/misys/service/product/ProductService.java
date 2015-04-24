@@ -22,6 +22,8 @@ public interface ProductService {
 
     Set<Product> getAllByNameContaining(String name);
 
+    Set<Product> getAllByCategory(String category);
+
     Set<Product> getAllByReferenceContaining(String reference);
 
     Set<Product> getAllByDescriptionContaining(String description);

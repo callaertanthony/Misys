@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="recommended_items"><!--recommended_items-->
-    <h2 class="title text-center">recommended items</h2>
+    <h2 class="title text-center"><spring:message code="recommanded.items"/></h2>
 
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -35,36 +35,23 @@
                                     <h2>${productElement.price}€</h2>
 
                                     <p>${productElement.name}</p>
+                                    <c:if test="${productElement.haveStock()}">
                                     <div>
                                         <label>Quantity:</label>
                                         <input type="number" value="1" max="${productElement.stock.quantity}" min="0" />
                                     </div>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li>
-                                        <button type="button" class="btn btn-default add-to-wishlist"
-                                                formaction="<spring:url value="/add-to-wishlist"/>" form="productForm-${productElement.id}">
-                                            <i class="glyphicon glyphicon-heart-empty"></i>Add to wishlist
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="btn btn-default add-to-cart"
-                                                formaction="<spring:url value="/add-to-cart"/>" form="productForm-${productElement.id}">
-                                            <i class="glyphicon glyphicon-shopping-cart"></i>Add to cart
-                                        </button>
-                                    </li>
+                                    <li><button type="button" class="btn btn-default add-to-wishlist"><i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/></button></li>
+                                    <c:if test="${productElement.haveStock()}">
+                                        <li><button type="button" class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></button></li>
+                                    </c:if>
                                 </ul>
                             </div>
                         </div>
-                        <div class="choose">
-                            <ul class="nav nav-pills nav-justified">
-                                <li><button type="button" class="btn btn-default add-to-wishlist-btn"><i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/></button></li>
-                                <li><button type="button" class="btn btn-default add-to-cart-btn"><i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/></button></li>
-                            </ul>
-                        </div>
-                    </div>
                     </form>
                 </div>
 

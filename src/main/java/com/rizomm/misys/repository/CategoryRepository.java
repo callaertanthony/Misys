@@ -1,6 +1,7 @@
 package com.rizomm.misys.repository;
 
 import com.rizomm.misys.model.Category;
+import com.rizomm.misys.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

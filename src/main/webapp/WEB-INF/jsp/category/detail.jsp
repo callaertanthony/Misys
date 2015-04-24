@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Guillaume
-  Date: 3/12/2015
-  Time: 9:24 AM
+  Date: 17/04/2015
+  Time: 12:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -33,20 +33,17 @@
 </head><!--/head-->
 <body>
 <!-- INCLUDE HEADER -->
-<jsp:include page="header.jsp" />
+<jsp:include page="../header.jsp" />
 
 <section>
     <div class="container">
         <div class="row">
-            <!-- INCLUDE SLIDER -->
-            <jsp:include page="slider.jsp" />
-
             <!------------------------------------------------
                 LEFT PANEL
              ------------------------------------------------>
             <div class="col-sm-3">
                 <!-- INCLUDE MENU -->
-                <jsp:include page="menu.jsp" />
+                <jsp:include page="../menu.jsp" />
             </div>
 
             <!------------------------------------------------
@@ -68,13 +65,11 @@
                                             <h2>${product.price}€</h2>
 
                                             <p>${product.name}</p>
-                                            <c:if test="${product.haveStock()}">
                                             <div>
 
                                                 <label><spring:message code="wishlist.quantity"/>:</label>
                                                 <input name="quantity" type="number" value="1" max="${product.stock.quantity}" min="1" form="productForm-${product.id}"/>
                                             </div>
-                                            </c:if>
                                         </div>
                                     </div>
                                     <div class="choose">
@@ -85,14 +80,12 @@
                                                     <i class="glyphicon glyphicon-heart-empty"></i><spring:message code="detail.addWishlist"/>
                                                 </button>
                                             </li>
-                                            <c:if test="${product.haveStock()}">
                                             <li>
                                                 <button type="button" class="btn btn-default add-to-cart"
                                                         formaction="<spring:url value="/add-to-cart"/>" form="productForm-${product.id}">
                                                     <i class="glyphicon glyphicon-shopping-cart"></i><spring:message code="wishlist.addtoCart"/>
                                                 </button>
                                             </li>
-                                            </c:if>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,7 +99,7 @@
 </section>
 
 <!-- INCLUDE FOOTER -->
-<jsp:include page="footer.jsp" />
+<jsp:include page="../footer.jsp" />
 
 </body>
 </html>

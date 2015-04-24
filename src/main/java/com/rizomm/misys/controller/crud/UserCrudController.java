@@ -42,7 +42,7 @@ public class UserCrudController {
     @RequestMapping("/{id}")
     public ModelAndView getUserPage(@PathVariable Long id) {
         LOGGER.debug("Getting user page for user={}", id);
-        return new ModelAndView("crud/user/detail", "user", userService.getUserById(id)
+        return new ModelAndView("user/detail", "user", userService.getUserById(id)
                 .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id))));
     }
 
@@ -50,7 +50,7 @@ public class UserCrudController {
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView getUserCreatePage() {
         LOGGER.debug("Getting user create form");
-        ModelAndView modelAndView = new ModelAndView("crud/user/create");
+        ModelAndView modelAndView = new ModelAndView("user/create");
 
         modelAndView.addObject("form", new UserCrudCreateForm());
         return modelAndView;
@@ -60,7 +60,7 @@ public class UserCrudController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView handleUserCreateForm(@Valid @ModelAttribute("form") UserCrudCreateForm form, BindingResult bindingResult) {
         LOGGER.debug("Processing user create form={}, bindingResult={}", form, bindingResult);
-        ModelAndView modelAndView = new ModelAndView("crud/user/create");
+        ModelAndView modelAndView = new ModelAndView("user/create");
         if (bindingResult.hasErrors()) {
             // failed validation
             return modelAndView;
@@ -82,7 +82,7 @@ public class UserCrudController {
     @RequestMapping("/list")
     public ModelAndView getUsersPage() {
         LOGGER.debug("Getting users page");
-        ModelAndView modelAndView = new ModelAndView("crud/user/list");
+        ModelAndView modelAndView = new ModelAndView("user/list");
         modelAndView.addObject("users", userService.getAllUsers());
         return modelAndView;
     }
